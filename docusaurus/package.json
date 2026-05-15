@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^3.10.1",
-    "wrangler": "^3.56.0"
+    "wrangler": "^4.92.0"
   },
   "browserslist": {
     "production": [
