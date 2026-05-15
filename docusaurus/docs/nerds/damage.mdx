@@ -1,0 +1,26 @@
+# Damage Model
+
+The damage model is more complex than it first appears, largely due to the game's
+asymmetric nature. The same attack can deal very different amounts of damage
+depending on whether the target is the Predator, the Fireteam, or an NPC.
+
+For example, a Frag Grenade deals 300 splash damage — enough to instantly down
+even the most durable Fireteam class via friendly fire — yet it takes four
+consecutive blasts to push the weakest Predator (1,000 HP) into Second Wind.
+
+
+## Yautja to Ooman damage
+
+<img src="/damage-yautja.drawio.svg" alt="Damage diagram: Yautja to Ooman" />
+
+
+## Ooman to Yautja damage
+
+<img src="/damage-ooman.drawio.svg" alt="Damage diagram: Ooman to Yautja" />
+
+
+## Damage curves
+
+Fireteam weapon damage falls off with distance. The game models this using Unreal Engine
+[Keys and Curves](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Timelines/KeysAndCurves/),
+which are piecewise linear interpolations between keyframe values (similar in concept to Bézier curves).

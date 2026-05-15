@@ -1,0 +1,4745 @@
+{
+  "perks": {
+    "predator": [
+      {
+        "id": "PK_P_OverloadCooldown",
+        "name": "Cooling Syncs",
+        "icon": "/icons/perks/predator/cooling_syncs.png",
+        "points": 3,
+        "modifier": 1.3,
+        "clash": "",
+        "description": "Reduced cooldown on energy overloads",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_OverloadCooldown.0"
+      },
+      {
+        "id": "PK_P_LaserVisibility",
+        "name": "Dithered Lens",
+        "icon": "/icons/perks/predator/dithered_lens.png",
+        "points": 5,
+        "modifier": 0.05,
+        "clash": "",
+        "description": "Reduced Plasma Caster laser visibility",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_LaserVisibility.0"
+      },
+      {
+        "id": "PK_P_See_Mudded_Footprints",
+        "name": "Observant",
+        "icon": "/icons/perks/predator/observant.png",
+        "points": 2,
+        "modifier": "yes",
+        "clash": "",
+        "description": "See mudded fireteam infrared footprints",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_See_Mudded_Footprints.0"
+      },
+      {
+        "id": "PK_P_TougherMask",
+        "name": "Protection",
+        "icon": "/icons/perks/predator/protection.png",
+        "points": 2,
+        "modifier": 0.15,
+        "clash": "",
+        "description": "Bio mask recieves less damage",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_TougherMask.0"
+      },
+      {
+        "id": "PK_P_SecondWindDuration",
+        "name": "Hanging On",
+        "icon": "/icons/perks/predator/hanging_on.png",
+        "points": 2,
+        "modifier": 0.5,
+        "clash": "",
+        "description": "Extends the duration of the Second Wind ability",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_SecondWindDuration.0"
+      },
+      {
+        "id": "PK_P_EnergyRegen",
+        "name": "Modified Reserve",
+        "icon": "/icons/perks/predator/modified_reserve.png",
+        "points": 2,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Faster energy regeneration",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_EnergyRegen.0"
+      },
+      {
+        "id": "PK_P_BackShotDamage",
+        "name": "Ironside",
+        "icon": "/icons/perks/predator/ironside.png",
+        "points": 3,
+        "modifier": 0.75,
+        "clash": "",
+        "description": "Take reduced damage from behind while moving, healing, claiming, or performing a stealth kill.",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_BackShotDamage.0"
+      },
+      {
+        "id": "PK_P_IncreasedRangedDmg",
+        "name": "Down Range",
+        "icon": "/icons/perks/predator/down_range.png",
+        "points": 4,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Deal more damage with ranged weapons",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_IncreasedRangedDmg.0"
+      },
+      {
+        "id": "PK_P_Treekour_Mount",
+        "name": "Ascender",
+        "icon": "/icons/perks/predator/ascender.png",
+        "points": 1,
+        "modifier": 1.45,
+        "clash": "",
+        "description": "Faster Predkour mounting speed",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_Treekour_Mount.0"
+      },
+      {
+        "id": "PK_P_MeleeDamage",
+        "name": "Fearless",
+        "icon": "/icons/perks/predator/fearless.png",
+        "points": 4,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Deal extra damage with melee weapons",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_MeleeDamage.0"
+      },
+      {
+        "id": "PK_P_Blood_Trail_Duration",
+        "name": "Clotted",
+        "icon": "/icons/perks/predator/clotted.png",
+        "points": 1,
+        "modifier": 3.0,
+        "clash": "",
+        "description": "Extended Blood trail intervals",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_Blood_Trail_Duration.0"
+      },
+      {
+        "id": "PK_P_SecondWindCooldown",
+        "name": "Impatient",
+        "icon": "/icons/perks/predator/impatient.png",
+        "points": 5,
+        "modifier": 0.7,
+        "clash": "",
+        "description": "Reduces the cooldown period of the Second Wind ability",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_SecondWindCooldown.0"
+      },
+      {
+        "id": "PK_P_BonusEnergy",
+        "name": "Energy Cell",
+        "icon": "/icons/perks/predator/energy_cell.png",
+        "points": 4,
+        "modifier": 1.6,
+        "clash": "",
+        "description": "Increased energy reserves",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_BonusEnergy.0"
+      },
+      {
+        "id": "PK_P_ReducedPredkourDamage",
+        "name": "Height Advantage",
+        "icon": "/icons/perks/predator/height_advantage.png",
+        "points": 5,
+        "modifier": 0.75,
+        "clash": "",
+        "description": "Take reduced damage while in the trees",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_ReducedPredkourDamage.0"
+      },
+      {
+        "id": "PK_P_VisionEnergy",
+        "name": "Heated",
+        "icon": "/icons/perks/predator/heated.png",
+        "points": 1,
+        "modifier": 0.95,
+        "clash": "",
+        "description": "Vision mode consumes less energy",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_VisionEnergy.0"
+      },
+      {
+        "id": "PK_P_Larger_Sound_Indicators",
+        "name": "Spectral Awareness",
+        "icon": "/icons/perks/predator/spectral_awareness.png",
+        "points": 2,
+        "modifier": 1.75,
+        "clash": "",
+        "description": "Larger sound indicators in vision mode",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_Larger_Sound_Indicators.0"
+      },
+      {
+        "id": "PK_P_SprintDuration",
+        "name": "Adrenal Boost",
+        "icon": "/icons/perks/predator/adrenal_boost.png",
+        "points": 4,
+        "modifier": 1.25,
+        "clash": "",
+        "description": "Bonus stamina and exhaustion recovery",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_SprintDuration.0"
+      },
+      {
+        "id": "PK_P_IncreasedBulletResist",
+        "name": "Impenetrable",
+        "icon": "/icons/perks/predator/impenetrable.png",
+        "points": 6,
+        "modifier": 0.8,
+        "clash": "",
+        "description": "Take less damage from bullet based weapons",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_IncreasedBulletResist.0"
+      },
+      {
+        "id": "PK_P_IncreasedGearUses",
+        "name": "Large Pouch",
+        "icon": "/icons/perks/predator/large_pouch.png",
+        "points": 3,
+        "modifier": 2,
+        "clash": "",
+        "description": "Increased uses of gear items",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_IncreasedGearUses.0"
+      },
+      {
+        "id": "PK_P_Pounce_Distance",
+        "name": "Long Jump",
+        "icon": "/icons/perks/predator/long_jump.png",
+        "points": 3,
+        "modifier": 1.3,
+        "clash": "",
+        "description": "Leap further distances.",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_Pounce_Distance.0"
+      },
+      {
+        "id": "PK_P_CloakEnergy",
+        "name": "Light Bender",
+        "icon": "/icons/perks/predator/light_bender.png",
+        "points": 1,
+        "modifier": 0.95,
+        "clash": "",
+        "description": "Cloak consumes less energy",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_CloakEnergy.0"
+      },
+      {
+        "id": "PK_P_Healing_Speed",
+        "name": "Medic",
+        "icon": "/icons/perks/predator/medic.png",
+        "points": 4,
+        "modifier": 1.75,
+        "clash": "",
+        "description": "Heal with the med kit at a higher speed",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_Healing_Speed.0"
+      },
+      {
+        "id": "PK_P_BonusXP",
+        "name": "Resourceful",
+        "icon": "/icons/perks/predator/resourceful.png",
+        "points": 2,
+        "modifier": 1.2,
+        "clash": "",
+        "description": "Increased Experience from all sources",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_BonusXP.0"
+      },
+      {
+        "id": "PK_P_TougherTraps",
+        "name": "Trapper",
+        "icon": "/icons/perks/predator/trapper.png",
+        "points": 3,
+        "modifier": 1.75,
+        "clash": "",
+        "description": "Tougher traps (takes longer for Fireteam to escape)",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_TougherTraps.0"
+      },
+      {
+        "id": "PK_P_WeaponSwitching",
+        "name": "Fast Hands",
+        "icon": "/icons/perks/predator/fast_hands.png",
+        "points": 3,
+        "modifier": 1.75,
+        "clash": "",
+        "description": "Faster weapon/gear switching",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_WeaponSwitching.0"
+      },
+      {
+        "id": "PK_P_FastPredkour",
+        "name": "Branch Master",
+        "icon": "/icons/perks/predator/branch_master.png",
+        "points": 1,
+        "modifier": 1.25,
+        "clash": "",
+        "description": "Faster movement speed in the trees",
+        "source": "Content/Character/Data/Predator/Perks/PK_P_FastPredkour.0"
+      }
+    ],
+    "fireteam": [
+      {
+        "id": "PK_FT_AIDamage",
+        "name": "Flesh Ripper",
+        "icon": "/icons/perks/fireteam/flesh_ripper.png",
+        "points": 3,
+        "modifier": 1.3,
+        "clash": "",
+        "description": "Increased damage against AI",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_AIDamage.0"
+      },
+      {
+        "id": "PK_FT_SprintDuration",
+        "name": "Iron Lungs",
+        "icon": "/icons/perks/fireteam/iron_lungs.png",
+        "points": 2,
+        "modifier": 1.25,
+        "clash": "",
+        "description": "Bonus stamina and exhaustion recovery",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_SprintDuration.0"
+      },
+      {
+        "id": "PK_FT_PredDamage",
+        "name": "Yautja's Bane",
+        "icon": "/icons/perks/fireteam/yautjas_bane.png",
+        "points": 6,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Bonus damage to Yautja",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_PredDamage.0"
+      },
+      {
+        "id": "PK_FT_PredSpotDuration",
+        "name": "Tracker",
+        "icon": "/icons/perks/fireteam/tracker.png",
+        "points": 6,
+        "modifier": 2.5,
+        "clash": "",
+        "description": "Longer lasting predator spot",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_PredSpotDuration.0"
+      },
+      {
+        "id": "PK_FT_InteractSpeed",
+        "name": "Dexterous",
+        "icon": "/icons/perks/fireteam/dexterous.png",
+        "points": 3,
+        "modifier": 0.8,
+        "clash": "",
+        "description": "Increased interaction speed",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_InteractSpeed.0"
+      },
+      {
+        "id": "PK_FT_Sound_Indicator_Size",
+        "name": "Silent",
+        "icon": "/icons/perks/fireteam/silent.png",
+        "points": 4,
+        "modifier": null,
+        "clash": "",
+        "description": "Produce less noise (smaller sound indicators)",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_Sound_Indicator_Size.0"
+      },
+      {
+        "id": "PK_FT_ReloadSpeed",
+        "name": "Quick Release",
+        "icon": "/icons/perks/fireteam/quick_release.png",
+        "points": 2,
+        "modifier": 1.25,
+        "clash": "",
+        "description": "Reload weapons faster",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_ReloadSpeed.0"
+      },
+      {
+        "id": "PK_FT_HipFireBonus",
+        "name": "Action Hero",
+        "icon": "/icons/perks/fireteam/action_hero.png",
+        "points": 2,
+        "modifier": 0.75,
+        "clash": "",
+        "description": "Increased hip fire accuracy",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_HipFireBonus.0"
+      },
+      {
+        "id": "PK_FT_Spot_Traps",
+        "name": "Sixth Sense",
+        "icon": "/icons/perks/fireteam/sixth_sense.png",
+        "points": 6,
+        "modifier": "yes",
+        "clash": "",
+        "description": "Spot Predator traps automatically in range",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_Spot_Traps.0"
+      },
+      {
+        "id": "PK_FT_BonusXP",
+        "name": "Efficient",
+        "icon": "/icons/perks/fireteam/efficient.png",
+        "points": 2,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Increased Experience from all sources",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_BonusXP.0"
+      },
+      {
+        "id": "PK_FT_BleedOutDuration",
+        "name": "Sludge Blood",
+        "icon": "/icons/perks/fireteam/sludge_blood.png",
+        "points": 1,
+        "modifier": 0.6,
+        "clash": "",
+        "description": "Extends the time before you bleed out",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_BleedOutDuration.0"
+      },
+      {
+        "id": "PK_FT_ReducedRecoil",
+        "name": "Weapons Training",
+        "icon": "/icons/perks/fireteam/weapons_training.png",
+        "points": 3,
+        "modifier": 0.6,
+        "clash": "",
+        "description": "Reduced weapon fire recoil",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_ReducedRecoil.0"
+      },
+      {
+        "id": "PK_FT_MovementSpeed",
+        "name": "Double Time",
+        "icon": "/icons/perks/fireteam/double_time.png",
+        "points": 5,
+        "modifier": 1.1,
+        "clash": "",
+        "description": "Faster movement speed",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_MovementSpeed.0"
+      },
+      {
+        "id": "PK_FT_ReducedPredDamage",
+        "name": "OWLF Trained",
+        "icon": "/icons/perks/fireteam/owlf_trained.png",
+        "points": 3,
+        "modifier": 0.92,
+        "clash": "",
+        "description": "Take less damage from the Predator",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_ReducedPredDamage.0"
+      },
+      {
+        "id": "PK_FT_Reduced_Thermal_Temp",
+        "name": "Ice Cold",
+        "icon": "/icons/perks/fireteam/ice_cold.png",
+        "points": 5,
+        "modifier": -65,
+        "clash": "",
+        "description": "Reduced thermal body temperature",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_Reduced_Thermal_Temp.0"
+      },
+      {
+        "id": "PK_FT_CrawlSpeed",
+        "name": "Shuffler",
+        "icon": "/icons/perks/fireteam/shuffler.png",
+        "points": 1,
+        "modifier": 1.5,
+        "clash": "",
+        "description": "Improves movement speed while downed",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_CrawlSpeed.0"
+      },
+      {
+        "id": "PK_FT_ReducedAIDamage",
+        "name": "Body Armor",
+        "icon": "/icons/perks/fireteam/body_armor.png",
+        "points": 2,
+        "modifier": 0.7,
+        "clash": "",
+        "description": "Take less damage from AI units",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_ReducedAIDamage.0"
+      },
+      {
+        "id": "PK_FT_MeleeDamage",
+        "name": "Heavy Hitter",
+        "icon": "/icons/perks/fireteam/heavy_hitter.png",
+        "points": 3,
+        "modifier": 1.15,
+        "clash": "",
+        "description": "Deal extra melee damage",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_MeleeDamage.0"
+      },
+      {
+        "id": "PK_FT_WeaponSwitching",
+        "name": "Fast Hands",
+        "icon": "/icons/perks/fireteam/fast_hands.png",
+        "points": 1,
+        "modifier": 1.25,
+        "clash": "",
+        "description": "Faster weapon/gear switching",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_WeaponSwitching.0"
+      },
+      {
+        "id": "PK_FT_IncreasedHealth",
+        "name": "Thick Skin",
+        "icon": "/icons/perks/fireteam/thick_skin.png",
+        "points": 5,
+        "modifier": 25.0,
+        "clash": "",
+        "description": "Increased overall health",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_IncreasedHealth.0"
+      },
+      {
+        "id": "PK_FT_ADSMoveSpeed",
+        "name": "Multi Tasker",
+        "icon": "/icons/perks/fireteam/multi_tasker.png",
+        "points": 1,
+        "modifier": 1.8,
+        "clash": "",
+        "description": "Faster ADS movement speed",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_ADSMoveSpeed.0"
+      },
+      {
+        "id": "PK_FT_IncreasedAmmo",
+        "name": "Prepper",
+        "icon": "/icons/perks/fireteam/prepper.png",
+        "points": 2,
+        "modifier": 1.2,
+        "clash": "",
+        "description": "Increased starting weapon ammo",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_IncreasedAmmo.0"
+      },
+      {
+        "id": "PK_FT_MuddyUpDuration",
+        "name": "Pig In Shit",
+        "icon": "/icons/perks/fireteam/pig_in_shit.png",
+        "points": 4,
+        "modifier": 0.7,
+        "clash": "",
+        "description": "Muddy up faster, stay muddy longer",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_MuddyUpDuration.0"
+      },
+      {
+        "id": "PK_FT_DownedCount",
+        "name": "Persistent",
+        "icon": "/icons/perks/fireteam/persistent.png",
+        "points": 1,
+        "modifier": 1,
+        "clash": "",
+        "description": "Can be downed 1 extra time before death",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_DownedCount.0"
+      },
+      {
+        "id": "PK_FT_IncreasedGearUses",
+        "name": "Gearhead",
+        "icon": "/icons/perks/fireteam/gearhead.png",
+        "points": 6,
+        "modifier": 1,
+        "clash": "",
+        "description": "Increased number of gear uses",
+        "source": "Content/Character/Data/Fireteam/Perks/PK_FT_IncreasedGearUses.0"
+      }
+    ],
+    "last_man_standing": [
+      {
+        "id": "PK_FT_LMS_DamageResistance",
+        "name": "Damage resistance",
+        "modifier": 0.85,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_DamageResistance.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_StaminaUsage",
+        "name": "Stamina usage",
+        "modifier": 0.85,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_StaminaUsage.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_BodyHeat",
+        "name": "Body heat",
+        "modifier": 15,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_BodyHeat.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_MovmentSpeed",
+        "name": "Movment speed",
+        "modifier": 1.1,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_MovmentSpeed.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_ReloadSpeed",
+        "name": "Reload speed",
+        "modifier": 1.2,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_ReloadSpeed.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_StaminaRegeneration",
+        "name": "Stamina regeneration",
+        "modifier": 1.15,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_StaminaRegeneration.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_InteractionSpeed",
+        "name": "Interaction speed",
+        "modifier": 1.3,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_InteractionSpeed.0",
+        "icon": null
+      },
+      {
+        "id": "PK_FT_LMS_WeaponSwapSpeed",
+        "name": "Weapon swap speed",
+        "modifier": 1.5,
+        "source": "Content/Character/Data/Fireteam/Perks/LastManStanding/PK_FT_LMS_WeaponSwapSpeed.0",
+        "icon": null
+      }
+    ]
+  },
+  "characters": {
+    "predator": [
+      {
+        "id": "CD_Predator_Scout",
+        "name": "SCOUT",
+        "icon": "/icons/characters/predator/scout.png",
+        "health": 1000.0,
+        "downed_health": 1000.0,
+        "downed_bleed": 5.0,
+        "stamina": 30.0,
+        "stamina_recovery": 3.5,
+        "exhaustion_duration": 1.0,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 0.95,
+        "melee_stamina": 0.4,
+        "energy": 1650.0,
+        "energy_recovery": 175.0,
+        "max_gear": 8,
+        "max_perk": 15,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.78,
+          "Bullet_SmallCaliber": 0.77,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.13,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 4000.0,
+        "source": "Content/Character/Data/Predator/Classes/Scout/CD_Predator_Scout_Male.0"
+      },
+      {
+        "id": "CD_Predator_Hunter",
+        "name": "HUNTER",
+        "icon": "/icons/characters/predator/hunter.png",
+        "health": 1250.0,
+        "downed_health": 1250.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 2.0,
+        "speed_modifier": 1.0,
+        "predkour_modifier": 1.0,
+        "melee_modifier": 1.0,
+        "melee_stamina": 0.25,
+        "energy": 2000.0,
+        "energy_recovery": 150.0,
+        "max_gear": 10,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": null,
+        "source": "Content/Character/Data/Predator/Classes/Hunter/CD_Predator_Hunter_Male.0"
+      },
+      {
+        "id": "CD_Predator_Berserker",
+        "name": "BERSERKER",
+        "icon": "/icons/characters/predator/berserker.png",
+        "health": 1500.0,
+        "downed_health": 1500.0,
+        "downed_bleed": 5.0,
+        "stamina": 21.0,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 0.95,
+        "predkour_modifier": 0.95,
+        "melee_modifier": 1.1,
+        "melee_stamina": 0.5,
+        "energy": 2250.0,
+        "energy_recovery": 135.0,
+        "max_gear": 15,
+        "max_perk": 9,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.15,
+          "Bullet_Shotgun": 0.85,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3000.0,
+        "source": "Content/Character/Data/Predator/Classes/Berserker/CD_Predator_Berserker_Female.0"
+      },
+      {
+        "id": "CD_Predator_JH87",
+        "name": "Jungle Hunter ('87)",
+        "icon": "/icons/characters/predator/jungle_hunter_(87).png",
+        "health": 1250.0,
+        "downed_health": 1250.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 2.0,
+        "speed_modifier": 1.0,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.0,
+        "melee_stamina": 0.25,
+        "energy": 2000.0,
+        "energy_recovery": 150.0,
+        "max_gear": 10,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3500.0,
+        "source": "Content/Character/Data/Predator/Classes/JH87/CD_Predator_JH87.0"
+      },
+      {
+        "id": "CD_Predator_HeavyCat",
+        "name": "Emissary",
+        "icon": "/icons/characters/predator/emissary.png",
+        "health": 1600.0,
+        "downed_health": 1300.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 2.85,
+        "exhaustion_duration": 2.2,
+        "speed_modifier": 1.0,
+        "predkour_modifier": 1.0,
+        "melee_modifier": 1.12,
+        "melee_stamina": 0.35,
+        "energy": 1600.0,
+        "energy_recovery": 140.0,
+        "max_gear": 15,
+        "max_perk": 9,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3250.0,
+        "source": "Content/DLC_Release/FU_14/Character/Data/Predator/HeavyCat/CD_Predator_HeavyCat.0"
+      },
+      {
+        "id": "CD_Predator_Alpha",
+        "name": "ALPHA PREDATOR",
+        "icon": "/icons/characters/predator/alpha_predator.png",
+        "health": 1150.0,
+        "downed_health": 1150.0,
+        "downed_bleed": 5.0,
+        "stamina": 28.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 2.0,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.0,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.25,
+        "energy": 1600.0,
+        "energy_recovery": 150.0,
+        "max_gear": 10,
+        "max_perk": 13,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": null,
+        "source": "Content/DLC_Release/DLC_01/Character/Data/Predator/CD_Predator_Alpha.0"
+      },
+      {
+        "id": "CD_Predator_Cyborg",
+        "name": "Bionic",
+        "icon": "/icons/characters/predator/bionic.png",
+        "health": 1350.0,
+        "downed_health": 1400.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 2.8,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.0,
+        "melee_stamina": 0.4,
+        "energy": 2350.0,
+        "energy_recovery": 175.0,
+        "max_gear": 15,
+        "max_perk": 9,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 4050.0,
+        "source": "Content/DLC_Release/FU_15/Data/Predator/Cyborg/CD_Predator_Cyborg.0"
+      },
+      {
+        "id": "CD_Predator_Viking",
+        "name": "Viking",
+        "icon": "/icons/characters/predator/viking.png",
+        "health": 1500.0,
+        "downed_health": 1500.0,
+        "downed_bleed": 5.0,
+        "stamina": 21.0,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 0.9,
+        "predkour_modifier": 0.95,
+        "melee_modifier": 1.15,
+        "melee_stamina": 0.5,
+        "energy": 2250.0,
+        "energy_recovery": 135.0,
+        "max_gear": 10,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.15,
+          "Bullet_Shotgun": 0.85,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3000.0,
+        "source": "Content/DLC_Release/FU_05/Character/Data/Predator/CD_Predator_Viking.0"
+      },
+      {
+        "id": "CD_Predator_Rio_01",
+        "name": "Valkyrie",
+        "icon": "/icons/characters/predator/valkyrie.png",
+        "health": 1300.0,
+        "downed_health": 1000.0,
+        "downed_bleed": 5.0,
+        "stamina": 30.0,
+        "stamina_recovery": 3.5,
+        "exhaustion_duration": 1.5,
+        "speed_modifier": 1.02,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.03,
+        "melee_stamina": 0.2,
+        "energy": 2000.0,
+        "energy_recovery": 150.0,
+        "max_gear": 9,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 4000.0,
+        "source": "Content/DLC_Release/FU_07/Character/Data/Predator/CD_Predator_Rio_01.0"
+      },
+      {
+        "id": "CD_Predator_Kappa",
+        "name": "Oni",
+        "icon": "/icons/characters/predator/oni.png",
+        "health": 1300.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 25.5,
+        "stamina_recovery": 3.15,
+        "exhaustion_duration": 1.3,
+        "speed_modifier": 1.15,
+        "predkour_modifier": 1.25,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.2,
+        "energy": 2500.0,
+        "energy_recovery": 155.0,
+        "max_gear": 14,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3950.0,
+        "source": "Content/DLC_Release/FU_24/Data/CD_Predator_Kappa.0"
+      },
+      {
+        "id": "CD_Predator_Celtic",
+        "name": "Celtic",
+        "icon": "/icons/characters/predator/celtic.png",
+        "health": 1350.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 3.2,
+        "exhaustion_duration": 1.5,
+        "speed_modifier": 0.95,
+        "predkour_modifier": 1.04,
+        "melee_modifier": 0.95,
+        "melee_stamina": 0.35,
+        "energy": 1900.0,
+        "energy_recovery": 170.0,
+        "max_gear": 11,
+        "max_perk": 14,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3700.0,
+        "source": "Content/DLC_Release/FU_16/Data/Predator/Celtic/CD_Predator_Celtic.0"
+      },
+      {
+        "id": "CD_Predator_Bloody",
+        "name": "Scar",
+        "icon": "/icons/characters/predator/scar.png",
+        "health": 1400.0,
+        "downed_health": 1300.0,
+        "downed_bleed": 5.0,
+        "stamina": 26.0,
+        "stamina_recovery": 3.3,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 1.065,
+        "predkour_modifier": 1.03,
+        "melee_modifier": 1.055,
+        "melee_stamina": 0.5,
+        "energy": 2350.0,
+        "energy_recovery": 165.0,
+        "max_gear": 13,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3100.0,
+        "source": "Content/DLC_Release/FU_16/Data/Predator/Scar/CD_Predator_Bloody.0"
+      },
+      {
+        "id": "CD_Predator_Chopper",
+        "name": "Chopper",
+        "icon": "/icons/characters/predator/chopper.png",
+        "health": 1100.0,
+        "downed_health": 1000.0,
+        "downed_bleed": 5.0,
+        "stamina": 27.0,
+        "stamina_recovery": 3.15,
+        "exhaustion_duration": 2.8,
+        "speed_modifier": 1.1,
+        "predkour_modifier": 1.25,
+        "melee_modifier": 1.085,
+        "melee_stamina": 0.45,
+        "energy": 1550.0,
+        "energy_recovery": 130.0,
+        "max_gear": 12,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3450.0,
+        "source": "Content/DLC_Release/FU_16/Data/Predator/Chopper/CD_Predator_Chopper.0"
+      },
+      {
+        "id": "CD_Predator_Zeta",
+        "name": "Anubis",
+        "icon": "/icons/characters/predator/anubis.png",
+        "health": 1350.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 3.1,
+        "exhaustion_duration": 2.4,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.25,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.25,
+        "energy": 2100.0,
+        "energy_recovery": 145.0,
+        "max_gear": 13,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3950.0,
+        "source": "Content/DLC_Release/FU_20/Data/Predator/Zeta/CD_Predator_Zeta.0"
+      },
+      {
+        "id": "CD_Predator_Helsinki",
+        "name": "Exiled",
+        "icon": "/icons/characters/predator/exiled.png",
+        "health": 1200.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 28.0,
+        "stamina_recovery": 4.0,
+        "exhaustion_duration": 1.5,
+        "speed_modifier": 1.08,
+        "predkour_modifier": 1.0,
+        "melee_modifier": 1.045,
+        "melee_stamina": 0.35,
+        "energy": 1800.0,
+        "energy_recovery": 175.0,
+        "max_gear": 11,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3500.0,
+        "source": "Content/DLC_Release/FU_11/Character/Data/Predator/Helsinki/CD_Predator_Helsinki.0"
+      },
+      {
+        "id": "CD_Predator_Samurai",
+        "name": "Samurai",
+        "icon": "/icons/characters/predator/samurai.png",
+        "health": 1350.0,
+        "downed_health": 1500.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 0.975,
+        "predkour_modifier": 0.975,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.5,
+        "energy": 2250.0,
+        "energy_recovery": 135.0,
+        "max_gear": 10,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 0.9,
+          "Bullet_Shotgun": 0.85,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3250.0,
+        "source": "Content/DLC_Release/DLC_02/Character/Data/Predator/CD_Predator_Samurai.0"
+      },
+      {
+        "id": "CD_Predator_Elder",
+        "name": "Elder",
+        "icon": "/icons/characters/predator/elder.png",
+        "health": 1250.0,
+        "downed_health": 1000.0,
+        "downed_bleed": 5.0,
+        "stamina": 21.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 1.5,
+        "speed_modifier": 0.965,
+        "predkour_modifier": 1.05,
+        "melee_modifier": 0.95,
+        "melee_stamina": 0.25,
+        "energy": 2300.0,
+        "energy_recovery": 150.0,
+        "max_gear": 12,
+        "max_perk": 13,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3750.0,
+        "source": "Content/DLC_Release/FU_01/Character/Data/Predator/Elder/CD_Predator_Elder.0"
+      },
+      {
+        "id": "CD_Predator_Pirate",
+        "name": "Pirate",
+        "icon": "/icons/characters/predator/pirate.png",
+        "health": 1300.0,
+        "downed_health": 1340.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 2.95,
+        "exhaustion_duration": 2.4,
+        "speed_modifier": 1.02,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.0,
+        "melee_stamina": 0.25,
+        "energy": 2400.0,
+        "energy_recovery": 175.0,
+        "max_gear": 13,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3800.0,
+        "source": "Content/DLC_Release/FU_17/Data/Predator/Pirate/CD_Predator_Pirate.0"
+      },
+      {
+        "id": "CD_Predator_Amazon",
+        "name": "Amazon",
+        "icon": "/icons/characters/predator/amazon.png",
+        "health": 1550.0,
+        "downed_health": 1400.0,
+        "downed_bleed": 5.0,
+        "stamina": 24.0,
+        "stamina_recovery": 3.63,
+        "exhaustion_duration": 2.7,
+        "speed_modifier": 1.055,
+        "predkour_modifier": 0.995,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.5,
+        "energy": 1950.0,
+        "energy_recovery": 155.0,
+        "max_gear": 8,
+        "max_perk": 14,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3900.0,
+        "source": "Content/DLC_Release/FU_17/Data/Predator/Amazon/CD_Predator_Amazon.0"
+      },
+      {
+        "id": "CD_Predator_Jotun",
+        "name": "Jotun",
+        "icon": "/icons/characters/predator/jotun.png",
+        "health": 1600.0,
+        "downed_health": 1450.0,
+        "downed_bleed": 5.0,
+        "stamina": 32.0,
+        "stamina_recovery": 5.0,
+        "exhaustion_duration": 0.9,
+        "speed_modifier": 0.98,
+        "predkour_modifier": 1.02,
+        "melee_modifier": 1.2,
+        "melee_stamina": 0.45,
+        "energy": 1500.0,
+        "energy_recovery": 130.0,
+        "max_gear": 8,
+        "max_perk": 15,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3400.0,
+        "source": "Content/DLC_Release/FU_25/Data/CD_Predator_Jotun.0"
+      },
+      {
+        "id": "CD_Predator_Father",
+        "name": "Father",
+        "icon": "/icons/characters/predator/father.png",
+        "health": 1200.0,
+        "downed_health": 1150.0,
+        "downed_bleed": 5.0,
+        "stamina": 26.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 0.9,
+        "speed_modifier": 1.01,
+        "predkour_modifier": 0.9,
+        "melee_modifier": 1.065,
+        "melee_stamina": 0.4,
+        "energy": 2550.0,
+        "energy_recovery": 135.0,
+        "max_gear": 15,
+        "max_perk": 9,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3300.0,
+        "source": "Content/DLC_Release/FU_26/Data/CD_Predator_Father.0"
+      },
+      {
+        "id": "CD_Predator_Cid",
+        "name": "Exalted",
+        "icon": "/icons/characters/predator/exalted.png",
+        "health": 1300.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 24.0,
+        "stamina_recovery": 3.2,
+        "exhaustion_duration": 1.1,
+        "speed_modifier": 1.095,
+        "predkour_modifier": 1.3,
+        "melee_modifier": 1.13,
+        "melee_stamina": 0.25,
+        "energy": 2400.0,
+        "energy_recovery": 160.0,
+        "max_gear": 12,
+        "max_perk": 11,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3850.0,
+        "source": "Content/DLC_Release/FU_21/Data/CD_Predator_Cid.0"
+      },
+      {
+        "id": "CD_Predator_CityHunter_01",
+        "name": "City Hunter ('97)",
+        "icon": "/icons/characters/predator/city_hunter_(97).png",
+        "health": 1250.0,
+        "downed_health": 1250.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 1.75,
+        "speed_modifier": 1.035,
+        "predkour_modifier": 1.0,
+        "melee_modifier": 1.03,
+        "melee_stamina": 0.25,
+        "energy": 2250.0,
+        "energy_recovery": 150.0,
+        "max_gear": 12,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": null,
+        "source": "Content/DLC_Release/DLC_03/Character/Data/Predator/CD_Predator_CityHunter_01.0"
+      },
+      {
+        "id": "CD_Predator_Feral",
+        "name": "Feral",
+        "icon": "/icons/characters/predator/feral.png",
+        "health": 1350.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 3.1,
+        "exhaustion_duration": 2.4,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.25,
+        "melee_modifier": 1.075,
+        "melee_stamina": 0.25,
+        "energy": 2100.0,
+        "energy_recovery": 145.0,
+        "max_gear": 13,
+        "max_perk": 10,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3950.0,
+        "source": "Content/DLC_Release/FU_18/Data/Predator/Feral/CD_Predator_Feral.0"
+      },
+      {
+        "id": "CD_Predator_BigDog",
+        "name": "Mr. Black",
+        "icon": "/icons/characters/predator/mr._black.png",
+        "health": 1500.0,
+        "downed_health": 1200.0,
+        "downed_bleed": 5.0,
+        "stamina": 25.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 3.0,
+        "speed_modifier": 0.9,
+        "predkour_modifier": 0.9,
+        "melee_modifier": 1.1,
+        "melee_stamina": 0.2,
+        "energy": 2250.0,
+        "energy_recovery": 175.0,
+        "max_gear": 12,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3500.0,
+        "source": "Content/DLC_Release/FU_12/Data/Predator/BigDog/CD_Predator_BigDog.0"
+      },
+      {
+        "id": "CD_Predator_WildBird",
+        "name": "Falconer",
+        "icon": "/icons/characters/predator/falconer.png",
+        "health": 1200.0,
+        "downed_health": 1150.0,
+        "downed_bleed": 5.0,
+        "stamina": 30.0,
+        "stamina_recovery": 3.5,
+        "exhaustion_duration": 1.2,
+        "speed_modifier": 1.05,
+        "predkour_modifier": 1.2,
+        "melee_modifier": 1.045,
+        "melee_stamina": 0.45,
+        "energy": 1750.0,
+        "energy_recovery": 165.0,
+        "max_gear": 11,
+        "max_perk": 13,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 4000.0,
+        "source": "Content/DLC_Release/FU_12/Data/Predator/WildBird/CD_Predator_WildBird.0"
+      },
+      {
+        "id": "CD_Predator_CP",
+        "name": "Captured",
+        "icon": "/icons/characters/predator/captured.png",
+        "health": 1250.0,
+        "downed_health": 1250.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 2.0,
+        "speed_modifier": 1.0,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.0,
+        "melee_stamina": 0.25,
+        "energy": 2000.0,
+        "energy_recovery": 150.0,
+        "max_gear": 10,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.8,
+          "Bullet_SmallCaliber": 0.79,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.15,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3500.0,
+        "source": "Content/DLC_Release/FU_12/Character/Predator/Crucified/CD_Predator_CP.0"
+      },
+      {
+        "id": "CD_Predator_Lambda",
+        "name": "Witch",
+        "icon": "/icons/characters/predator/witch.png",
+        "health": 1050.0,
+        "downed_health": 1450.0,
+        "downed_bleed": 5.0,
+        "stamina": 32.0,
+        "stamina_recovery": 4.0,
+        "exhaustion_duration": 0.9,
+        "speed_modifier": 1.1,
+        "predkour_modifier": 1.02,
+        "melee_modifier": 1.045,
+        "melee_stamina": 0.55,
+        "energy": 2400.0,
+        "energy_recovery": 130.0,
+        "max_gear": 11,
+        "max_perk": 12,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3000.0,
+        "source": "Content/DLC_Release/FU_22/Data/CD_Predator_Lambda.0"
+      },
+      {
+        "id": "CD_Predator_Berlin",
+        "name": "Cleopatra",
+        "icon": "/icons/characters/predator/cleopatra.png",
+        "health": 1450.0,
+        "downed_health": 1000.0,
+        "downed_bleed": 5.0,
+        "stamina": 21.0,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 1.02,
+        "predkour_modifier": 1.1,
+        "melee_modifier": 1.15,
+        "melee_stamina": 0.6,
+        "energy": 2300.0,
+        "energy_recovery": 150.0,
+        "max_gear": 13,
+        "max_perk": 11,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3750.0,
+        "source": "Content/DLC_Release/FU_10/Character/Data/Predator/CD_Predator_Berlin.0"
+      },
+      {
+        "id": "CD_Predator_DogMeat",
+        "name": "Wolf",
+        "icon": "/icons/characters/predator/wolf.png",
+        "health": 1400.0,
+        "downed_health": 1350.0,
+        "downed_bleed": 5.0,
+        "stamina": 20.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 1.5,
+        "speed_modifier": 1.0965,
+        "predkour_modifier": 1.15,
+        "melee_modifier": 0.98,
+        "melee_stamina": 0.35,
+        "energy": 2300.0,
+        "energy_recovery": 160.0,
+        "max_gear": 8,
+        "max_perk": 15,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3650.0,
+        "source": "Content/DLC_Release/FU_13/Data/Predator/DogMeat/CD_Predator_DogMeat.0"
+      },
+      {
+        "id": "CD_Predator_Gamma",
+        "name": "Gladiator",
+        "icon": "/icons/characters/predator/gladiator.png",
+        "health": 1500.0,
+        "downed_health": 1500.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.5,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": 2.5,
+        "speed_modifier": 0.95,
+        "predkour_modifier": 0.95,
+        "melee_modifier": 1.1,
+        "melee_stamina": 0.5,
+        "energy": 2250.0,
+        "energy_recovery": 140.0,
+        "max_gear": 15,
+        "max_perk": 9,
+        "damage_zones": {
+          "Head": 1.15,
+          "Body": 0.85,
+          "LeftArm": 0.75,
+          "RightArm": 0.75,
+          "LeftLeg": 0.8,
+          "RightLeg": 0.8
+        },
+        "armor": {
+          "FT_Slashing": 1.05,
+          "Bullet_Shotgun": 0.825,
+          "Bullet_HighCaliber": 0.86,
+          "Bullet_SmallCaliber": 0.84,
+          "Plasma": 1.23,
+          "FT_Explosive": 1.18,
+          "Bullet_HighCaliber_NPC": 2.34,
+          "Bullet_SmallCaliber_NPC": 2.7,
+          "Bullet_Shotgun_NPC": 4.5,
+          "FT_LauncherExplosive": 2.0,
+          "FT_RocketExplosive": 1.2,
+          "FT_SmallPlasma": 0.79
+        },
+        "beam_switch": 3200.0,
+        "source": "Content/DLC_Release/FU_19/Data/Predator/Gamma/CD_Predator_Gamma.0"
+      }
+    ],
+    "fireteam": [
+      {
+        "id": "CD_Fireteam_Recon",
+        "name": "RECON",
+        "icon": "/icons/characters/fireteam/recon.png",
+        "health": 125.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 19.0,
+        "stamina_recovery": 3.0,
+        "exhaustion_duration": 0.35,
+        "speed_modifier": 1.03,
+        "max_gear": 8,
+        "max_perk": 15,
+        "melee_modifier": 0.95,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/Character/Data/Fireteam/Classes/Recon/CD_Fireteam_Recon_Female.0"
+      },
+      {
+        "id": "CD_Fireteam_Scout",
+        "name": "SCOUT",
+        "icon": "/icons/characters/fireteam/scout.png",
+        "health": 125.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 22.0,
+        "stamina_recovery": 4.25,
+        "exhaustion_duration": 0.15,
+        "speed_modifier": 1.06,
+        "max_gear": 6,
+        "max_perk": 12,
+        "melee_modifier": 0.93,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/Character/Data/Fireteam/Classes/Scout/CD_Fireteam_Scout_Female.0"
+      },
+      {
+        "id": "CD_Fireteam_Assault",
+        "name": "ASSAULT",
+        "icon": "/icons/characters/fireteam/assault.png",
+        "health": 150.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 17.0,
+        "stamina_recovery": 2.5,
+        "exhaustion_duration": 0.5,
+        "speed_modifier": 1.0,
+        "max_gear": 10,
+        "max_perk": 9,
+        "melee_modifier": 1.0,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/Character/Data/Fireteam/Classes/Assault/CD_Fireteam_Assault_Female.0"
+      },
+      {
+        "id": "CD_Fireteam_Support",
+        "name": "SUPPORT",
+        "icon": "/icons/characters/fireteam/support.png",
+        "health": 175.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 16.0,
+        "stamina_recovery": null,
+        "exhaustion_duration": 1.0,
+        "speed_modifier": 0.95,
+        "max_gear": 15,
+        "max_perk": 6,
+        "melee_modifier": 1.08,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/Character/Data/Fireteam/Classes/Support/CD_Fireteam_Support_Male.0"
+      },
+      {
+        "id": "CD_Fireteam_Dutch2025",
+        "name": "DUTCH (2025)",
+        "icon": "/icons/characters/fireteam/dutch_(2025).png",
+        "health": 160.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 17.0,
+        "stamina_recovery": 2.5,
+        "exhaustion_duration": 0.5,
+        "speed_modifier": 1.0,
+        "max_gear": 8,
+        "max_perk": 9,
+        "melee_modifier": 1.0,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/DLC_Release/DLC_01/Character/Data/Fireteam/CD_Fireteam_Dutch2025.0"
+      },
+      {
+        "id": "CD_Fireteam_SmallFox",
+        "name": "Isabelle",
+        "icon": "/icons/characters/fireteam/isabelle.png",
+        "health": 130.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 25.0,
+        "stamina_recovery": 4.0,
+        "exhaustion_duration": 1.0,
+        "speed_modifier": 1.0,
+        "max_gear": 7,
+        "max_perk": 10,
+        "melee_modifier": 1.08,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/DLC_Release/FU_09/Character/Data/Fireteam/CD_Fireteam_SmallFox.0"
+      },
+      {
+        "id": "CD_Fireteam_MTL",
+        "name": "Dante",
+        "icon": "/icons/characters/fireteam/dante.png",
+        "health": 160.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 20.0,
+        "stamina_recovery": 2.75,
+        "exhaustion_duration": null,
+        "speed_modifier": 1.02,
+        "max_gear": 9,
+        "max_perk": 10,
+        "melee_modifier": 1.0,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/DLC_Release/FU_06/Character/Data/Fireteam/CD_Fireteam_MTL.0"
+      },
+      {
+        "id": "CD_Fireteam_OWLF",
+        "name": "OWLF Operative",
+        "icon": "/icons/characters/fireteam/owlf_operative.png",
+        "health": 135.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 23.0,
+        "stamina_recovery": 3.75,
+        "exhaustion_duration": 2.0,
+        "speed_modifier": 1.0,
+        "max_gear": 12,
+        "max_perk": 8,
+        "melee_modifier": 0.95,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/DLC_Release/FU_06/Character/Data/Fireteam/CD_Fireteam_OWLF.0"
+      },
+      {
+        "id": "CD_Fireteam_Dutch87",
+        "name": "Dutch (1987)",
+        "icon": "/icons/characters/fireteam/dutch_(1987).png",
+        "health": 155.0,
+        "downed_health": 220.0,
+        "downed_bleed": 5.0,
+        "stamina": 25.0,
+        "stamina_recovery": 3.5,
+        "exhaustion_duration": 0.5,
+        "speed_modifier": 1.0,
+        "max_gear": 7,
+        "max_perk": 11,
+        "melee_modifier": 1.0,
+        "melee_stamina": 1.0,
+        "damage_zones": null,
+        "armor": {
+          "Slashing": 0.5,
+          "Arrow": 0.75,
+          "Bludgeon": 0.7,
+          "FT_Explosive": 0.6,
+          "Slashing_WristBlades": 0.5,
+          "Bullet_SmallCaliber_NPC": 1.175,
+          "Bullet_HighCaliber_NPC": 0.95,
+          "Bullet_Shotgun_NPC": 1.1,
+          "FT_LauncherExplosive": 0.75,
+          "CombiStick": 0.85,
+          "Bullet_SmallCaliber": 0.5,
+          "Bullet_MiniGun": 0.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 0.75,
+          "FT_Slashing": 0.5,
+          "FT_SmallPlasma": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "self_armor": {
+          "FT_Explosive": 0.15,
+          "FT_LauncherExplosive": 0.5,
+          "FT_RocketExplosive": 0.75
+        },
+        "source": "Content/DLC_Release/DLC_04/Character/Data/Fireteam/CD_Fireteam_Dutch87.0"
+      }
+    ],
+    "npc": [
+      {
+        "id": "CD_FuelDealer",
+        "name": "Fuel Dealer",
+        "health": 300.0,
+        "stamina": null,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 2.0
+        },
+        "armor": null,
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/MissionVIPCDs/CD_FuelDealer.0",
+        "icon": null
+      },
+      {
+        "id": "CD_DrugLord",
+        "name": "Drug Lord",
+        "health": 200.0,
+        "stamina": 0.0,
+        "speed_modifier": 0.8,
+        "damage_zones": {
+          "Head": 3.0
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.15,
+          "Bullet_MiniGun": 0.15,
+          "Bullet_Shotgun": 0.15,
+          "Bullet_HighCaliber": 0.3
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/MissionVIPCDs/CD_DrugLord.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Guerilla_Captain",
+        "name": "Guerilla Captain",
+        "health": 75.0,
+        "stamina": 20.0,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 3.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 2.0,
+          "Slashing": 0.5,
+          "Slashing_WristBlades": 0.6,
+          "Plasma": 2.0,
+          "PounceSlam": 10.0,
+          "SmallPlasma": 2.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/Classes/Captain/CD_Guerilla_Captain.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Guerilla_Heavy",
+        "name": "Guerilla Heavy",
+        "health": 115.0,
+        "stamina": 14.0,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 2.5,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.15,
+          "Bullet_MiniGun": 1.5,
+          "Bullet_HighCaliber": 0.9,
+          "Bullet_Shotgun": 1.5,
+          "Slashing": 1.0,
+          "Slashing_WristBlades": 0.6,
+          "Plasma": 1.7,
+          "PounceSlam": 10.0,
+          "SmallPlasma": 1.7
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/Classes/Heavy/CD_Guerilla_Heavy.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Guerilla_Grunt",
+        "name": "Guerilla Grunt",
+        "health": 30.0,
+        "stamina": 14.0,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 4.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 3.0,
+          "Slashing": 0.35,
+          "Slashing_WristBlades": 0.35,
+          "Plasma": 2.0,
+          "PounceSlam": 10.0,
+          "SmallPlasma": 2.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/Classes/Grunt/CD_Guerilla_Grunt_NoHelmet.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Guerilla_Sniper",
+        "name": "Guerilla Sniper",
+        "health": 25.0,
+        "stamina": 14.0,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 4.0,
+          "Body": 1.0,
+          "LeftArm": 0.8,
+          "RightArm": 0.8,
+          "LeftLeg": 0.7,
+          "RightLeg": 0.7
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 2.6,
+          "Slashing": 0.5,
+          "Slashing_WristBlades": 0.6,
+          "Plasma": 2.0,
+          "PounceSlam": 10.0,
+          "SmallPlasma": 2.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/Classes/Sniper/CD_Guerilla_Sniper.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Guerilla_Elite",
+        "name": "Guerilla Elite",
+        "health": 50.0,
+        "stamina": 14.0,
+        "speed_modifier": null,
+        "damage_zones": {
+          "Head": 4.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.5,
+          "Bullet_HighCaliber": 0.5,
+          "Bullet_Shotgun": 1.8,
+          "Slashing": 0.7,
+          "Slashing_WristBlades": 0.7,
+          "Plasma": 2.0,
+          "PounceSlam": 10.0,
+          "SmallPlasma": 2.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Guerrilla/Classes/Elite/CD_Guerilla_Elite_Helmet.0",
+        "icon": null
+      },
+      {
+        "id": "CD_PMC_Captain",
+        "name": "PMC Captain",
+        "health": 150.0,
+        "stamina": 24.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 6.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.0,
+          "Bullet_HighCaliber": 0.5,
+          "Slashing_WristBlades": 1.1,
+          "Plasma": 2.0,
+          "Bullet_Shotgun": 1.5,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 3.0,
+          "SmallPlasma": 2.0,
+          "Slashing_Katana": 2.5
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Captain/CD_PMC_Captain.0",
+        "icon": null
+      },
+      {
+        "id": "CD_LW_PMC_Heavy",
+        "name": "LW PMC Heavy",
+        "health": 250.0,
+        "stamina": 10.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 2.5,
+          "Body": 0.9,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 0.8,
+          "Bullet_HighCaliber": 0.4,
+          "Slashing_WristBlades": 1.4,
+          "Plasma": 1.5,
+          "Bullet_Shotgun": 1.2,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 2.0,
+          "SmallPlasma": 1.5,
+          "Slashing_Katana": 3.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Heavy/CD_LW_PMC_Heavy.0",
+        "icon": null
+      },
+      {
+        "id": "CD_PMC_Heavy",
+        "name": "PMC Heavy",
+        "health": 250.0,
+        "stamina": 10.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 2.5,
+          "Body": 0.9,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 0.8,
+          "Bullet_HighCaliber": 0.4,
+          "Slashing_WristBlades": 1.4,
+          "Plasma": 1.5,
+          "Bullet_Shotgun": 1.2,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 2.0,
+          "SmallPlasma": 1.5,
+          "Slashing_Katana": 3.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Heavy/CD_PMC_Heavy.0",
+        "icon": null
+      },
+      {
+        "id": "CD_PMC_Sniper",
+        "name": "PMC Sniper",
+        "health": 115.0,
+        "stamina": 24.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 7.0,
+          "Body": 1.0,
+          "LeftArm": 0.8,
+          "RightArm": 0.8,
+          "LeftLeg": 0.7,
+          "RightLeg": 0.7
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.0,
+          "Bullet_HighCaliber": 0.5,
+          "Plasma": 3.0,
+          "Bullet_Shotgun": 2.0,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 2.5,
+          "SmallPlasma": 3.0,
+          "Slashing_Katana": 2.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Sniper/CD_PMC_Sniper.0",
+        "icon": null
+      },
+      {
+        "id": "CD_PMC_Elite",
+        "name": "PMC Elite",
+        "health": 150.0,
+        "stamina": 24.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 4.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.0,
+          "Bullet_HighCaliber": 0.5,
+          "Slashing_WristBlades": 1.1,
+          "Plasma": 2.0,
+          "Bullet_Shotgun": 1.4,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 2.5,
+          "SmallPlasma": 2.0,
+          "Slashing_Katana": 2.5
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Elite/CD_PMC_Elite_HeavyHelmet.0",
+        "icon": null
+      },
+      {
+        "id": "CD_PMC_Tutorial",
+        "name": "PMC Tutorial",
+        "health": 150.0,
+        "stamina": 24.0,
+        "speed_modifier": 1.1,
+        "damage_zones": {
+          "Head": 4.0,
+          "Body": 1.0,
+          "LeftArm": 0.7,
+          "RightArm": 0.7,
+          "LeftLeg": 0.6,
+          "RightLeg": 0.6
+        },
+        "armor": {
+          "Bullet_SmallCaliber": 0.3,
+          "Bullet_MiniGun": 1.0,
+          "Bullet_HighCaliber": 0.5,
+          "Slashing_WristBlades": 1.1,
+          "Plasma": 2.0,
+          "Bullet_Shotgun": 1.4,
+          "PounceSlam": 10.0,
+          "FT_LauncherExplosive": 2.5,
+          "SmallPlasma": 2.0,
+          "Slashing_Katana": 2.5
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/PMC/Classes/Elite/CD_PMC_Tutorial.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Wildlife_Bird",
+        "name": "Bird",
+        "health": 5.0,
+        "stamina": null,
+        "speed_modifier": null,
+        "damage_zones": null,
+        "armor": null,
+        "self_armor": null,
+        "source": "Content/Character/Data/Wildlife/Classes/CD_Wildlife_Bird.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Wildlife_Pig",
+        "name": "Pig",
+        "health": 15.0,
+        "stamina": null,
+        "speed_modifier": null,
+        "damage_zones": null,
+        "armor": null,
+        "self_armor": null,
+        "source": "Content/Character/Data/Wildlife/Classes/CD_Wildlife_Pig.0",
+        "icon": null
+      },
+      {
+        "id": "CD_Wildlife_Boar",
+        "name": "Boar",
+        "health": 50.0,
+        "stamina": 50.0,
+        "speed_modifier": 0.76,
+        "damage_zones": null,
+        "armor": {
+          "DT_Kunai": 50.0
+        },
+        "self_armor": null,
+        "source": "Content/Character/Data/Wildlife/Classes/CD_Wildlife_Boar.0",
+        "icon": null
+      }
+    ]
+  },
+  "weapons": {
+    "predator": [
+      {
+        "id": "WD_Predator_Sickle",
+        "name": "Alpha Sickle",
+        "icon": "/icons/weapons/predator/alpha_sickle.png",
+        "description": "Once wielded by the legendary \"Alpha Predator\", this Sickle was used in the uprising of the Hish against their cruel Amengi rulers thousands of years ago",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                75.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                75.0,
+                80.0,
+                100.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0,
+                300.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/DLC_01/Weapon/Definitions/Predator/Sickle/WD_Predator_Sickle.0"
+      },
+      {
+        "id": "WD_Predator_BattleAxe",
+        "name": "Battle Axe",
+        "icon": "/icons/weapons/predator/battle_axe.png",
+        "description": "Wielded by the Viking Predator of the north, this powerful two-handed battle axe was forged for devastating close range attacks against ferocious Norsemen. The secondary attack provides a heavy overhead swing with increased damage to any prey it finds. Few would ever look upon this blade without it cleaving their skull.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                35.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                35.0,
+                55.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0
+              ]
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                60.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/FU_05/Weapon/Predator/BattleAxe/WD_Predator_BattleAxe.0"
+      },
+      {
+        "id": "WD_Predator_RioWeapon",
+        "name": "Norse Hammer",
+        "icon": "/icons/weapons/predator/norse_hammer.png",
+        "description": "Wielded by the ferocious Valkyrie Predator of the north, this mighty two-handed Norse Hammer was forged for dealing crippling close range damage against any Norsemen that would stand in her way. The secondary attack provides a heavy overhead swing with increased damage to any prey unfortunate enough to stand in her path.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                35.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                35.0,
+                40.0,
+                70.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0,
+                300.0
+              ],
+              "impact_radius": 1000.0,
+              "impact_status": "RioImpactStun"
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                70.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0
+              ],
+              "impact_radius": 1000.0,
+              "impact_status": "RioImpactStun"
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/FU_07/Weapon/Definitions/Predator/RioWeapon/WD_Predator_RioWeapon.0"
+      },
+      {
+        "id": "WD_Predator_HandheldPlasmaCaster_Zeta",
+        "name": "The Eye of Ra",
+        "icon": "/icons/weapons/predator/the_eye_of_ra.png",
+        "description": "As if harnessing its power from the sun itself, this gleaming variant of the Handheld Plasma Caster fires powerful, concentrated projectiles with less arc and faster traveling speed.  However, it has a slower firing rate and a smaller clip capacity.",
+        "category": null,
+        "attacks": [
+          {
+            "type": "fire",
+            "damage_type": "ESFDamageTypeCategory::Energy",
+            "headshot": null,
+            "damage": 100,
+            "splash_damage_max": 10,
+            "splash_damage_min": 5,
+            "splash_radius_inner": 100,
+            "splash_radius_outer": 150
+          }
+        ],
+        "source": "Content/DLC_Release/FU_20/Weapon/HandHeldPlasmaCaster_Zeta/WD_Predator_HandheldPlasmaCaster_Zeta.0"
+      },
+      {
+        "id": "WD_Predator_HelsinkiWeapon",
+        "name": "Hook",
+        "icon": "/icons/weapons/predator/hook.png",
+        "description": null,
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                35.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                35.0,
+                45.0,
+                125.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0,
+                325.0
+              ]
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                125.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                325.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/FU_11/Weapon/Definitions/HelsinkiWeapon/WD_Predator_HelsinkiWeapon.0"
+      },
+      {
+        "id": "WD_Predator_Katana",
+        "name": "Katana",
+        "icon": "/icons/weapons/predator/katana.png",
+        "description": "This retractable single edged sword was used in many hunts throughout ancient earth. The long blade produces heavy two handed attacks against prey. This melee weapon has Primary and Secondary combo attacks, both of which cause temporary bleeding to prey.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                25.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                320.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                25.0,
+                30.0,
+                25.0,
+                25.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                320.0,
+                300.0,
+                300.0,
+                300.0
+              ]
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                35.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/DLC_02/Weapon/Definitions/Predator/Katana/WD_Predator_Katana.0"
+      },
+      {
+        "id": "WD_Predator_Sword_Cid",
+        "name": "Dual Swords",
+        "icon": "/icons/weapons/predator/dual_swords.png",
+        "description": "Like fierce torrents of dancing winds, the Dual Blades allow the user to quickly cut through multiple foes with each swing of each blade.  Its secondary attack allows the user to lunge towards targets with a crossing horizontal slash that cannot be parried but has a longer recovery time.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                30.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                30.0,
+                40.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0
+              ]
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                50.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/DLC_Release/FU_21/Weapon/Sword_Cid/WD_Predator_Sword_Cid.0"
+      },
+      {
+        "id": "WD_Predator_WristDart_CityHunter",
+        "name": "Wrist Launcher",
+        "icon": "/icons/weapons/predator/wrist_launcher.png",
+        "description": "Thermal projectile launcher built into the City Hunter's left wrist gauntlet ",
+        "category": "Weapon.Category.Gear",
+        "attacks": [
+          {
+            "type": "fire",
+            "damage_type": "ESFDamageTypeCategory::Energy",
+            "headshot": null,
+            "damage": 25.0,
+            "damage_fire": 5,
+            "fire_time": 5
+          }
+        ],
+        "source": "Content/DLC_Release/DLC_03/Weapon/Definitions/Predator/WD_Predator_WristDart_CityHunter.0"
+      },
+      {
+        "id": "WD_Predator_EnergyShield",
+        "name": "Shield",
+        "icon": "/icons/weapons/predator/shield.png",
+        "description": "An expandable shield that is worn on the left arm. Upon expanding, soaks up any incoming damage to avoid heavy barrages of gunfire or other attacks. If the shield absorbs too much damage, it can overload your energy.",
+        "category": "Weapon.Category.Special",
+        "attacks": {},
+        "source": "Content/DLC_Release/FU_18/Data/Predator/Feral/WD_Predator_EnergyShield.0"
+      },
+      {
+        "id": "WD_Predator_HandheldTuscon_A",
+        "name": "Crossbolt Gun",
+        "icon": "/icons/weapons/predator/crossbolt_gun.png",
+        "description": "Fires a fast moving, guided Crossbolt Arrow that pierces through targets, causing massive damage. Arrows must be retrieved.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          {
+            "type": "throw",
+            "damage": 120,
+            "damage_back": 80,
+            "damage_type": "ESFDamageTypeCategory::Blade",
+            "headshot": null,
+            "health": 1000
+          }
+        ],
+        "source": "Content/DLC_Release/FU_18/Weapon/Predator/BoltGun/WD_Predator_HandheldTuscon_A.0"
+      },
+      {
+        "id": "WD_Predator_CombiStick_Trident",
+        "name": "Trident",
+        "icon": "/icons/weapons/predator/trident.png",
+        "description": "A specially crafted three-pronged spear that slightly sacrifices melee and throwing power for superior handling and portability, allowing the user to carry multiple Tridents at once.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                25.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                350.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                25.0,
+                20.0,
+                25.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                350.0,
+                350.0,
+                350.0
+              ]
+            }
+          ],
+          {
+            "type": "throw",
+            "damage": 64.0,
+            "damage_type": "ESFDamageTypeCategory::Bullet"
+          }
+        ],
+        "source": "Content/DLC_Release/FU_19/Weapon/Trident/WD_Predator_CombiStick_Trident.0"
+      },
+      {
+        "id": "WD_Predator_PlasmaCaster",
+        "name": "Plasma Caster",
+        "icon": "/icons/weapons/predator/plasma_caster.png",
+        "description": null,
+        "category": "Weapon.Category.SniperRifle",
+        "attacks": [
+          {
+            "type": "fire",
+            "damage_type": "ESFDamageTypeCategory::Energy",
+            "headshot": null,
+            "damage": 140,
+            "splash_damage_max": 100,
+            "splash_damage_min": 15,
+            "splash_radius_inner": 150,
+            "splash_radius_outer": 750
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Predator/PlasmaCaster/WD_Predator_PlasmaCaster.0"
+      },
+      {
+        "id": "WD_Predator_WarClub",
+        "name": "War Club",
+        "icon": "/icons/weapons/predator/war_club.png",
+        "description": "Ceremonial bladed war club used by Yautja who prefer close melee combat. This club will pack a heavy punch which disorients victims and has a final swing that cannot be parried.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                35.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                35.0,
+                54.31,
+                125.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blunt",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0,
+                300.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/Weapon/Definitions/Predator/WarClub/WD_Predator_WarClub.0"
+      },
+      {
+        "id": "WD_Predator_CombiStick_Hunter",
+        "name": "Combistick",
+        "icon": "/icons/weapons/predator/combistick.png",
+        "description": "A retractible spear and one of the more popular choices of Yautja hunters. Powerful, wide swathed melee attacks allow for easily dispatching groups of prey. The Combistick may also be hurled through the air, doing massive amounts of damage and pinning lesser prey to surfaces",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                20.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                350.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                20.0,
+                35.0,
+                27.5
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                350.0,
+                350.0,
+                350.0
+              ]
+            }
+          ],
+          {
+            "type": "throw",
+            "damage": 115.0,
+            "damage_type": "ESFDamageTypeCategory::Blade"
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Predator/CombiStick/WD_Predator_CombiStick_Hunter.0"
+      },
+      {
+        "id": "WD_Predator_HandheldPlasmaCaster",
+        "name": "Hand Held Plasma Caster",
+        "icon": "/icons/weapons/predator/hand_held_plasma_caster.png",
+        "description": "An ammo based hand held version of the plasma caster that produces a multi-shot fractured plasma projectile. Effective at close ranges",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          {
+            "type": "fire",
+            "damage_type": "ESFDamageTypeCategory::Energy",
+            "headshot": null,
+            "damage": 40,
+            "splash_damage_max": 20,
+            "splash_damage_min": 3,
+            "splash_radius_inner": 75,
+            "splash_radius_outer": 250
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Predator/Handheld_PlasmaCaster/WD_Predator_HandheldPlasmaCaster.0"
+      },
+      {
+        "id": "WD_Predator_NetGun",
+        "name": "Net Gun",
+        "icon": "/icons/weapons/predator/net_gun.png",
+        "description": "Shoots a large net projectile at a limited range. Upon trapping or pinning a victim, this net will begin to constrict, dealing damage while they are vulnerable. This weapon contains limited uses",
+        "category": "Weapon.Category.Special",
+        "attacks": {},
+        "source": "Content/Weapon/Definitions/Predator/NetGun/WD_Predator_NetGun.0"
+      },
+      {
+        "id": "WD_Predator_WristBlades",
+        "name": "Wrist Blades",
+        "icon": "/icons/weapons/predator/wrist_blades.png",
+        "description": null,
+        "category": "Weapon.Category.Melee",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                60.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                200.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                60.0,
+                60.0,
+                60.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                200.0,
+                200.0,
+                200.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/Weapon/Definitions/Predator/WristBlades/WD_Predator_WristBlades.0"
+      },
+      {
+        "id": "WD_Predator_Bow",
+        "name": "Yautja Bow",
+        "icon": "/icons/weapons/predator/yautja_bow.png",
+        "description": "A powerful, collapsable bow made from some of the rarest materials on Yautja Prime. Charging the bow will increase arrow velocity and damage. Arrows fired from this bow will slow live targets, pin lesser prey, and can be retrieved for re-use.",
+        "category": "Weapon.Category.SniperRifle",
+        "attacks": [
+          {
+            "type": "fire",
+            "damage_type": "ESFDamageTypeCategory::Blunt",
+            "headshot": null,
+            "damage": [
+              40,
+              60,
+              90
+            ],
+            "damage_time": [
+              0.1,
+              0.6,
+              1.0
+            ]
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Predator/Bow/WD_Predator_Bow.0"
+      },
+      {
+        "id": "WD_Predator_SmartDisc",
+        "name": "Smart Disc",
+        "icon": "/icons/weapons/predator/smart_disc.png",
+        "description": "A sharp bladed disc held in hand. Can be used for quick, effective melee attacks or thrown and piloted via the wrist computer. Impacts with prey while piloting deals massive damage",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                50.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                200.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                50.0,
+                50.0,
+                80.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                200.0,
+                200.0,
+                200.0
+              ]
+            }
+          ],
+          {
+            "type": "throw",
+            "damage": 125,
+            "damage_back": 50,
+            "damage_type": "ESFDamageTypeCategory::Blade",
+            "headshot": null,
+            "health": 200
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Predator/SmartDisc/WD_Predator_SmartDisc.0"
+      },
+      {
+        "id": "WD_Predator_ElderSword",
+        "name": "Elder Sword",
+        "icon": "/icons/weapons/predator/elder_sword.png",
+        "description": "An ancient Yautja blade passed down from elders to aide young bloods during their hunts. This melee weapon produces several attacks in quick succession.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                45.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0
+              ]
+            },
+            {
+              "type": "melee_combo",
+              "damage": [
+                45.0,
+                80.0,
+                60.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                300.0,
+                300.0,
+                320.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/Weapon/Definitions/Predator/ElderSword/WD_Predator_ElderSword.0"
+      }
+    ],
+    "fireteam": [
+      {
+        "id": "WD_Rifle_Hammerhead",
+        "name": "Hammerhead",
+        "icon": "/icons/weapons/fireteam/hammerhead.png",
+        "description": "Well balanced, all purpose assault rifle with an underbarrel grenade launcher",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              47.3,
+              46.3,
+              38.6,
+              34.3
+            ],
+            "distance": [
+              2.6,
+              967.8,
+              4133.3,
+              11290.9
+            ],
+            "fire_rate": 600,
+            "max_range": 100000
+          },
+          {
+            "type": "grenade",
+            "damage_type": "ESFDamageTypeCategory::Explosion",
+            "fire_rate": 40,
+            "direct_hit_damage": 15.0,
+            "splash_damage_max": 120.0,
+            "splash_damage_min": 15.0,
+            "splash_radius_inner": 200.0,
+            "splash_radius_outer": 500.0
+          }
+        ],
+        "source": "Content/DLC_Release/DLC_01/Weapon/Definitions/Fireteam/HammerHead/WD_Rifle_Hammerhead.0"
+      },
+      {
+        "id": "WD_SniperRifle_SmallFoxWeapon_Standard",
+        "name": "NRV-E",
+        "icon": "/icons/weapons/fireteam/nrv-e.png",
+        "description": "This heavily customized sniper rifle has a number of advanced modifications that put it into a field of its own. Incorporating Predator Technology, its unique rounds are devastating to their target and the surrounding area.",
+        "category": "Weapon.Category.SniperRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              294.3,
+              266.1,
+              259.3,
+              230.9,
+              173.0
+            ],
+            "distance": [
+              15.8,
+              6782.6,
+              18502.5,
+              35752.4,
+              73092.0
+            ],
+            "fire_rate": 35,
+            "max_range": 200000
+          }
+        ],
+        "source": "Content/DLC_Release/FU_09/Weapon/Definitions/Fireteam/SmallFoxWeapon/WD_SniperRifle_SmallFoxWeapon_Standard.0"
+      },
+      {
+        "id": "Default__WD_PlasmaAR_Base_C",
+        "name": "Plasma Rifle Prototype",
+        "icon": "/icons/weapons/fireteam/plasma_rifle_prototype.png",
+        "description": "Fresh out of the OWLF\u2019s R&D department, this projectile-based weapon fires a concentrated, explosive, plasma-energy round at a high velocity. Fully automatic, energy-based, with a venting process to reload the plasma shots.",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Energy",
+            "damage": [
+              45.0,
+              35.9,
+              27.3,
+              23.0
+            ],
+            "distance": [
+              32.9,
+              874.4,
+              4070.2,
+              11227.8
+            ],
+            "fire_rate": 400,
+            "max_range": null
+          }
+        ],
+        "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PlasmaRifle/WD_PlasmaAR_Base.1"
+      },
+      {
+        "id": "WD_GrenadeLauncher_PDL",
+        "name": "PDL",
+        "icon": "/icons/weapons/fireteam/pdl.png",
+        "description": "Using modified alien technology, the OWLF was able to retrofit a grenade launcher to fire proximity sensing mines. This new tool allows them to turn the tables on a Predator and become the hunter.",
+        "category": "Weapon.Category.SecondarySpecial",
+        "attacks": [],
+        "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PDL/WD_GrenadeLauncher_PDL.0"
+      },
+      {
+        "id": "WD_B34ST",
+        "name": "B34S-T",
+        "icon": "/icons/weapons/fireteam/b34s-t.png",
+        "description": "Purpose built as an anti-armor weapon, this rocket propelled grenade launcher quickly became a favorite of the OWLF after a mission in Thailand proved its effectiveness against predators.",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          {
+            "type": "grenade",
+            "damage_type": "ESFDamageTypeCategory::Explosion",
+            "fire_rate": 60,
+            "direct_hit_damage": 75.0,
+            "splash_damage_max": 150.0,
+            "splash_damage_min": null,
+            "splash_radius_inner": 250.0,
+            "splash_radius_outer": 600.0
+          }
+        ],
+        "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/SpecialHeavy/B34S-T/WD_B34ST.0"
+      },
+      {
+        "id": "WD_OWLFAR_Standard",
+        "name": "O.W.L.F. PIT BULL",
+        "icon": "/icons/weapons/fireteam/o.w.l.f._pit_bull.png",
+        "description": "A special bull-pup assault rifle designed and created by O.W.L.F. researchers for use in the field",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              55.0,
+              49.9,
+              36.9,
+              27.1
+            ],
+            "distance": [
+              4.6,
+              860.8,
+              6795.3,
+              10936.0
+            ],
+            "fire_rate": 450,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/DLC_Release/FU_03/Weapon/Definitions/Fireteam/AssaultRifle/OWLFAR/WD_OWLFAR_Standard.0"
+      },
+      {
+        "id": "WD_Rifle_MERC",
+        "name": "Mercenary ('87)",
+        "icon": "/icons/weapons/fireteam/mercenary_(87).png",
+        "description": "The original weapon wielded by Alan \"Dutch\" Schaefer during the Val Verde Incident of 1987. This fully automatic rifle packs a punch with it's underbarrel grenade launcher",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              48.9,
+              47.2,
+              41.1,
+              32.3
+            ],
+            "distance": [
+              32.9,
+              937.5,
+              5434.1,
+              12777.5
+            ],
+            "fire_rate": 600,
+            "max_range": 100000
+          },
+          {
+            "type": "grenade",
+            "damage_type": "ESFDamageTypeCategory::Explosion",
+            "fire_rate": 40,
+            "direct_hit_damage": 15.0,
+            "splash_damage_max": 120.0,
+            "splash_damage_min": 15.0,
+            "splash_radius_inner": 200.0,
+            "splash_radius_outer": 500.0
+          }
+        ],
+        "source": "Content/DLC_Release/DLC_04/Weapon/Definitions/Fireteam/MERC/WD_Rifle_MERC.0"
+      },
+      {
+        "id": "WD_Pistol_1011-12_Standard",
+        "name": "1011-12",
+        "icon": "/icons/weapons/fireteam/1011-12.png",
+        "description": "Versatile, large caliber pistol",
+        "category": "Weapon.Category.Pistol",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              80.1,
+              70.4,
+              47.5,
+              37.8
+            ],
+            "distance": [
+              40.6,
+              1707.8,
+              5009.1,
+              12494.6
+            ],
+            "fire_rate": 600,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/1011-12/WD_Pistol_1011-12_Standard.0"
+      },
+      {
+        "id": "WD_Pistol_2XL",
+        "name": "2XL",
+        "icon": "/icons/weapons/fireteam/2xl.png",
+        "description": "High powered, six shot revolver",
+        "category": "Weapon.Category.Pistol",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              140.0,
+              112.0,
+              100.0,
+              90.0
+            ],
+            "distance": [
+              17.2,
+              1400.0,
+              4000.0,
+              6500.0
+            ],
+            "fire_rate": 150,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/2XL/WD_Pistol_2XL.0"
+      },
+      {
+        "id": "WD_Pistol_Grimtech19_Standard",
+        "name": "GrimTech 19",
+        "icon": "/icons/weapons/fireteam/grimtech_19.png",
+        "description": "Light, compact semi-automatic pistol",
+        "category": "Weapon.Category.Pistol",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              60.9,
+              49.4,
+              25.0
+            ],
+            "distance": [
+              -6.0,
+              1197.0,
+              6560.1
+            ],
+            "fire_rate": 900,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/Grimtech19/WD_Pistol_Grimtech19_Standard.0"
+      },
+      {
+        "id": "WD_Shotgun_CS12",
+        "name": "CS-12",
+        "icon": "/icons/weapons/fireteam/cs-12.png",
+        "description": "CS-12 Shotgun",
+        "category": "Weapon.Category.Shotgun",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              15.0,
+              3.2,
+              0.5
+            ],
+            "distance": [
+              100.0,
+              1116.4,
+              3832.7
+            ],
+            "fire_rate": 300,
+            "max_range": 15000,
+            "pellets": 7
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Shotgun/Cs12/WD_Shotgun_CS12.0"
+      },
+      {
+        "id": "WD_Shotgun_DJL33_Secondary",
+        "name": "DJL-33",
+        "icon": "/icons/weapons/fireteam/djl-33.png",
+        "description": "Single shot, pump action 12 gauge shotgun",
+        "category": "Weapon.Category.Shotgun",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              32.085056,
+              13.4,
+              2.9
+            ],
+            "distance": [
+              134.03735,
+              746.6,
+              4103.0
+            ],
+            "fire_rate": 70,
+            "max_range": 15000,
+            "pellets": 9
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Shotgun/DJL33/WD_Shotgun_DJL33_Secondary.0"
+      },
+      {
+        "id": "WD_Shotgun_XDB12_Secondary",
+        "name": "XDB-12",
+        "icon": "/icons/weapons/fireteam/xdb-12.png",
+        "description": "Dual shot, pump action 12 gauge shotgun",
+        "category": "Weapon.Category.Shotgun",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              20.0,
+              5.0,
+              2.0
+            ],
+            "distance": [
+              150.0,
+              2000.0,
+              5868.302
+            ],
+            "fire_rate": 60,
+            "max_range": 15000,
+            "pellets": 9
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Shotgun/XDB12/WD_Shotgun_XDB12_Secondary.0"
+      },
+      {
+        "id": "WD_Minigun",
+        "name": "S-R3D",
+        "icon": "/icons/weapons/fireteam/s-r3d.png",
+        "description": "Belt fed, high capaity handheld rotary gun with an insane rate of fire",
+        "category": "Weapon.Category.SecondarySpecial",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              12.1,
+              10.3,
+              7.1
+            ],
+            "distance": [
+              10.8,
+              1671.8,
+              11909.1
+            ],
+            "fire_rate": 5000,
+            "max_range": 15000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Minigun/WD_Minigun.0"
+      },
+      {
+        "id": "WD_SniperRifle_ABR-Z_Standard",
+        "name": "ABR-Z",
+        "icon": "/icons/weapons/fireteam/abr-z.png",
+        "description": "Versatile, semi automatic marksman rifle",
+        "category": "Weapon.Category.SniperRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              69.7,
+              69.6,
+              69.3,
+              68.5
+            ],
+            "distance": [
+              730.7,
+              8406.8,
+              22594.9,
+              108015.4
+            ],
+            "fire_rate": 400,
+            "max_range": 200000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/SniperRifle/ABR-Z/WD_SniperRifle_ABR-Z_Standard.0"
+      },
+      {
+        "id": "WD_SniperRifle_7EN_Standard",
+        "name": "7EN",
+        "icon": "/icons/weapons/fireteam/7en.png",
+        "description": "High powered, semi automatic sniper rifle",
+        "category": "Weapon.Category.SniperRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              166.0,
+              165.2,
+              159.5,
+              139.0
+            ],
+            "distance": [
+              107.4,
+              6793.5,
+              17285.2,
+              43250.9
+            ],
+            "fire_rate": 90,
+            "max_range": 200000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/SniperRifle/7EN/WD_SniperRifle_7EN_Standard.0"
+      },
+      {
+        "id": "WD_Rifle_G-ROW_Standard",
+        "name": "G-ROW",
+        "icon": "/icons/weapons/fireteam/g-row.png",
+        "description": "Bullpup designed, fast firing assault rifle ",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              32.9,
+              29.9,
+              22.5,
+              20.2
+            ],
+            "distance": [
+              31.1,
+              1133.0,
+              5494.6,
+              12973.1
+            ],
+            "fire_rate": 700,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/G-ROW/WD_Rifle_G-ROW_Standard.0"
+      },
+      {
+        "id": "WD_Rifle_GOSL-R_Standard",
+        "name": "GOSL-R",
+        "icon": "/icons/weapons/fireteam/gosl-r.png",
+        "description": "Slower firing, long range assault rifle",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              55.0,
+              50.1,
+              37.5,
+              34.8
+            ],
+            "distance": [
+              25.4,
+              815.6,
+              5833.1,
+              11909.1
+            ],
+            "fire_rate": 500,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/GOSL-R/WD_Rifle_GOSL-R_Standard.0"
+      },
+      {
+        "id": "WD_Rifle_AR-W_Standard",
+        "name": "AR-W",
+        "icon": "/icons/weapons/fireteam/ar-w.png",
+        "description": "Heavy hitting, large caliber assault rifle",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              42.5,
+              38.5,
+              29.4,
+              24.3
+            ],
+            "distance": [
+              -6.6,
+              1071.3,
+              5718.1,
+              16353.7
+            ],
+            "fire_rate": 600,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/AR-W/WD_Rifle_AR-W_Standard.0"
+      },
+      {
+        "id": "WD_Rifle_QR4_Standard",
+        "name": "QR-4",
+        "icon": "/icons/weapons/fireteam/qr-4.png",
+        "description": "Well balanced, all purpose assault rifle",
+        "category": "Weapon.Category.AssaultRifle",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              38.0,
+              35.9,
+              27.3,
+              23.0
+            ],
+            "distance": [
+              -4.7,
+              874.4,
+              4070.2,
+              11227.8
+            ],
+            "fire_rate": 600,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/QR4/WD_Rifle_QR4_Standard.0"
+      },
+      {
+        "id": "Default__WD_Knife_Gear_Base_C",
+        "name": "Basic Knife",
+        "icon": "/icons/weapons/fireteam/basic_knife.png",
+        "description": "Basic Knife Loc",
+        "category": "Weapon.Category.Melee",
+        "attacks": [
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                125.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                170.0
+              ]
+            },
+            {
+              "type": "melee_weapon",
+              "damage": [
+                100.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                170.0
+              ]
+            }
+          ],
+          [
+            {
+              "type": "melee_single",
+              "damage": [
+                190.0
+              ],
+              "damage_type": "ESFDamageTypeCategory::Blade",
+              "headshot": null,
+              "range": [
+                170.0
+              ]
+            }
+          ]
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Melee/WD_Knife_Gear_Base.1"
+      },
+      {
+        "id": "WD_GrenadeLauncher_D34D",
+        "name": "D34-D",
+        "icon": "/icons/weapons/fireteam/d34-d.png",
+        "description": "Revolver style grenade launcher with timed projectiles",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          {
+            "type": "grenade",
+            "damage_type": "ESFDamageTypeCategory::Explosion",
+            "fire_rate": 70,
+            "direct_hit_damage": 15.0,
+            "splash_damage_max": 120.0,
+            "splash_damage_min": 15.0,
+            "splash_radius_inner": 200.0,
+            "splash_radius_outer": 500.0
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/GrenadeLauncher/D34D/WD_GrenadeLauncher_D34D.0"
+      },
+      {
+        "id": "WD_SMG_Z-06_Secondary",
+        "name": "Z-06",
+        "icon": "/icons/weapons/fireteam/z-06.png",
+        "description": "Versatile, high powered sub machine gun",
+        "category": "Weapon.Category.SMG",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              47.0,
+              40.8,
+              14.0
+            ],
+            "distance": [
+              53.8,
+              789.9,
+              7932.3
+            ],
+            "fire_rate": 600,
+            "max_range": 80000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/SMG/Z-06/WD_SMG_Z-06_Secondary.0"
+      },
+      {
+        "id": "WD_SMG_PDW-Z_Secondary",
+        "name": "PDW-Z",
+        "icon": "/icons/weapons/fireteam/pdw-z.png",
+        "description": "Small, compact sub machine gun",
+        "category": "Weapon.Category.SMG",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              42.8,
+              34.1,
+              12.2,
+              2.4
+            ],
+            "distance": [
+              25.4,
+              1766.5,
+              3364.0,
+              7256.7
+            ],
+            "fire_rate": 950,
+            "max_range": 80000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/SMG/PDW-Z/WD_SMG_PDW-Z_Secondary.0"
+      },
+      {
+        "id": "WD_SMG_ZR-55_Secondary",
+        "name": "ZR-55",
+        "icon": "/icons/weapons/fireteam/zr-55.png",
+        "description": "Compact sub machine gun with a high rate of fire",
+        "category": "Weapon.Category.SMG",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              30.2,
+              21.0,
+              5.0
+            ],
+            "distance": [
+              19.3,
+              1293.3,
+              7448.0
+            ],
+            "fire_rate": 1200,
+            "max_range": 80000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/SMG/ZR-55/WD_SMG_ZR-55_Secondary.0"
+      },
+      {
+        "id": "WD_Grenade_Frag_FT",
+        "name": "Frag Grenade",
+        "icon": "/icons/weapons/fireteam/frag_grenade.png",
+        "description": "Standard fragmentation grenade that damages anything within it's blast radius",
+        "category": "Weapon.Category.Gear",
+        "attacks": [
+          {
+            "type": "grenade",
+            "damage_type": "ESFDamageTypeCategory::Explosion",
+            "fire_rate": null,
+            "direct_hit_damage": 10.0,
+            "splash_damage_max": 300.0,
+            "splash_damage_min": 10.0,
+            "splash_radius_inner": 500.0,
+            "splash_radius_outer": 1500.0
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_Frag_FT.0"
+      },
+      {
+        "id": "Default__WD_LMG_RP-103_Base_C",
+        "name": "RP-103",
+        "icon": "/icons/weapons/fireteam/rp-103.png",
+        "description": "RP-103 Light Machine Gun",
+        "category": "Weapon.Category.Special",
+        "attacks": [
+          {
+            "type": "projectile",
+            "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage": [
+              34.8,
+              32.8,
+              28.6,
+              20.6
+            ],
+            "distance": [
+              38.5,
+              1418.5,
+              6921.1,
+              14510.1
+            ],
+            "fire_rate": 750,
+            "max_range": 100000
+          }
+        ],
+        "source": "Content/Weapon/Definitions/Fireteam/LMG/RP-103/WD_LMG_RP-103_Base.1"
+      }
+    ]
+  },
+  "gear": {
+    "predator": [
+      {
+        "id": "WD_Predator_WristDart_CityHunter",
+        "name": "Wrist Launcher",
+        "icon": "/icons/gear/predator/wrist_launcher.png",
+        "description": "Thermal projectile launcher built into the City Hunter's left wrist gauntlet ",
+        "weight": 1,
+        "source": "Content/DLC_Release/DLC_03/Weapon/Definitions/Predator/WD_Predator_WristDart_CityHunter.0"
+      },
+      {
+        "id": "WD_Predator_Drone",
+        "name": "Drone",
+        "icon": "/icons/gear/predator/drone.png",
+        "description": "A disposable tracking device that uses Yautja technology similar to the bionic mask\u2019s scanning abilities.  After deployment, the Drone will cloak itself and send out a pulse, marking all prey within its scanning radius for a set duration.",
+        "weight": 5,
+        "source": "Content/DLC_Release/FU_22/Weapon/Drone/WD_Predator_Drone.0"
+      },
+      {
+        "id": "WD_Predator_MotionDetector",
+        "name": "Motion Detector",
+        "icon": "/icons/gear/predator/motion_detector.png",
+        "description": "Throwable device that sticks to surfaces and generates a motion detection field. Prey entering this field trigger an alert and are marked",
+        "weight": 3,
+        "source": "Content/Weapon/Definitions/Predator/Gear/MotionDetector/WD_Predator_MotionDetector.0"
+      },
+      {
+        "id": "WD_Predator_HealKit",
+        "name": "Healing Kit",
+        "icon": "/icons/gear/predator/healing_kit.png",
+        "description": "Limited use medical device that stops bleeding and heals massive amounts of health",
+        "weight": 5,
+        "source": "Content/Weapon/Definitions/Predator/Gear/HealKit/WD_Predator_HealKit.0"
+      },
+      {
+        "id": "WD_Predator_AudioDecoy",
+        "name": "Audio Decoy",
+        "icon": "/icons/gear/predator/audio_decoy.png",
+        "description": "Device that sends out false audio noises to confuse and distract prey",
+        "weight": 2,
+        "source": "Content/Weapon/Definitions/Predator/Gear/AudioDecoy/WD_Predator_AudioDecoy.0"
+      },
+      {
+        "id": "WD_Predator_BearTrap",
+        "name": "Bear Trap",
+        "icon": "/icons/gear/predator/bear_trap.png",
+        "description": "A proximity based trap that slightly damages and captures prey when tripped. The trap throws up an alert when it gets triggered.",
+        "weight": 5,
+        "source": "Content/Weapon/Definitions/Predator/Gear/bearTrap/WD_Predator_BearTrap.0"
+      }
+    ],
+    "fireteam": [
+      {
+        "id": "WD_Gear_EMPMine",
+        "name": "EMP Mine",
+        "icon": "/icons/gear/fireteam/emp_mine.png",
+        "description": "The OWLF whipped up this modified EMP mine to interact with alien tech. When triggered it will knock out a Predator\u2019s cloak and send their whole system into overload.",
+        "weight": 4,
+        "source": "Content/DLC_Release/FU_06/Weapon/Fireteam/Grenade/EMPMine/WD_Gear_EMPMine.0"
+      },
+      {
+        "id": "WD_Gear_SelfRevive",
+        "name": "Self Revive Syrette",
+        "icon": "/icons/gear/fireteam/self_revive_syrette.png",
+        "description": "Single use gear item that revives yourself when downed. This gear item cannot be resupplied and is not affected by the \"Gearhead\" perk.",
+        "weight": 4,
+        "source": "Content/DLC_Release/FU_03/Weapon/Definitions/Fireteam/Gear/WD_Gear_SelfRevive.0"
+      },
+      {
+        "id": "WD_Gear_UAVScanner",
+        "name": "U.A.V. Scanner",
+        "icon": "/icons/gear/fireteam/u.a.v._scanner.png",
+        "description": "Handheld display used to call in locational U.A.V. scans. Enemies and Items are automatically spotted wihtin your vicinity",
+        "weight": 5,
+        "source": "Content/DLC_Release/FU_03/Weapon/Fireteam/Gadgets/UAVScanner/WD_Gear_UAVScanner.0"
+      },
+      {
+        "id": "Default__WD_Grenade_ACIG_Base_C",
+        "name": "A.C.I.G",
+        "icon": "/icons/gear/fireteam/a.c.i.g.png",
+        "description": "An Anti Cloaking Impact Grenade designed to disable and prevent Predator cloaking technology within the area of effect",
+        "weight": 3,
+        "source": "Content/DLC_Release/FU_03/Weapon/Fireteam/Grenade/ACIG/WD_Grenade_ACIG_Base.1"
+      },
+      {
+        "id": "WD_Gear_HealthPack",
+        "name": "Medical kit",
+        "icon": "/icons/gear/fireteam/medical_kit.png",
+        "description": "Deployable med kits that allow teammates to heal themselves multiple times ",
+        "weight": 5,
+        "source": "Content/Weapon/Definitions/Fireteam/Gear/WD_Gear_HealthPack.0"
+      },
+      {
+        "id": "WD_Gear_AmmoBag",
+        "name": "Ammo Bag",
+        "icon": "/icons/gear/fireteam/ammo_bag.png",
+        "description": "Deployable ammunition bags that provide multiple ammo resupplies",
+        "weight": 5,
+        "source": "Content/Weapon/Definitions/Fireteam/Gear/WD_Gear_AmmoBag.0"
+      },
+      {
+        "id": "WD_Gear_SelfHealSyrette",
+        "name": "Field Syrette",
+        "icon": "/icons/gear/fireteam/field_syrette.png",
+        "description": "Quick use medical syrette that heals quickly in the heat of battle",
+        "weight": 4,
+        "source": "Content/Weapon/Definitions/Fireteam/Gear/WD_Gear_SelfHealSyrette.0"
+      },
+      {
+        "id": "WD_Grenade_Frag_FT",
+        "name": "Frag Grenade",
+        "icon": "/icons/gear/fireteam/frag_grenade.png",
+        "description": "Standard fragmentation grenade that damages anything within it's blast radius",
+        "weight": 3,
+        "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_Frag_FT.0"
+      },
+      {
+        "id": "WD_Grenade_Smoke",
+        "name": "Smoke Grenade",
+        "icon": "/icons/gear/fireteam/smoke_grenade.png",
+        "description": "Tactical grenade that deploys a large smoke screen",
+        "weight": 1,
+        "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_Smoke.0"
+      },
+      {
+        "id": "WD_Grenade_Flash_FT",
+        "name": "Flashbang",
+        "icon": "/icons/gear/fireteam/flashbang.png",
+        "description": "Tactical grenade that temporarily blinds enemies nearby to blast",
+        "weight": 2,
+        "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_Flash_FT.0"
+      },
+      {
+        "id": "WD_Grenade_ThermalDecoy",
+        "name": "Thermal Decoy",
+        "icon": "/icons/gear/fireteam/thermal_decoy.png",
+        "description": "Experimental flare that emits massive amounts of infrared heat in a small area",
+        "weight": 2,
+        "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_ThermalDecoy.0"
+      },
+      {
+        "id": "WD_NoiseMaker",
+        "name": "Noise Maker",
+        "icon": "/icons/gear/fireteam/noise_maker.png",
+        "description": "Throwable device that emits fake gun sounds to generate distractions",
+        "weight": 1,
+        "source": "Content/Weapon/Definitions/Fireteam/NoiseMaker/WD_NoiseMaker.0"
+      }
+    ]
+  },
+  "specializations": {
+    "predator": [
+      {
+        "id": "Spec_Warrior",
+        "name": "Warrior",
+        "main_modifier": 0.75,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Reduced parry stun duration.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Warrior.0",
+        "classes": [
+          "CD_Predator_Samurai",
+          "CD_Predator_Alpha",
+          "CD_Predator_Amazon",
+          "CD_Predator_Chopper",
+          "CD_Predator_Gamma"
+        ]
+      },
+      {
+        "id": "Spec_Enraged",
+        "name": "Enraged",
+        "main_modifier": 1.1,
+        "secondary_modifier": 1.2,
+        "clash": "",
+        "description": "Increased speed and stamina regeneration while at low health. Note: low health is below 50%",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Enraged.1",
+        "classes": [
+          "CD_Predator_Viking",
+          "CD_Predator_Berserker",
+          "CD_Predator_Berlin",
+          "CD_Predator_DogMeat",
+          "CD_Predator_HeavyCat",
+          "CD_Predator_Bloody",
+          "CD_Predator_Lambda"
+        ]
+      },
+      {
+        "id": "Spec_Analytic",
+        "name": "Analytic",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "partial",
+        "description": "Increased damage to fully scanned targets.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Analytic.0",
+        "classes": [
+          "CD_Predator_CityHunter_01",
+          "CD_Predator_Scout",
+          "CD_Predator_Helsinki",
+          "CD_Predator_Pirate",
+          "CD_Predator_Celtic",
+          "CD_Predator_Feral"
+        ]
+      },
+      {
+        "id": "Spec_Wrathful",
+        "name": "Wrathful",
+        "main_modifier": 1.25,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "After receiving enemy fireteam damage from behind, your next melee attack deals increased damage.",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Wrathful.1",
+        "classes": [
+          "CD_Predator_Viking",
+          "CD_Predator_Alpha",
+          "CD_Predator_BigDog",
+          "CD_Predator_HeavyCat",
+          "CD_Predator_Feral",
+          "CD_Predator_Jotun",
+          "CD_Predator_Father"
+        ]
+      },
+      {
+        "id": "Spec_Fervent",
+        "name": "Fervent",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage while all fireteam are alive and standing.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Fervent.0",
+        "classes": [
+          "CD_Predator_Samurai",
+          "CD_Predator_JH87",
+          "CD_Predator_Hunter",
+          "CD_Predator_Rio_01",
+          "CD_Predator_CP",
+          "CD_Predator_Bloody",
+          "CD_Predator_Lambda"
+        ]
+      },
+      {
+        "id": "Spec_Tracker",
+        "name": "Tracker",
+        "main_modifier": null,
+        "secondary_modifier": null,
+        "clash": "no",
+        "description": "Target isolation ignores mud.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Tracker.0",
+        "classes": [
+          "CD_Predator_Hunter",
+          "CD_Predator_JH87",
+          "CD_Predator_WildBird",
+          "CD_Predator_CP",
+          "CD_Predator_Gamma"
+        ]
+      },
+      {
+        "id": "Spec_Assassin",
+        "name": "Assassin",
+        "main_modifier": 1.2,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increase all damage when attacking from behind.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Assassin.0",
+        "classes": [
+          "CD_Predator_Alpha",
+          "CD_Predator_Helsinki",
+          "CD_Predator_WildBird",
+          "CD_Predator_DogMeat",
+          "CD_Predator_Celtic",
+          "CD_Predator_Feral",
+          "CD_Predator_Kappa"
+        ]
+      },
+      {
+        "id": "Spec_Ghost",
+        "name": "Ghost",
+        "main_modifier": 1.3,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Attacking with melee from cloak deals additional damage. Note: lasts for 3 seconds after decloack",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Ghost.1",
+        "classes": [
+          "CD_Predator_Samurai",
+          "CD_Predator_Scout",
+          "CD_Predator_Rio_01",
+          "CD_Predator_Amazon",
+          "CD_Predator_Chopper",
+          "CD_Predator_Lambda",
+          "CD_Predator_Father"
+        ]
+      },
+      {
+        "id": "Spec_Savage",
+        "name": "Savage",
+        "main_modifier": 0.2,
+        "secondary_modifier": 0.4,
+        "clash": "no",
+        "description": "Claiming restores health. Note: takes 4 seconds to gain health after claim",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Savage_HealOverTime.5",
+        "classes": [
+          "CD_Predator_Berserker",
+          "CD_Predator_Rio_01",
+          "CD_Predator_HeavyCat",
+          "CD_Predator_Pirate",
+          "CD_Predator_Zeta",
+          "CD_Predator_Kappa"
+        ]
+      },
+      {
+        "id": "Spec_Focused",
+        "name": "Focused",
+        "main_modifier": 1.1,
+        "secondary_modifier": 1.3,
+        "clash": "no",
+        "description": "Gain movement speed and energy regeneration after activating target isolation. Note: lasts for 10 seconds",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Focused.1",
+        "classes": [
+          "CD_Predator_CityHunter_01",
+          "CD_Predator_Elder",
+          "CD_Predator_WildBird",
+          "CD_Predator_DogMeat",
+          "CD_Predator_Celtic",
+          "CD_Predator_Jotun"
+        ]
+      },
+      {
+        "id": "Spec_Tactician",
+        "name": "Tactician",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage versus enemies that are trapped, netted, or interacting.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Tactician.0",
+        "classes": [
+          "CD_Predator_CityHunter_01",
+          "CD_Predator_Hunter",
+          "CD_Predator_JH87",
+          "CD_Predator_Berlin",
+          "CD_Predator_CP",
+          "CD_Predator_Zeta",
+          "CD_Predator_Father"
+        ]
+      },
+      {
+        "id": "Spec_Vicious",
+        "name": "Vicious",
+        "main_modifier": 1.25,
+        "secondary_modifier": 1.2,
+        "clash": "no",
+        "description": "Opponents you down bleed out faster and take longer to revive.",
+        "source": "/Game/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/StatusEffects/SE_Vicious.1",
+        "classes": [
+          "CD_Predator_Viking",
+          "CD_Predator_Elder",
+          "CD_Predator_BigDog",
+          "CD_Predator_Pirate",
+          "CD_Predator_Gamma"
+        ]
+      },
+      {
+        "id": "Spec_Stalker",
+        "name": "Stalker",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage while at full stamina.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Stalker.0",
+        "classes": [
+          "CD_Predator_Elder",
+          "CD_Predator_Berlin",
+          "CD_Predator_Cyborg",
+          "CD_Predator_Bloody",
+          "CD_Predator_Cid",
+          "CD_Predator_Jotun"
+        ]
+      },
+      {
+        "id": "Spec_Brute",
+        "name": "Brute",
+        "main_modifier": 0.4,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage inflicted when an attack is parried.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Brute.0",
+        "classes": [
+          "CD_Predator_Berserker",
+          "CD_Predator_BigDog",
+          "CD_Predator_Cyborg",
+          "CD_Predator_Amazon",
+          "CD_Predator_Zeta",
+          "CD_Predator_Cid"
+        ]
+      },
+      {
+        "id": "Spec_Disciplined",
+        "name": "Disciplined",
+        "main_modifier": -1.0,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Removes clicking noises while cloaked.",
+        "source": "Content/DLC_Release/FU_08/Character/Data/Predator/ClassSpecializations/Spec_Disciplined.0",
+        "classes": [
+          "CD_Predator_Scout",
+          "CD_Predator_Helsinki",
+          "CD_Predator_Cyborg",
+          "CD_Predator_Chopper",
+          "CD_Predator_Cid",
+          "CD_Predator_Kappa"
+        ]
+      }
+    ],
+    "fireteam": [
+      {
+        "id": "Spec_Amphibious",
+        "name": "Amphibious",
+        "main_modifier": 1.2,
+        "secondary_modifier": null,
+        "clash": "partial",
+        "description": "Increased movement speed in water. Being in water counts as being fully concealed by mud.",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Amphibious.1",
+        "classes": [
+          "CD_Fireteam_Recon",
+          "CD_Fireteam_Dutch87",
+          "CD_Fireteam_SmallFox"
+        ]
+      },
+      {
+        "id": "Spec_Deadly",
+        "name": "Deadly",
+        "main_modifier": 1.1,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased assault rifle damage.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Deadly.0",
+        "classes": [
+          "CD_Fireteam_Assault",
+          "CD_Fireteam_Dutch2025"
+        ]
+      },
+      {
+        "id": "Spec_Overwatch",
+        "name": "Overwatch",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage when firing from a height advantage.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Overwatch.0",
+        "classes": [
+          "CD_Fireteam_Dutch2025",
+          "CD_Fireteam_Recon",
+          "CD_Fireteam_OWLF"
+        ]
+      },
+      {
+        "id": "Spec_Spotter",
+        "name": "Spotter",
+        "main_modifier": 30.0,
+        "secondary_modifier": 0.85,
+        "clash": "partial",
+        "description": "Lower body temp when crouching. Spotted targets move slower. Does not stack with other Spotters.",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Spotter.1",
+        "classes": [
+          "CD_Fireteam_Recon",
+          "CD_Fireteam_OWLF"
+        ]
+      },
+      {
+        "id": "Spec_Unleashed",
+        "name": "Unleashed",
+        "main_modifier": 1.3,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage with explosives.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Unleashed.0",
+        "classes": [
+          "CD_Fireteam_Assault",
+          "CD_Fireteam_MTL"
+        ]
+      },
+      {
+        "id": "Spec_FieldMedic",
+        "name": "Field Medic",
+        "main_modifier": 0.55,
+        "secondary_modifier": 1.4,
+        "clash": "no",
+        "description": "Increased revive speed. Revived soldiers have more health.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_FieldMedic.0",
+        "classes": [
+          "CD_Fireteam_Support"
+        ]
+      },
+      {
+        "id": "Spec_Comms",
+        "name": "Comms",
+        "main_modifier": 20.0,
+        "secondary_modifier": null,
+        "clash": "no",
+        "description": "When a teammate dies the reinforcement timer is reduced. Does not stack with other Comms.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Comms.0",
+        "classes": [
+          "CD_Fireteam_Support",
+          "CD_Fireteam_OWLF",
+          "CD_Fireteam_MTL"
+        ]
+      },
+      {
+        "id": "Spec_Sniper",
+        "name": "Sniper",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Increased damage to spotted targets.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Sniper.0",
+        "classes": [
+          "CD_Fireteam_Recon",
+          "CD_Fireteam_OWLF",
+          "CD_Fireteam_SmallFox"
+        ]
+      },
+      {
+        "id": "Spec_Reckless",
+        "name": "Reckless",
+        "main_modifier": 1.1,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Gains a temporary damage boost after receiving damage. Note: lasts for 3 seconds",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Reckless.1",
+        "classes": [
+          "CD_Fireteam_Assault",
+          "CD_Fireteam_Dutch87"
+        ]
+      },
+      {
+        "id": "Spec_Scavenger",
+        "name": "Scavenger",
+        "main_modifier": 10,
+        "secondary_modifier": 1.15,
+        "clash": "no",
+        "description": "Gathered ammo pickups restore health. Increased damage with weapons found in weapon crates around the map.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Scavenger.0",
+        "classes": [
+          "CD_Fireteam_Scout",
+          "CD_Fireteam_SmallFox"
+        ]
+      },
+      {
+        "id": "Spec_Rushdown",
+        "name": "Rushdown",
+        "main_modifier": 1.2,
+        "secondary_modifier": null,
+        "clash": "no",
+        "description": "Gains a short but powerful speed boost upon killing an AI. Note: lasts for 3 seconds",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Rushdown.1",
+        "classes": [
+          "CD_Fireteam_Scout",
+          "CD_Fireteam_MTL",
+          "CD_Fireteam_SmallFox"
+        ]
+      },
+      {
+        "id": "Spec_Fanatic",
+        "name": "Fanatic",
+        "main_modifier": 1.1,
+        "secondary_modifier": 1.1,
+        "clash": "",
+        "description": "Increased damage and speed while wounded. Note: wounded means health below 50%",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Fanatic.1",
+        "classes": [
+          "CD_Fireteam_Assault",
+          "CD_Fireteam_Dutch87",
+          "CD_Fireteam_MTL"
+        ]
+      },
+      {
+        "id": "Spec_Leader",
+        "name": "Leader",
+        "main_modifier": 1.15,
+        "secondary_modifier": null,
+        "clash": "",
+        "description": "Damaged targets are weaker to damage from teammates for a short period of time. This effect does not stack from multiple Leaders. Note: lasts for 3 seconds",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Leader.1",
+        "classes": [
+          "CD_Fireteam_Dutch87",
+          "CD_Fireteam_Dutch2025",
+          "CD_Fireteam_Support"
+        ]
+      },
+      {
+        "id": "Spec_Overseer",
+        "name": "Overseer",
+        "main_modifier": 10.0,
+        "secondary_modifier": null,
+        "clash": "no",
+        "description": "Restores health to the team each time the mission progresses. This effect does not stack with multiple Overseers.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Overseer.0",
+        "classes": [
+          "CD_Fireteam_Support",
+          "CD_Fireteam_Dutch2025"
+        ]
+      },
+      {
+        "id": "Spec_Duelist",
+        "name": "Duelist",
+        "main_modifier": 1.2,
+        "secondary_modifier": 2.0,
+        "clash": "",
+        "description": "Increased damage and higher starting ammo for pistols.",
+        "source": "Content/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/Spec_Duelist.0",
+        "classes": [
+          "CD_Fireteam_Scout"
+        ]
+      },
+      {
+        "id": "Spec_Liberator",
+        "name": "Liberator",
+        "main_modifier": 50.0,
+        "secondary_modifier": 1.2,
+        "clash": "no",
+        "description": "Heals and receives a temporary damage boost after disabling or destroying a camp alarm. Note: lasts for 7 seconds",
+        "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/ClassSpecializations/StatusEffects/SE_Liberator.1",
+        "classes": [
+          "CD_Fireteam_Scout"
+        ]
+      }
+    ]
+  }
+}

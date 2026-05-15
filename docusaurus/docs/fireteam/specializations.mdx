@@ -1,0 +1,55 @@
+---
+sidebar_position: 2
+sidebar_label: ✨ Specializations
+---
+
+import data from '/static/data.json'
+import NoteValues from "@site/src/components/NoteValues.md"
+import Percent from '@site/src/components/Percent'
+import SpecializationClasses from "@site/src/components/SpecializationClasses"
+import Table from '@site/src/components/Table'
+
+
+# Fireteam Specializations
+
+Passive abilities that provide buffs to enhance specific playstyles.
+Each class has access to a different set of specializations.
+
+
+## Stats
+
+export const modify = {
+    Spec_Overseer: { callback: (value) => `+${value} HP`, good: true },
+    Spec_Liberator: { callback: (value) => `+${value} HP`, good: true },
+    Spec_Scavenger: { callback: (value) => `+${value} HP`, good: true },
+    Spec_Spotter: { callback: (value) => `${value} °C/${(value*9/5)+32} °F`, good: true },
+    Spec_FieldMedic: { good_negative: true },
+    Spec_Comms: { callback: (value) => `${value} s faster`, good: true },
+}
+
+export const modify_secondary = {
+    Spec_Spotter: { good_negative: true },
+}
+
+<Table columns={[
+    { name: 'Name', key: "name", format: SpecializationClasses(data.characters.fireteam)  },
+    {
+        name: 'Main modifier',
+        key: "main_modifier",
+        align: "right",
+        format: Percent('main_modifier', modify),
+    },
+    {
+        name: 'Secondary modifier',
+        key: "secondary_modifier",
+        align: "right",
+        format: Percent('secondary_modifier', modify_secondary),
+    },
+    { name: 'Description', key: "description", grow: 4 },
+    { name: 'Clash', key: "clash", align: "center" },
+]} data={data.specializations.fireteam} />
+
+
+## Notes
+
+<NoteValues />

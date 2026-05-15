@@ -1,0 +1,311 @@
+---
+sidebar_position: 4
+sidebar_label: 🔫 Weapons
+---
+
+import Table from '@site/src/components/Table'
+import Icon from '@site/src/components/Icon'
+import DamageCurveChart from '@site/src/components/DamageCurveChart'
+import SplashRadiusChart from '@site/src/components/SplashRadiusChart'
+import NoteGauges from "@site/src/components/NoteGauges.md"
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from '/static/data.json'
+
+# Fireteam Weapons and Gear
+
+Available Fireteam Weapons statistics.
+
+export const DMG_TYPE_EMOJI = {
+    'ESFDamageTypeCategory::Bullet':    '\ud83d\udd2b',
+    'ESFDamageTypeCategory::Energy':    '\u26a1',
+    'ESFDamageTypeCategory::Explosion': '\ud83d\udca5',
+    'ESFDamageTypeCategory::Blade':     '\u2694\ufe0f',
+    'ESFDamageTypeCategory::Blunt':     '\ud83d\udd28',
+};
+
+export function flattenWeapon(w) {
+    const attacks = Array.isArray(w.attacks) ? w.attacks : (w.attacks ? [w.attacks] : []);
+    const attack  = attacks.find(a => a && !Array.isArray(a) && a.type !== 'acig') ?? null;
+    const grenade = attacks.find(a => a && !Array.isArray(a) && a.type === 'grenade') ?? null;
+    const acig    = attacks.find(a => a && !Array.isArray(a) && a.type === 'acig') ?? null;
+    const melee   = attacks.find(a => Array.isArray(a)) ?? null;
+    const meleeSingle = melee ? melee.find(a => a.type === 'melee_single') : null;
+    const meleeHeavy  = melee ? melee.find(a => a.type === 'melee_single' && a !== meleeSingle) : null;
+
+    const dmgClose = Array.isArray(attack?.damage) ? attack.damage[0] : (attack?.damage ?? null);
+    const fireRate = attack?.fire_rate ?? null;
+    const pellets  = attack?.pellets ?? 1;
+    const dps = (dmgClose != null && fireRate != null)
+        ? Math.round(dmgClose * (fireRate / 60) * pellets)
+        : null;
+
+    return {
+        ...w,
+        _dmgType:    attack?.damage_type ?? null,
+        _dmgEmoji:   DMG_TYPE_EMOJI[attack?.damage_type] ?? '',
+        _damage:     dmgClose,
+        _damageFar:  Array.isArray(attack?.damage) ? attack.damage[attack.damage.length - 1] : null,
+        _fireRate:   fireRate,
+        _maxRange:   attack?.max_range != null ? Math.round(attack.max_range / 100) : null,
+        _pellets:    attack?.pellets ?? null,
+        _dps:        dps,
+        // For pure grenade weapons, the grenade IS the primary attack
+        _directHit:       grenade?.direct_hit_damage ?? null,
+        _splash:          grenade?.splash_damage_max ?? null,
+        _splashMin:       grenade?.splash_damage_min ?? null,
+        _splashInnerM:    grenade?.splash_radius_inner != null ? Math.round(grenade.splash_radius_inner / 100) : null,
+        _splashOuterM:    grenade?.splash_radius_outer != null ? Math.round(grenade.splash_radius_outer / 100) : null,
+        _grenadeFireRate: grenade?.fire_rate ?? null,
+        _grenadesplashOuter: grenade?.splash_radius_outer ?? null,
+        _hasUnderbarrel: grenade != null && attack?.type === 'projectile',
+        _acigDps:    acig?.damage_per_second ?? null,
+        _acigRadius: acig?.radius != null ? Math.round(acig.radius / 100) : null,
+        _acigDuration: acig?.duration ?? null,
+        _meleeDmg:   meleeSingle?.damage?.[0] ?? null,
+        _meleeHeavy: meleeHeavy?.damage?.[0] ?? null,
+    };
+}
+
+export const flatFT = data.weapons.fireteam.map(flattenWeapon);
+
+export function fmtDamage(row) {
+    const v = row._damage;
+    if (v == null) return null;
+    const emoji = row._dmgEmoji;
+    const far = row._damageFar;
+    const hasFalloff = far != null && Math.abs(far - v) > 0.5;
+    return (
+        <span title={row._dmgType}>
+            {emoji} <strong>{Math.round(v)}</strong>
+            {hasFalloff && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> → {Math.round(far)}</small>}
+        </span>
+    );
+}
+
+export function fmtFireRate(row) {
+    const v = row._fireRate;
+    if (v == null) return null;
+    return <span title="rounds per minute">{v} <small>rpm</small></span>;
+}
+
+export function fmtRange(row) {
+    const v = row._maxRange;
+    if (v == null) return null;
+    return <span title="max effective range in metres">{v} <small>m</small></span>;
+}
+
+export function fmtMelee(row) {
+    if (row._meleeDmg == null) return null;
+    const heavy = row._meleeHeavy;
+    return (
+        <span>
+            <strong>{row._meleeDmg}</strong>
+            {heavy != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> / {heavy}</small>}
+        </span>
+    );
+}
+
+export function fmtSplash(row) {
+    if (row._directHit == null && row._splash == null) return null;
+    const parts = [];
+    if (row._directHit != null) parts.push(`direct: ${row._directHit}`);
+    if (row._splash != null) parts.push(`splash: ${row._splash}`);
+    return <span title={parts.join(', ')}><strong>{row._directHit ?? '—'}</strong>{row._splash != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> (+{row._splash})</small>}</span>;
+}
+
+export function fmtDps(row) {
+    if (row._dps == null) return null;
+    return <span title="damage per second at closest range (pellets included)">{row._dps}</span>;
+}
+
+export function fmtGrenade(row) {
+    if (row._splash == null && row._directHit == null) return null;
+    const tooltip = [
+        row._splash != null ? `splash max: ${row._splash}` : null,
+        row._splashOuterM != null ? `radius: ${row._splashOuterM}m` : null,
+        row._directHit != null ? `direct: ${row._directHit}` : null,
+    ].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            💥 <strong>{row._splash ?? row._directHit}</strong>
+            <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> ({row._splashOuterM}m</small>
+            {row._directHit != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}>, direct: {row._directHit}</small>}
+            <small style={{color: 'var(--ifm-color-secondary-darkest)'}}>)</small>
+        </span>
+    );
+}
+
+export function fmtUnderbarrel(row) {
+    if (!row._hasUnderbarrel) return null;
+    return fmtGrenade(row);
+}
+
+export function toSplashWeapon(row) {
+    if (row._splash == null) return null;
+    return {
+        name:        row.name,
+        directHit:   row._directHit,
+        splashMax:   row._splash,
+        splashMin:   row._splashMin,
+        innerRadius: row._splashInnerM,
+        outerRadius: row._splashOuterM,
+    };
+}
+
+export function fmtAcig(row) {
+    if (row._acigDps == null && row._acigRadius == null) return null;
+    const tooltip = [
+        row._acigDps != null ? `${row._acigDps} dps` : null,
+        row._acigRadius != null ? `radius: ${row._acigRadius}m` : null,
+        row._acigDuration != null ? `duration: ${row._acigDuration}s` : null,
+    ].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            🔵 <small>{row._acigRadius}m / {row._acigDuration}s</small>
+        </span>
+    );
+}
+
+export const ASSAULT_COLS = [
+    { name: 'Name',        key: 'name',            format: Icon('name') },
+    { name: 'Damage',      key: '_damage',          align: 'right', numeric: true, format: fmtDamage },
+    { name: 'DPS',         key: '_dps',             align: 'right', numeric: true, format: fmtDps },
+    { name: 'Fire Rate',   key: '_fireRate',         align: 'right', numeric: true, format: fmtFireRate },
+    { name: 'Max. Range',       key: '_maxRange',         align: 'right', numeric: true, format: fmtRange },
+    { name: 'Underbarrel', key: '_hasUnderbarrel',   align: 'right', sortable: false, format: fmtUnderbarrel },
+];
+
+export const RIFLE_COLS = [
+    { name: 'Name',        key: 'name',            format: Icon('name') },
+    { name: 'Damage',      key: '_damage',          align: 'right', numeric: true, format: fmtDamage },
+    { name: 'DPS',         key: '_dps',             align: 'right', numeric: true, format: fmtDps },
+    { name: 'Fire Rate',   key: '_fireRate',         align: 'right', numeric: true, format: fmtFireRate },
+    { name: 'Max. Range',       key: '_maxRange',         align: 'right', numeric: true, format: fmtRange },
+];
+
+export const SHOTGUN_COLS = [
+    { name: 'Name',       key: 'name',      format: Icon('name') },
+    { name: 'Dmg/pellet', key: '_damage',   align: 'right', numeric: true, format: fmtDamage },
+    { name: 'Pellets',    key: '_pellets',  align: 'right', numeric: true },
+    { name: 'DPS',        key: '_dps',      align: 'right', numeric: true, format: fmtDps },
+    { name: 'Fire Rate',  key: '_fireRate', align: 'right', numeric: true, format: fmtFireRate },
+    { name: 'Max. Range',      key: '_maxRange', align: 'right', numeric: true, format: fmtRange },
+];
+
+export const allSplashWeapons = (() => {
+    const rows = [
+        ...flatFT,
+        ...data.gear.fireteam.map(flattenWeapon),
+    ].map(toSplashWeapon).filter(Boolean);
+
+    // Deduplicate entries with identical splash curves — merge their names
+    const seen = new Map();
+    for (const w of rows) {
+        const key = `${w.splashMax}|${w.splashMin}|${w.innerRadius}|${w.outerRadius}`;
+        if (seen.has(key)) {
+            seen.get(key).name += ' / ' + w.name;
+        } else {
+            seen.set(key, { ...w });
+        }
+    }
+    return Array.from(seen.values());
+})();
+
+## Stats
+
+
+### Primary
+
+
+#### Assault Rifles
+
+<DamageCurveChart weapons={flatFT.filter(w => w.category === 'Weapon.Category.AssaultRifle').map(w => ({ name: w.name, attack: w.attacks?.[0] }))} />
+
+<Table columns={ASSAULT_COLS} filterable
+    data={flatFT.filter(w => w.category === 'Weapon.Category.AssaultRifle')} fullWidth />
+
+
+#### Sniper Rifles
+
+<DamageCurveChart weapons={flatFT.filter(w => w.category === 'Weapon.Category.SniperRifle').map(w => ({ name: w.name, attack: w.attacks?.[0] }))} />
+
+<Table columns={RIFLE_COLS}
+    data={flatFT.filter(w => w.category === 'Weapon.Category.SniperRifle')} fullWidth />
+
+
+#### Special
+
+<Table columns={[
+    { name: 'Name',       key: 'name',       format: Icon('name') },
+    { name: 'Damage',     key: '_damage',    align: 'right', numeric: true, format: fmtDamage },
+    { name: 'Grenade',    key: '_directHit', align: 'right', numeric: true, sortable: false, format: fmtGrenade },
+    { name: 'DPS',        key: '_dps',       align: 'right', numeric: true, format: fmtDps },
+    { name: 'Fire Rate',  key: '_fireRate',  align: 'right', numeric: true, format: fmtFireRate },
+]} data={flatFT.filter(w => w.category === 'Weapon.Category.Special')} fullWidth />
+
+
+### Secondary
+
+
+#### Pistols
+
+<DamageCurveChart weapons={flatFT.filter(w => w.category === 'Weapon.Category.Pistol').map(w => ({ name: w.name, attack: w.attacks?.[0] }))} />
+
+<Table columns={RIFLE_COLS}
+    data={flatFT.filter(w => w.category === 'Weapon.Category.Pistol')} fullWidth />
+
+
+#### Shotguns
+
+<DamageCurveChart weapons={flatFT.filter(w => w.category === 'Weapon.Category.Shotgun').map(w => ({ name: w.name, attack: w.attacks?.[0] }))} />
+
+<Table columns={SHOTGUN_COLS}
+    data={flatFT.filter(w => w.category === 'Weapon.Category.Shotgun')} fullWidth />
+
+
+#### Submachine Guns
+
+<DamageCurveChart weapons={flatFT.filter(w => w.category === 'Weapon.Category.SMG').map(w => ({ name: w.name, attack: w.attacks?.[0] }))} />
+
+<Table columns={RIFLE_COLS}
+    data={flatFT.filter(w => w.category === 'Weapon.Category.SMG')} fullWidth />
+
+
+#### Special
+
+<Table columns={[
+    { name: 'Name',      key: 'name',      format: Icon('name') },
+    { name: 'Damage',    key: '_damage',   align: 'right', numeric: true, format: fmtDamage },
+    { name: 'DPS',       key: '_dps',      align: 'right', numeric: true, format: fmtDps },
+    { name: 'Fire Rate', key: '_fireRate', align: 'right', numeric: true, format: fmtFireRate },
+]} data={flatFT.filter(w => w.category === 'Weapon.Category.SecondarySpecial')} fullWidth />
+
+### Grenades
+
+<SplashRadiusChart weapons={allSplashWeapons} />
+
+### Knife
+
+<Table columns={[
+    { name: 'Name',        key: 'name',        format: Icon('name') },
+    { name: 'Light / Heavy', key: '_meleeDmg', align: 'right', numeric: true, format: fmtMelee },
+]} data={flatFT.filter(w => w.category === 'Weapon.Category.Melee')} fullWidth />
+
+
+### Gear
+
+export const flatGear = data.gear.fireteam.map(flattenWeapon);
+
+<Table columns={[
+    { name: 'Name',        key: 'name',        format: Icon('name') },
+    { name: 'Weight',      key: 'weight',      align: 'center', numeric: true },
+    { name: 'Grenade',     key: '_directHit',  align: 'right',  sortable: false, format: fmtGrenade },
+    { name: 'Anti-cloak',  key: '_acigRadius', align: 'right',  sortable: false, format: fmtAcig },
+    { name: 'Description', key: 'description' },
+]} data={flatGear} fullWidth />
+
+
+## Notes
+
+<NoteGauges />
+<NoteValues />

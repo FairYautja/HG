@@ -1,0 +1,142 @@
+---
+sidebar_position: 4
+sidebar_label: ⚔️ Weapons
+---
+
+import Table from '@site/src/components/Table'
+import Icon from '@site/src/components/Icon'
+import NoteGauges from "@site/src/components/NoteGauges.md"
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from '/static/data.json'
+
+# Predator Weapons and Gear
+
+Available Predator Weapons statistics.
+
+## Stats
+
+### Weapons
+
+export function flattenWeapons(weapons) {
+    return weapons.map(w => {
+        const attacks = w.attacks;
+        const isEmpty = !attacks || (Array.isArray(attacks) && attacks.length === 0) || (!Array.isArray(attacks) && Object.keys(attacks).length === 0);
+
+        // Normalise to array of modes
+        const modes = isEmpty ? [] : (Array.isArray(attacks) ? attacks : [attacks]);
+
+        // Mode 0: primary — either [melee_single, melee_combo] or a single fire/throw object
+        const primary = modes[0] ?? null;
+        const primaryAttacks = Array.isArray(primary) ? primary : (primary ? [primary] : []);
+        const primarySingle = primaryAttacks.find(a => a.type === 'melee_single') ?? (primaryAttacks.length === 1 ? primaryAttacks[0] : null);
+        const primaryCombo  = primaryAttacks.find(a => a.type === 'melee_combo') ?? null;
+
+        // Mode 1: secondary — either alternate melee_single or throw
+        const secondary = modes[1] ?? null;
+        const secondaryAttacks = Array.isArray(secondary) ? secondary : (secondary ? [secondary] : []);
+        const secondarySingle = secondaryAttacks.find(a => a.type === 'melee_single') ?? (secondaryAttacks.length === 1 ? secondaryAttacks[0] : null);
+
+        return {
+            ...w,
+            _primaryType:      primarySingle?.type ?? null,
+            _primaryDmgType:   primarySingle?.damage_type?.replace('ESFDamageTypeCategory::', '') ?? null,
+            _primarySingle:    Array.isArray(primarySingle?.damage) ? primarySingle.damage[0] : (primarySingle?.damage ?? null),
+            _primaryCombo:     primaryCombo?.damage ?? null,
+            _primarySplash:    primarySingle?.splash_damage_max ?? null,
+            _primaryFire:      primarySingle?.damage_fire ?? null,
+            _primaryHeadshot:  primarySingle?.headshot ?? null,
+            _secondaryType:    secondarySingle?.type ?? null,
+            _secondarySingle:  Array.isArray(secondarySingle?.damage) ? secondarySingle.damage[0] : (secondarySingle?.damage ?? null),
+            _secondaryDmgType: secondarySingle?.damage_type?.replace('ESFDamageTypeCategory::', '') ?? null,
+            _secondaryBack:    secondarySingle?.damage_back ?? null,
+            _secondaryHealth:  secondarySingle?.health ?? null,
+            _secondaryHeadshot: secondarySingle?.headshot ?? null,
+        };
+    });
+}
+
+export function fmtCombo(row) {
+    const dmg = row._primaryCombo;
+    if (!dmg) return null;
+    return (
+        <span title={dmg.join(' → ')}>
+            {dmg.join(' / ')}
+        </span>
+    );
+}
+
+export function fmtHeadshot(multiplier) {
+    if (multiplier == null) return null;
+    return <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> 💢x{multiplier}</small>;
+}
+
+export function fmtPrimary(row) {
+    const v = row._primarySingle;
+    if (v == null) return null;
+    const emoji = DMG_TYPE_EMOJI[row._primaryDmgType] ?? '';
+    const extra = [];
+    if (row._primarySplash != null) extra.push(`splash ${row._primarySplash}`);
+    if (row._primaryFire != null) extra.push(`fire ${row._primaryFire}/s`);
+    if (row._primaryHeadshot != null) extra.push(`headshot x${row._primaryHeadshot}`);
+    const tooltip = [emoji, row._primaryDmgType, row._primaryType, ...extra].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            {emoji} <strong>{v}</strong>
+            {row._primaryHeadshot != null && fmtHeadshot(row._primaryHeadshot)}
+            {(row._primarySplash != null || row._primaryFire != null) && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> +{[row._primarySplash != null ? `splash ${row._primarySplash}` : null, row._primaryFire != null ? `fire ${row._primaryFire}/s` : null].filter(Boolean).join(', ')}</small>}
+        </span>
+    );
+}
+
+export function fmtSecondary(row) {
+    const v = row._secondarySingle;
+    if (v == null) return null;
+    const isThrow = row._secondaryType === 'throw';
+    const dmgEmoji = DMG_TYPE_EMOJI[row._secondaryDmgType] ?? '';
+    const icon = isThrow ? '🏹' : dmgEmoji;
+    const typeLabel = isThrow ? 'Throw' : 'Alt melee';
+    const extra = [];
+    if (row._secondaryBack != null) extra.push(`back hit: ${row._secondaryBack}`);
+    if (row._secondaryHealth != null) extra.push(`projectile HP: ${row._secondaryHealth}`);
+    if (row._secondaryHeadshot != null) extra.push(`headshot x${row._secondaryHeadshot}`);
+    const tooltip = [icon, dmgEmoji, typeLabel, ...extra].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            {icon} <strong>{v}</strong>
+            {row._secondaryHeadshot != null && fmtHeadshot(row._secondaryHeadshot)}
+            {row._secondaryBack != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> /{row._secondaryBack}</small>}
+        </span>
+    );
+}
+
+export const DMG_TYPE_EMOJI = {
+    'Blade':             '⚔️',
+    'Blunt':             '🔨',
+    'Bullet':            '🔫',
+    'Energy':            '⚡',
+    'Explosion':         '💥',
+    'Arrow':             '🏹',
+    'Slashing_BattleAxe': '⚔️',
+};
+
+<Table columns={[
+    { name: 'Name',      key: 'name',            format: Icon('name') },
+    { name: 'Primary',   key: '_primarySingle',   align: 'right', numeric: true, format: fmtPrimary },
+    { name: 'Combo',     key: '_primaryCombo',    align: 'right', sortable: false, format: fmtCombo },
+    { name: 'Secondary', key: '_secondarySingle', align: 'right', numeric: true, format: fmtSecondary },
+]} data={flattenWeapons(data.weapons.predator)} fullWidth filterable />
+
+
+### Gear
+
+<Table columns={[
+    { name: 'Name',        key: 'name',        format: Icon('name') },
+    { name: 'Weight',      key: 'weight',      align: 'center', numeric: true },
+    { name: 'Description', key: 'description' },
+]} data={data.gear.predator} fullWidth />
+
+
+## Notes
+
+<NoteGauges />
+<NoteValues />

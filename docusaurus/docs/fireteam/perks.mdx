@@ -1,0 +1,67 @@
+---
+sidebar_position: 3
+sidebar_label: 💠 Perks
+---
+
+import Table from "@site/src/components/Table"
+import Percent from "@site/src/components/Percent"
+import Icon from "@site/src/components/Icon"
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from "/static/data.json"
+
+
+# Fireteam Perks
+
+Passive bonuses that Fireteam can equip to enhance their abilities.
+Each character can equip up to three perks, but the total perk weight must not exceed the available perk points for that class.
+
+
+# Stats
+
+export const modify = {
+    PK_FT_InteractSpeed: { good_negative: true },
+    PK_FT_HipFireBonus: { good_negative: true },
+    PK_FT_Spot_Traps: { good: true },
+    PK_FT_BleedOutDuration: { good: true },
+    PK_FT_ReducedRecoil: { good_negative: true },
+    PK_FT_ReducedPredDamage: { good_negative: true },
+    PK_FT_Reduced_Thermal_Temp: { callback: (value) => `${value} °C/${(value*9/5)+32} °F`, good: true },
+    PK_FT_ReducedAIDamage: { good_negative: true },
+    PK_FT_MuddyUpDuration: { good_negative: true },
+    PK_FT_DownedCount: { value: "+1", good: true },
+    PK_FT_IncreasedGearUses: { value: "+1", good: true },
+}
+
+<Table columns={[
+    {
+        name: "Name",
+        key: "name",
+        format: Icon("name"),
+    },
+    {
+        name: "Weight",
+        key: "points",
+        align: "center",
+    },
+    {
+        name: "Modifier",
+        key: "modifier",
+        align: "right",
+        format: Percent("modifier", modify),
+    },
+    {
+        name: "Description",
+        key: "description",
+        grow: 4,
+    },
+    {
+        name: "Clash",
+        key: "clash",
+        align: "center",
+    },
+]} data={data.perks.fireteam} />
+
+
+# Notes
+
+<NoteValues />

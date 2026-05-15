@@ -1,0 +1,45 @@
+---
+sidebar_position: 3
+sidebar_label: 💠 Perks
+---
+
+import Table from '@site/src/components/Table'
+import Percent from '@site/src/components/Percent'
+import Icon from '@site/src/components/Icon'
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from '/static/data.json'
+
+
+# Predator Perks
+
+Passive bonuses that Predator can equip to enhance their abilities.
+Each character can equip up to three perks, but the total perk weight must not exceed the available perk points for that class.
+
+
+## Stats
+
+export const modify = {
+    PK_P_BackShotDamage: { good_negative: true },
+    PK_P_CloakEnergy: { good_negative: true },
+    PK_P_IncreasedBulletResist: { good_negative: true },
+    PK_P_LaserVisibility: { good_negative: true },
+    PK_P_ReducedPredkourDamage: { good_negative: true },
+    PK_P_SecondWindCooldown: { good_negative: true },
+    PK_P_SecondWindDuration: { good_negative: true },
+    PK_P_TougherMask: { good_negative: true },
+    PK_P_VisionEnergy: { good_negative: true },
+    PK_P_See_Mudded_Footprints: { style: { color: 'green' } },
+}
+
+<Table columns={[
+    { name: 'Name', key: "name", format: Icon('name') },
+    { name: 'Weight', key: "points", align: "center" },
+    { name: 'Modifier', key: "modifier", align: "right", format: Percent('modifier', modify) },
+    { name: 'Description', key: "description" },
+    { name: 'Clash', key: "clash", align: "center" }
+]} data={data.perks.predator} />
+
+
+## Notes
+
+<NoteValues />

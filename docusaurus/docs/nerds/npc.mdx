@@ -1,0 +1,19 @@
+import Table from '@site/src/components/Table'
+import Percent from '@site/src/components/Percent'
+import NoteGauges from "@site/src/components/NoteGauges.md"
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from '/static/data.json'
+
+# NPC Stats
+
+These are mined NPC staistics.
+
+<Table columns={[
+    { name: 'Name', key: "name" },
+    { name: 'Health', key: "health", align: "right" },
+    { name: 'Stamina', key: "stamina", align: "right" },
+    { name: 'Speed', key: "speed_modifier", align: "right", format: Percent('speed_modifier') },
+]} data={data.characters.npc} />
+
+<NoteGauges />
+<NoteValues />

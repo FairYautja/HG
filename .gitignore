@@ -1,0 +1,14 @@
+/SpaceFish
+
+/scripts/__pycache__/
+
+/docusaurus/node_modules/
+/docusaurus/build/
+/docusaurus/.docusaurus
+/docusaurus/.cache-loader
+/docusaurus/package-lock.json
+/docusaurus/yarn.lock
+
+/build/
+
+aes.key

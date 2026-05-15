@@ -1,0 +1,102 @@
+---
+sidebar_position: 1
+sidebar_label: 🧑‍💻 Characters
+---
+
+import Table from '@site/src/components/Table'
+import Percent from '@site/src/components/Percent'
+import Icon from '@site/src/components/Icon'
+import Relative from '@site/src/components/Relative'
+import NoteGauges from "@site/src/components/NoteGauges.md"
+import NoteValues from "@site/src/components/NoteValues.md"
+import data from '/static/data.json'
+
+
+# Fireteam Characters
+
+List of all available Fireteam classes and their key attributes.
+
+
+## Stats
+
+export const modify_stamina_recovery = {
+  CD_Fireteam_Support_Female: { value: 2, source: "SkooLBoY_SkePtiK" },
+}
+
+<Table columns={[
+    { name: 'Name', key: "name", format: Icon('name') },
+    {
+        name: 'Health',
+        key: "health",
+        align: "right",
+        numeric: true,
+        format: Relative("health", data.characters.fireteam),
+    },
+    {
+        name: 'Stamina',
+        key: "stamina",
+        align: "right",
+        numeric: true,
+        format: Relative("stamina", data.characters.fireteam),
+    },
+    {
+        name: 'Stamina recovery',
+        key: 'stamina_recovery',
+        align: "right",
+        numeric: true,
+        format: Relative("stamina_recovery", data.characters.fireteam, modify_stamina_recovery),
+    },
+    {
+        name: 'Speed',
+        key: "speed_modifier",
+        align: "right",
+        numeric: true,
+        format: Percent('speed_modifier'),
+        filterValue: (v) => Math.round((v - 1) * 100),
+    },
+    { name: 'Perks', key: "max_perk", align: "right", numeric: true },
+    { name: 'Gear', key: "max_gear", align: "right", numeric: true },
+]} data={data.characters.fireteam} fullWidth filterable />
+
+
+## Last Man Standing
+
+<div className="container">
+    <div class="row">
+        <div class="col col--6">
+
+While playing the game, when the other three Fireteam members are killed, the last surviving
+Fireteam member will gain these "perks" to have a better chance against the Predator.
+
+*Damage Resistance* is a multiplier ({data.perks.last_man_standing.find((perk) => perk.id == 'PK_FT_LMS_DamageResistance').modifier})
+applied to incoming damage for the Fireteam member. That is why the percentage value is displayed as a negative value.
+
+        </div>
+        <div class="col col--6">
+
+export const modify = {
+    PK_FT_LMS_BodyHeat: { callback: (value) => `+${value} °C/+${(value*9/5)+32} °F`, bad: true },
+    PK_FT_LMS_StaminaUsage: { good_negative: true },
+    PK_FT_LMS_DamageResistance: { good_negative: true },
+
+}
+
+<Table columns={[
+    { name: 'Name', key: "name" },
+    {
+        name: 'Modifier',
+        key: "modifier",
+        align: "right", format:
+        Percent('modifier', modify),
+    },
+]} data={data.perks.last_man_standing} />
+
+        </div>
+    </div>
+</div>
+
+
+## Notes
+
+<NoteGauges />
+<NoteValues />
