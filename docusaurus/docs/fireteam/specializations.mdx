@@ -6,7 +6,7 @@ sidebar_label: ✨ Specializations
 import data from '/static/data.json'
 import NoteValues from "@site/src/components/NoteValues.md"
 import Percent from '@site/src/components/Percent'
-import SpecializationClasses from "@site/src/components/SpecializationClasses"
+import SpecializationClasses, { SpecializationClassList } from "@site/src/components/SpecializationClasses"
 import Table from '@site/src/components/Table'
 
 
@@ -32,7 +32,8 @@ export const modify_secondary = {
 }
 
 <Table columns={[
-    { name: 'Name', key: "name", format: SpecializationClasses(data.characters.fireteam)  },
+    { name: 'Name', key: "name", format: SpecializationClasses(data.characters.fireteam) },
+    { name: 'Classes', key: 'classes', format: SpecializationClassList(data.characters.fireteam) },
     {
         name: 'Main modifier',
         key: "main_modifier",
@@ -47,7 +48,7 @@ export const modify_secondary = {
     },
     { name: 'Description', key: "description", grow: 4 },
     { name: 'Clash', key: "clash", align: "center" },
-]} data={data.specializations.fireteam} />
+]} data={data.specializations.fireteam} filterable  sortable={false} fullWidth />
 
 
 ## Notes

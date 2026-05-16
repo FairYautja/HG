@@ -10,23 +10,7 @@ import Relative from '@site/src/components/Relative'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
 import data from '/static/data.json'
-
-export function fmtArmor(key) {
-    return function format(row) {
-        const v = row.armor?.[key];
-        if (v == null) return null;
-        if (v === 1.0) return <span style={{color: 'var(--ifm-color-secondary)'}}>—</span>;
-        const pct = Math.round((v - 1) * 100);
-        const color = pct > 0 ? '#f0001f' : '#218409';
-        return <span style={{fontWeight: 'bold', color}} title={`x${v}`}>{pct > 0 ? '+' : ''}{pct}%</span>;
-    };
-}
-
-export function fmtBeam(row) {
-    const v = row.beam_switch;
-    if (v == null) return <span style={{color: 'var(--ifm-color-secondary)'}}>default</span>;
-    return <span>{Math.round(v / 100)} <small>m</small></span>;
-}
+import predatorEHP from '@site/src/components/predatorEHP'
 
 
 # Predator Characters
@@ -123,25 +107,20 @@ List of all available Predator classes and their key attributes.
 ]} data={data.characters.predator} fullWidth filterable />
 
 
-## Resistances & Plasma Caster Range
+## Effective Health
 
-:::info
-Resistance values show how much incoming damage is **modified** for each damage type. Negative
-(green) means the Predator takes less damage; positive (red) means more. Blank means the same
-as the default (no special resistance). **Beam switch** is the maximum distance at which the
-Plasma Caster targeting beam can jump between targets.
-:::
+Effective health shows how much total damage each Predator can absorb per damage type, based on
+their base HP and armor value.
 
 <Table columns={[
-    { name: 'Name',          key: 'name',         format: Icon('name') },
-    { name: '🔫 Bullet',    key: 'armor',         align: 'right', sortable: false, format: fmtArmor('Bullet_SmallCaliber') },
-    { name: '🔫 Sniper',    key: 'armor',         align: 'right', sortable: false, format: fmtArmor('Bullet_HighCaliber') },
-    { name: '🔫 Shotgun',   key: 'armor',         align: 'right', sortable: false, format: fmtArmor('Bullet_Shotgun') },
-    { name: '💥 Explosive', key: 'armor',         align: 'right', sortable: false, format: fmtArmor('FT_Explosive') },
-    { name: '⚔️ Knife',     key: 'armor',         align: 'right', sortable: false, format: fmtArmor('FT_Slashing') },
-    { name: '⚡ Plasma',    key: 'armor',         align: 'right', sortable: false, format: fmtArmor('Plasma') },
-    { name: 'Beam switch',  key: 'beam_switch',   align: 'right', numeric: true,   format: fmtBeam },
-]} data={data.characters.predator} fullWidth />
+    { name: 'Name',         key: 'name',  format: Icon('name') },
+    { name: '🔫 Bullet',    key: 'eHP_Bullet_SmallCaliber', align: 'right', numeric: true },
+    { name: '🔫 Sniper',    key: 'eHP_Bullet_HighCaliber',  align: 'right', numeric: true },
+    { name: '🔫 Shotgun',   key: 'eHP_Bullet_Shotgun',      align: 'right', numeric: true },
+    { name: '💥 Explosive', key: 'eHP_FT_Explosive',        align: 'right', numeric: true },
+    { name: '⚔️ Knife',     key: 'eHP_FT_Slashing',         align: 'right', numeric: true },
+    { name: '⚡ Plasma',    key: 'eHP_Plasma',              align: 'right', numeric: true },
+]} data={predatorEHP} fullWidth filterable />
 
 ## Notes
 
