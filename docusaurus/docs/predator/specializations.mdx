@@ -6,7 +6,7 @@ sidebar_label: ✨ Specializations
 import data from "/static/data.json"
 import NoteValues from "@site/src/components/NoteValues.md"
 import Percent from "@site/src/components/Percent"
-import SpecializationClasses, { SpecializationClassList } from "@site/src/components/SpecializationClasses"
+import SpecializationClasses, { SpecializationClassList, classesFilterValue } from "@site/src/components/SpecializationClasses"
 import Table from "@site/src/components/Table"
 
 # Predator Specializations
@@ -30,7 +30,7 @@ export const modify_secondary = {
 
 <Table columns={[
     { name: "Name", key: "name", format: SpecializationClasses(data.characters.predator) },
-    { name: "Classes", key: "classes", format: SpecializationClassList(data.characters.predator) },
+    { name: "Classes", key: "classes", format: SpecializationClassList(data.characters.predator), filterText: classesFilterValue(data.characters.predator) },
     { name: "Main modifier", key: "main_modifier", align: "right", format: Percent("main_modifier", modify) },
     { name: "Secondary modifier", key: "secondary_modifier", align: "right", format: Percent("secondary_modifier", modify_secondary) },
     { name: "Description", key: "description", grow: 4 },

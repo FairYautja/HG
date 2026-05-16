@@ -19,6 +19,17 @@ export default function SpecializationClasses(characters) {
   };
 }
 
+export function classesFilterValue(characters) {
+  return function filterValue(classes) {
+    return classes
+      .map((id) => {
+        const c = characters.find((c) => c.id === id);
+        return c ? c.name : "";
+      })
+      .join(" ");
+  };
+}
+
 export function SpecializationClassList(characters) {
   return function format(row) {
     const { colorMode } = useColorMode();

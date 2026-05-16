@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { FilterMatchMode } from "primereact/api";
+import { FilterMatchMode, FilterService } from "primereact/api";
 
 function FullWidthWrapper({ children }) {
   const ref = useRef(null);
@@ -37,7 +37,9 @@ function buildInitialFilters(columns) {
       value: null,
       matchMode: col.numeric
         ? FilterMatchMode.GREATER_THAN_OR_EQUAL_TO
-        : FilterMatchMode.CONTAINS,
+        : col.filterText
+          ? FilterMatchMode.CUSTOM
+          : FilterMatchMode.CONTAINS,
     };
   }
   return filters;
@@ -51,6 +53,18 @@ export default function Table({
   sortable = true,
 }) {
   const [filters, setFilters] = useState(() => buildInitialFilters(columns));
+
+  columns.forEach((col) => {
+    if (col.filterText) {
+      FilterService.register(`custom_${col.key}`, (value, filter) => {
+        if (!filter) return true;
+        return col
+          .filterText(value)
+          .toLowerCase()
+          .includes(filter.toLowerCase());
+      });
+    }
+  });
 
   const table = (
     <DataTable
