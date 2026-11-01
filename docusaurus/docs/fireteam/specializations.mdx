@@ -22,7 +22,7 @@ export const modify = {
     Spec_Overseer: { callback: (value) => `+${value} HP`, good: true },
     Spec_Liberator: { callback: (value) => `+${value} HP`, good: true },
     Spec_Scavenger: { callback: (value) => `+${value} HP`, good: true },
-    Spec_Spotter: { callback: (value) => `${value} °C/${(value*9/5)+32} °F`, good: true },
+    Spec_Spotter: { callback: (value) => `-${value} °C/-${Math.round(value*9/5)} °F`, good: true },
     Spec_FieldMedic: { good_negative: true },
     Spec_Comms: { callback: (value) => `${value} s faster`, good: true },
 }

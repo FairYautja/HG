@@ -7,7 +7,8 @@ const predatorEHP = data.characters.predator.map(function(row) {
     for (var i = 0; i < ARMOR_KEYS.length; i++) {
         var k = ARMOR_KEYS[i];
         var v = row.armor && row.armor[k] != null ? row.armor[k] : 1;
-        extra['eHP_' + k] = Math.round(row.health * v);
+        // Armor multiplies incoming damage (verified in game), so effective health = health / armor
+        extra['eHP_' + k] = Math.round(row.health / v);
     }
     return Object.assign({}, row, extra);
 });

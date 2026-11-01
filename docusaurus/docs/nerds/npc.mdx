@@ -2,6 +2,8 @@ import Table from '@site/src/components/Table'
 import Percent from '@site/src/components/Percent'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
+import { withZones, ZoneModifier } from '@site/src/components/BodyParts'
+import { DamageTypeLabel } from '@site/src/components/DamageTypes'
 import data from '/static/data.json'
 
 # NPC Stats
@@ -14,6 +16,49 @@ These are mined NPC staistics.
     { name: 'Stamina', key: "stamina", align: "right" },
     { name: 'Speed', key: "speed_modifier", align: "right", format: Percent('speed_modifier') },
 ]} data={data.characters.npc} />
+
+export const npcs = withZones(data.characters.npc).map((c) => ({
+    ...c,
+    ...Object.fromEntries(Object.entries(c.armor || {}).map(([k, v]) => [`armor_${k}`, v])),
+}));
+
+export const npcArmorKeys = (() => {
+    // Damage types sorted by how many NPCs have armor against them
+    const count = {};
+    for (const c of data.characters.npc) {
+        for (const k of Object.keys(c.armor || {})) count[k] = (count[k] || 0) + 1;
+    }
+    return Object.keys(count).sort((a, b) => count[b] - count[a] || a.localeCompare(b));
+})();
+
+## Body Parts
+
+Incoming damage modifiers for each body part. Positive values mean the NPC takes more damage when
+hit there. Empty cells mean the game files define no modifier for that body part.
+
+<Table columns={[
+    { name: 'Name', key: 'name' },
+    { name: '🗣️ Head', key: 'head', align: 'right', numeric: true, format: ZoneModifier('head') },
+    { name: '👕 Body', key: 'body', align: 'right', numeric: true, format: ZoneModifier('body') },
+    { name: '💪 Arms', key: 'arms', align: 'right', numeric: true, format: ZoneModifier('arms') },
+    { name: '🦵 Legs', key: 'legs', align: 'right', numeric: true, format: ZoneModifier('legs') },
+]} data={npcs} />
+
+## Armor
+
+Multiplier applied to incoming damage of each damage type. Empty cells mean no modifier, so the
+damage is applied unchanged.
+
+<Table columns={[
+    { name: 'Name', key: 'name' },
+    ...npcArmorKeys.map((k) => ({
+        name: <DamageTypeLabel id={k} />,
+        key: `armor_${k}`,
+        align: 'right',
+        numeric: true,
+        format: ZoneModifier(`armor_${k}`),
+    })),
+]} data={npcs} fullWidth />
 
 <NoteGauges />
 <NoteValues />

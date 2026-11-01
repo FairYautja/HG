@@ -132,7 +132,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/fairyautja/hguide',
+                href: 'https://github.com/fairyautja/hg',
               },
             ],
           },

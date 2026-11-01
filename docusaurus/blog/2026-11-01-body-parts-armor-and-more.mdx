@@ -1,0 +1,72 @@
+---
+slug: body-parts-armor-and-more
+title: Body Parts, Armor and a Lot of Math
+authors: [fairyautja]
+tags: [update]
+---
+
+Hello again, hunters and prey! This update started as "let's just show body part modifiers"
+and, as these things go, ended with me shooting grenades at a Predator standing still in a
+private match and counting on my fingers. The result is a big pile of new stats, a handful of
+fixed bugs and a few numbers that were straight up wrong before.
+
+{/* truncate */}
+
+## Body parts and headshots
+
+Both [Fireteam](/fireteam/characters) and [Predator](/predator/characters) character pages now
+have a *Body Parts* section. Predators take +15% to the head, −15% to the body, −25% to the arms
+and −20% to the legs. Fireteam takes the same damage wherever it's hit.
+
+On top of that, every weapon got a *Headshot* column. Some damage types carry their own head
+bonus: the Yautja Bow hits +60%, shotguns +50%, sniper rifles +30%. Weapons with both a melee
+attack and a throw (Combistick, Trident, Smart Disc) show two values as *melee / throw*.
+
+## Armor, and an in-game test
+
+The game gives every character an armor value per damage type, and the guide now shows them all:
+a *Common Stats* table on both character pages and a full armor table for [NPCs](/nerds/npc).
+Did you know Predators take ×4.5 damage from NPC shotguns, and a Pounce Slam does ×10 to NPCs?
+
+The files don't say whether armor multiplies or divides incoming damage, so I tested it: 4–5
+grenade launcher hits put a 1,000 HP Scout into Second Wind. Dividing would have taken 14 or more.
+Armor multiplies damage, which means the old *Effective Health* table had it backwards. It's
+fixed now, so if you remember Predators being squishier against plasma than bullets, you were
+right.
+
+## New stats
+
+- **Fireteam class attributes:** every class's passive bonuses, e.g. Scout's sprint damage
+  resistance or Support's team ammo reserves, colored by whether they help you.
+- **Fireteam stats:** melee damage modifier, interaction speed, number of downs and a 44 s bleed-out
+  time.
+- **Ammo:** magazine size, reserve ammo and how much damage a full magazine deals and how fast you
+  empty it.
+- **Cloak time:** how long each Predator can stay cloaked from full energy. Tested in game: energy
+  keeps regenerating while cloaked after a short delay, so Celtic and Scar can stay cloaked
+  forever, while poor Jotun runs dry in about 12 seconds.
+- **Refill times** instead of raw recovery rates: seconds from empty to full stamina and energy.
+- **Predator weapons:** melee range, combo totals, Yautja Bow charge levels, Norse Hammer stun,
+  Plasma Caster splash and Wrist Launcher burn duration.
+
+The Predator stats table was getting a bit wide, so less important columns now hide behind a
+*Show details* button.
+
+## Fixes
+
+- Grenade and rocket launchers were tagged with a generic explosion damage type, and the Trident
+  throw was tagged as a rifle bullet. Both now use their real damage types.
+- The in-game tested stamina recovery for Support (thanks SkooLBoY_SkePtiK) never showed up because
+  of a naming mismatch. It does now.
+- Temperatures in °F were converted as absolute temperatures instead of differences. Ice Cold is
+  −117 °F, not −85 °F.
+- Thick Skin showed "x25" instead of +25 HP, Disciplined showed "−200%" instead of a simple yes,
+  and Brute showed "−60%". Brute actually lets +40% of the hit through when your attack is parried
+  (tested: 16 HP instead of 2).
+
+As always, if you spot something off, please open an issue on the
+[GitHub project page](https://github.com/fairyautja/hg).
+
+Happy hunting, and play fair.
+
+— Fair

@@ -104,6 +104,39 @@ def resolve_merge(definition: Definition) -> list[tuple[str, int, int]]:
     return [(merge_obj, merge_index, merge_priority)] if merge_obj else []
 
 
+def extract_magazine(loader: Loader, attachments: list[dict] | None) -> dict[str, Any] | None:
+    """Default magazine attachment: magazine size and ammo reserves"""
+    for attachment in attachments or []:
+        value = attachment.get("Value") or {}
+        if not str(value.get("ObjectName", "")).startswith("SFWeaponAttachment_Magazine"):
+            continue
+        path, index = split_index(value["ObjectPath"])
+        try:
+            mag = loader.extract(path, index, {
+                "Properties.MagazineSize": int,
+                "Properties.MaxAmmo": int,
+                "Properties.AmmoBagAmmo": int,
+                "Properties.InWorldPickupAmmo": int,
+                "Properties.SmallDropAmmo": int,
+                "Properties.LargeDropAmmo": int,
+                "Properties.ReloadSpeedMofidier": float,  # sic
+            })
+        except KeyError as error:
+            log.warning("Magazine not found: %s", error)
+            return None
+        return {
+            "size": mag.get("Properties.MagazineSize"),
+            "max_ammo": mag.get("Properties.MaxAmmo"),
+            "ammo_bag": mag.get("Properties.AmmoBagAmmo"),
+            "pickup": mag.get("Properties.InWorldPickupAmmo"),
+            "small_drop": mag.get("Properties.SmallDropAmmo"),
+            "large_drop": mag.get("Properties.LargeDropAmmo"),
+            "reload_speed": mag.get("Properties.ReloadSpeedMofidier", 1.0),
+            "source": mag.get("_source"),
+        }
+    return None
+
+
 def extract_weapons(loader: Loader) -> dict[str, dict[str, Any]]:
     """Get perks for predator, fireteam, and last man standing"""
     weapons = []
@@ -144,7 +177,17 @@ def extract_weapons(loader: Loader) -> dict[str, dict[str, Any]]:
             "Properties.SecondaryAction.ObjectPath": str,
             "Properties.ADSWeaponAction.ObjectPath": str,
             "Properties.ParryStaminaMultiplier": float,  # Predator - Alpha Sickle
+            "Properties.Progression.DefaultAttachments": list,
         }, merge=resolve_merge(definition))
+
+        # DefaultAttachments is keyed by attach point; clones override only some points,
+        # so combine them with the base definition instead of replacing the whole list.
+        attachments = {
+            a.get("Key"): a
+            for a in (get_in(definition.data[index], "Properties.Progression.DefaultAttachments") or [])
+            + (weapon.get("Properties.Progression.DefaultAttachments") or [])
+        }
+        weapon["_magazine"] = extract_magazine(loader, list(attachments.values()))
 
         if weapon.get("Properties.SlotTag.TagName") == "Weapon.Slot.Gear":
             weapon["Properties.CategoryTag.TagName"] = "Weapon.Category.Gear"
@@ -211,6 +254,7 @@ def weapons_data(weapons: dict[str, Any]) -> dict[str, dict[str, Any]]:
             "description": weapon.get("Properties.Description.LocalizedString"),
             "category": weapon.get("Properties.CategoryTag.TagName"),
             "attacks": weapon.get("_attacks"),
+            "magazine": weapon.get("_magazine"),
             "source": weapon.get("_source"),
         }
         if faction == WEAPON_PREDATOR:

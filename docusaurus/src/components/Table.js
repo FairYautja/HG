@@ -53,6 +53,26 @@ export default function Table({
   sortable = true,
 }) {
   const [filters, setFilters] = useState(() => buildInitialFilters(columns));
+  // Columns marked `detail: true` are hidden until the reader switches details on
+  const hasDetails = columns.some((col) => col.detail);
+  const [showDetails, setShowDetails] = useState(false);
+  const visibleColumns = hasDetails && !showDetails
+    ? columns.filter((col) => !col.detail)
+    : columns;
+
+  function toggleDetails() {
+    if (showDetails) {
+      // Don't keep filtering by columns the reader can no longer see
+      setFilters((current) => {
+        const next = { ...current };
+        for (const col of columns) {
+          if (col.detail) next[col.key] = { ...next[col.key], value: null };
+        }
+        return next;
+      });
+    }
+    setShowDetails(!showDetails);
+  }
 
   columns.forEach((col) => {
     if (col.filterText) {
@@ -75,7 +95,7 @@ export default function Table({
       onFilter={filterable ? (e) => setFilters(e.filters) : undefined}
       filterDisplay={filterable ? "row" : undefined}
     >
-      {columns.map((column) => (
+      {visibleColumns.map((column) => (
         <Column
           key={column.key}
           field={column.key}
@@ -127,9 +147,25 @@ export default function Table({
     </DataTable>
   );
 
+  const content = hasDetails ? (
+    <>
+      <div style={{ marginBottom: "0.5rem" }}>
+        <button
+          type="button"
+          className={`button button--sm ${showDetails ? "button--primary" : "button--secondary"}`}
+          aria-pressed={showDetails}
+          onClick={toggleDetails}
+        >
+          {showDetails ? "Hide details" : "Show details"}
+        </button>
+      </div>
+      {table}
+    </>
+  ) : table;
+
   if (fullWidth) {
-    return <FullWidthWrapper>{table}</FullWidthWrapper>;
+    return <FullWidthWrapper>{content}</FullWidthWrapper>;
   }
 
-  return table;
+  return content;
 }

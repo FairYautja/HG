@@ -31,8 +31,7 @@ def damage_melee(loader: Loader, path: str, modes: dict[str, list[str]]) -> list
         entry = {
             "type": f"melee_{mode}",
             "damage": damage,
-            "damage_type": info["category"] if info else None,
-            "headshot": info["headshot"] if info else None,
+            **damage_fields(info),
             "range": rng,
         }
         # Capture AoE/stun from the last action step (e.g. Norse Hammer secondary)
@@ -47,14 +46,29 @@ def damage_melee(loader: Loader, path: str, modes: dict[str, list[str]]) -> list
     return result
 
 
-def damage_type(loader: Loader, damage_path: str) -> str|None:
-    """Resolve weapon damage type (category string only, for use as functools.partial)"""
-    info = damage_type_info(loader, damage_path)
-    return info["category"] if info else None
+def parse_zone_modifiers(zone_modifiers: list[dict] | None) -> dict[str, float]:
+    """Flatten damage type body part modifiers
+
+    "ZoneModifiers": [
+      {
+        "DamageZone": "EILLDamageZone::Head",
+        "DamageModifier": 1.5,
+        "bAllowDowned": true
+      }
+    ]
+    """
+    modifiers = {}
+    for modifier in zone_modifiers or []:
+        zone = modifier.get("DamageZone")
+        value = modifier.get("DamageModifier")
+        if not zone or value is None:
+            continue
+        modifiers[zone.split("::")[-1]] = value
+    return modifiers
 
 
 def damage_type_info(loader: Loader, damage_path: str) -> dict|None:
-    """Resolve weapon damage type and headshot multiplier.
+    """Resolve weapon damage type, its class name and body part (zone) modifiers.
 
     If the DamageType asset is not present in the export (common for Blueprint
     damage type classes), fall back to extracting the category from the class
@@ -65,38 +79,46 @@ def damage_type_info(loader: Loader, damage_path: str) -> dict|None:
 
     path, index = split_index(damage_path)
     index = 1  # It points to 0, but the damage is defined at index 1
+    class_name = path.split("/")[-1]  # e.g. 'Slashing_BattleAxe'
 
     try:
         definition = loader.get(path)
     except KeyError:
         # DamageType Blueprint not exported — derive category from the file name.
-        category = path.split("/")[-1]  # e.g. 'Slashing_BattleAxe'
-        log.debug("DamageType not in export, derived category '%s' from path: %s", category, path)
-        return {"category": category, "headshot": None}
+        log.debug("DamageType not in export, derived category '%s' from path: %s", class_name, path)
+        return {"category": class_name, "class": class_name, "headshot": None, "zones": {}}
 
     obj = definition.data[index]
+    zones = parse_zone_modifiers(get_in(obj, "Properties.ZoneModifiers"))
     damage = get_in(obj, "Properties.DamageCategory")
     if not damage:
         # Also fall back to file name if DamageCategory property is absent
-        category = path.split("/")[-1]
-        log.debug("No DamageCategory in %s, using file name '%s'", damage_path, category)
-        return {"category": category, "headshot": None}
+        log.debug("No DamageCategory in %s, using file name '%s'", damage_path, class_name)
+        damage = class_name
 
     pos = damage.rfind(" ::")
     if pos != -1:
         damage = damage[pos + 2:]
 
-    headshot = get_in(obj, "Properties.HeadshotDamageMultiplier")
+    return {"category": damage, "class": class_name, "headshot": zones.get("Head"), "zones": zones}
 
-    return {"category": damage, "headshot": headshot}
+
+def damage_fields(info: dict|None) -> dict[str, Any]:
+    """Damage type fields shared by all attack entries"""
+    info = info or {}
+    return {
+        "damage_type": info.get("category"),
+        "damage_class": info.get("class"),
+        "headshot": info.get("headshot"),
+        "zones": info.get("zones") or None,
+    }
 
 
 def damage_combi_throw(loader: Loader, path: str, damage_curve_path: str, damage_type_key: str) -> dict[str, Any]:
     obj_path, obj_index = split_index(path)
     damage = loader.extract(obj_path, obj_index, {
-        damage_type_key: partial(damage_type, loader),
-    })
-    log.error(damage)
+        damage_type_key: partial(damage_type_info, loader),
+    }, inheritance_key="Template.ObjectPath")
     obj_path, obj_index = split_index(damage_curve_path)
     damage_curve = loader.extract(obj_path, obj_index, {
         "Properties.FloatCurve.Keys": list,
@@ -109,7 +131,7 @@ def damage_combi_throw(loader: Loader, path: str, damage_curve_path: str, damage
     return {
         "type": "throw",
         "damage": damage_value,
-        "damage_type": damage.get(damage_type_key),
+        **damage_fields(damage.get(damage_type_key)),
     }
 
 
@@ -126,8 +148,7 @@ def damage_disc_throw(loader: Loader, path: str) -> dict[str, Any]:
         "type": "throw",
         "damage": damage.get("Properties.DamageOnHitInner"),
         "damage_back": damage.get("Properties.DamageOnHitOuter"),
-        "damage_type": info.get("category"),
-        "headshot": info.get("headshot"),
+        **damage_fields(info),
         "health": damage.get("Properties.Health"),
     }
 
@@ -144,8 +165,7 @@ def damage_plasma(loader: Loader, path: str) -> dict[str, Any]:
     info = damage.get("Properties.DamageTypeClass.ObjectPath") or {}
     return {
         "type": "fire",
-        "damage_type": info.get("category"),
-        "headshot": info.get("headshot"),
+        **damage_fields(info),
         "damage": damage.get("Properties.DirectHitDamage"),
         "splash_damage_max": damage.get("Properties.SplashBaseDamage"),
         "splash_damage_min": damage.get("Properties.SplashMinimiumDamage"),
@@ -166,8 +186,7 @@ def damage_bow(loader: Loader, projectile_path: str, damage_path: str) -> dict[s
     info = projectile.get("Properties.HitDamageType.ObjectPath") or {}
     return {
         "type": "fire",
-        "damage_type": info.get("category"),
-        "headshot": info.get("headshot"),
+        **damage_fields(info),
         "damage": [round(v["Value"]) for v in curve],
         "damage_time": [float(v["Time"]) for v in curve],
     }
@@ -190,8 +209,7 @@ def damage_dart(loader: Loader, damage_type_path: str, projectile_path: str, dam
 
     return {
         "type": "fire",
-        "damage_type": info["category"] if info else None,
-        "headshot": info["headshot"] if info else None,
+        **damage_fields(info),
         "damage": damage,
         "damage_fire": projectile.get("Properties.DamagePerSecond"),
         "fire_time": projectile.get("Properties.EffectLifetime"),
@@ -200,7 +218,7 @@ def damage_dart(loader: Loader, damage_type_path: str, projectile_path: str, dam
 def damage_rifle(loader: Loader, path: str) -> dict[str, Any]:
     obj_path, obj_index = split_index(path)
     fire = loader.extract(obj_path, obj_index, {
-        "Properties.DamageType.ObjectPath": partial(damage_type, loader),
+        "Properties.DamageType.ObjectPath": partial(damage_type_info, loader),
         "Properties.RateOfFire": int,
         "Properties.MaxRange": int,
         "Properties.SpreadCurve.ObjectPath": str,
@@ -217,7 +235,7 @@ def damage_rifle(loader: Loader, path: str) -> dict[str, Any]:
     curve = damage.get("Properties.FloatCurve.Keys")
     return {
         "type": "projectile",
-        "damage_type": fire.get("Properties.DamageType.ObjectPath"),
+        **damage_fields(fire.get("Properties.DamageType.ObjectPath")),
         "damage": [float(v["Value"]) for v in curve],
         "distance": [float(v["Time"]) for v in curve],
         "fire_rate": fire.get("Properties.RateOfFire"),
@@ -259,20 +277,25 @@ def damage_grenade_launcher(loader: Loader, path: str, projectile_path: str) -> 
     """Fireteam Grenade Launchers"""
     obj_path, obj_index = split_index(path)
     damage = loader.extract(obj_path, obj_index, {
-        "Properties.DamageType.ObjectPath": partial(damage_type, loader),
+        "Properties.DamageType.ObjectPath": partial(damage_type_info, loader),
         "Properties.RateOfFire": int,
     })
     obj_path, obj_index = split_index(projectile_path)
     projectile = loader.extract(obj_path, obj_index, {
+        "Properties.DamageTypeClass.ObjectPath": partial(damage_type_info, loader),
         "Properties.DirectHitDamage": float,
         "Properties.SplashBaseDamage": float,
         "Properties.SplashMinimiumDamage": float,
         "Properties.SplashDamageInnerRadius": float,
         "Properties.SplashDamageOuterRadius": float,
-    })
+    }, inheritance_key="Template.ObjectPath")
+    # The fire action's DamageType is a generic placeholder (Explosive), the projectile
+    # defines the real one (FT_LauncherExplosive, FT_RocketExplosive).
+    damage_info = projectile.get("Properties.DamageTypeClass.ObjectPath") or \
+        damage.get("Properties.DamageType.ObjectPath")
     return {
         "type": "grenade",
-        "damage_type": damage.get("Properties.DamageType.ObjectPath"),
+        **damage_fields(damage_info),
         "fire_rate": damage.get("Properties.RateOfFire"),
         "direct_hit_damage": projectile.get("Properties.DirectHitDamage"),
         "splash_damage_max": projectile.get("Properties.SplashBaseDamage"),
@@ -285,7 +308,7 @@ def damage_grenade(loader: Loader, path: str) -> dict[str, any]:
     """Fireteam Frag Grenade"""
     obj_path, obj_index = split_index(path)
     damage = loader.extract(obj_path, obj_index, {
-        "Properties.DamageTypeClass.ObjectPath": partial(damage_type, loader),
+        "Properties.DamageTypeClass.ObjectPath": partial(damage_type_info, loader),
         "Properties.RateOfFire": int,
         "Properties.DirectHitDamage": float,
         "Properties.SplashBaseDamage": float,
@@ -295,7 +318,7 @@ def damage_grenade(loader: Loader, path: str) -> dict[str, any]:
     })
     data = {
         "type": "grenade",
-        "damage_type": damage.get("Properties.DamageTypeClass.ObjectPath"),
+        **damage_fields(damage.get("Properties.DamageTypeClass.ObjectPath")),
         "fire_rate": damage.get("Properties.RateOfFire"),
         "direct_hit_damage": damage.get("Properties.DirectHitDamage"),
         "splash_damage_max": damage.get("Properties.SplashBaseDamage"),
@@ -346,9 +369,9 @@ DAMAGE_EXTRACTORS = {
         {"single": ["01"], "combo": ["01", "02", "03"]},
     ), (
         damage_combi_throw,
-        "Content/DLC_Release/FU_19/Weapon/Trident/Pred_CombistickTrident_Throw.0",
+        "Content/DLC_Release/FU_19/Weapon/Trident/Proj_CombiStick_Trident.1",
         "Content/DLC_Release/FU_19/Weapon/Trident/TridentDamageCurve.0",
-        "Properties.DamageType.ObjectPath",
+        "Properties.HitDamageType.ObjectPath",
     )),
     "WD_Predator_WarClub_Base": ((
         damage_melee,
@@ -464,19 +487,19 @@ DAMAGE_EXTRACTORS = {
         damage_rifle,
         "Content/DLC_Release/DLC_01/Weapon/Definitions/Fireteam/HammerHead/Hammerhead_Fire.0",
     ), (
-        # Underbarrel M203 grenade launcher — inherits damage from D34-D projectile
+        # Underbarrel M203 grenade launcher — projectile inherits damage from D34-D grenade
         damage_grenade_launcher,
         "Content/DLC_Release/DLC_01/Weapon/Definitions/Fireteam/HammerHead/Hammerhead_Fire_ImpactGrenade.0",
-        "Content/Weapon/Fireteam/SpecialHeavy/D34-D/Grenade_D34-D.8",
+        "Content/DLC_Release/DLC_01/Weapon/Fireteam/SpecialHeavy/Grenade_M203-Impact.1",
     )),
     "WD_Rifle_MERC_Base": ((
         damage_rifle,
         "Content/DLC_Release/DLC_04/Weapon/Definitions/Fireteam/MERC/MERC_Fire.0",
     ), (
-        # Underbarrel M203 grenade launcher — inherits damage from D34-D projectile
+        # Underbarrel M203 grenade launcher — projectile inherits damage from D34-D grenade
         damage_grenade_launcher,
         "Content/DLC_Release/DLC_04/Weapon/Definitions/Fireteam/MERC/MERC_Fire_ImpactGrenade.0",
-        "Content/Weapon/Fireteam/SpecialHeavy/D34-D/Grenade_D34-D.8",
+        "Content/DLC_Release/DLC_01/Weapon/Fireteam/SpecialHeavy/Grenade_M203-Impact.1",
     )),
     "WD_PlasmaAR_Base": ((
         damage_rifle,

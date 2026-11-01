@@ -9,6 +9,8 @@ import Icon from '@site/src/components/Icon'
 import Relative from '@site/src/components/Relative'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
+import { fmtDamageTypeName, commonValue, damageTypeRows, fmtCommonValue } from '@site/src/components/DamageTypes'
+import Seconds, { ratio } from '@site/src/components/Seconds'
 import data from '/static/data.json'
 
 
@@ -20,8 +22,19 @@ List of all available Fireteam classes and their key attributes.
 ## Stats
 
 export const modify_stamina_recovery = {
-  CD_Fireteam_Support_Female: { value: 2, source: "SkooLBoY_SkePtiK" },
+  CD_Fireteam_Support: { value: 2, source: "SkooLBoY_SkePtiK" },
 }
+
+export const fireteam = data.characters.fireteam.map((c) => {
+    const override = modify_stamina_recovery[c.id];
+    const recovery = override?.value ?? c.stamina_recovery;
+    return {
+        ...c,
+        stamina_recovery_used: recovery,
+        stamina_recovery_source: override ? `${override.source} (tested in game)` : c.id,
+        stamina_refill: ratio(c.stamina, recovery),
+    };
+});
 
 <Table columns={[
     { name: 'Name', key: "name", format: Icon('name') },
@@ -40,11 +53,12 @@ export const modify_stamina_recovery = {
         format: Relative("stamina", data.characters.fireteam),
     },
     {
-        name: 'Stamina recovery',
-        key: 'stamina_recovery',
+        name: 'Stamina refill',
+        key: 'stamina_refill',
         align: "right",
         numeric: true,
-        format: Relative("stamina_recovery", data.characters.fireteam, modify_stamina_recovery),
+        format: Seconds('stamina_refill', fireteam, (row) =>
+            `${row.stamina} stamina ÷ ${row.stamina_recovery_used} recovery per second · ${row.stamina_recovery_source}`),
     },
     {
         name: 'Speed',
@@ -54,9 +68,152 @@ export const modify_stamina_recovery = {
         format: Percent('speed_modifier'),
         filterValue: (v) => Math.round((v - 1) * 100),
     },
+    {
+        name: 'Stamina exhaustion duration',
+        key: 'exhaustion_duration',
+        align: "right",
+        numeric: true,
+        format: Relative("exhaustion_duration", data.characters.fireteam.filter((c) => c.exhaustion_duration != null)),
+    },
+    {
+        name: 'Melee',
+        key: 'melee_modifier',
+        align: "right",
+        numeric: true,
+        format: Percent('melee_modifier'),
+        filterValue: (v) => Math.round((v - 1) * 100),
+    },
+    {
+        name: 'Interaction speed',
+        key: 'interaction_speed',
+        align: "right",
+        numeric: true,
+        format: Percent('interaction_speed'),
+        filterValue: (v) => Math.round((v - 1) * 100),
+    },
+    {
+        name: 'Downs',
+        key: 'downed_limit',
+        align: "right",
+        numeric: true,
+        format: (row) => row.downed_limit != null
+            ? <span title={`${row.id}: DownedLimit ${row.downed_limit}`}>{row.downed_limit}</span>
+            : <span title="not set in the class definition, the game default applies">—</span>,
+    },
     { name: 'Perks', key: "max_perk", align: "right", numeric: true },
     { name: 'Gear', key: "max_gear", align: "right", numeric: true },
-]} data={data.characters.fireteam} fullWidth filterable />
+]} data={fireteam} fullWidth filterable />
+
+*Downs* is the class's downed limit. Classes showing `—` don't set it in their definition and use
+the game's default, which isn't part of the exported files.
+
+
+## Class Attributes
+
+Every Fireteam class has passive bonuses that are always active. Multipliers are shown as a
+percentage change of the affected value. Green means the change helps the player, e.g.
+*Sprint damage resist* `-20%` means 20% less damage taken while sprinting.
+
+export const attributeRows = data.characters.fireteam.flatMap((c) =>
+    (c.class_attributes || []).map((a) => ({ ...a, id: `${c.id}:${a.id}`, class_name: c.name, class_icon: c.icon, attribute: a.name }))
+);
+
+export const ATTRIBUTE_LOWER_IS_BETTER = new Set([
+    // Lower value benefits the player (damage taken, spread, time to get muddy, body
+    // temperature). Attributes in neither set are left uncolored.
+    'FT_ClassAttribute_HipFireAccuracy',
+    'FT_ClassAttribute_MuddyDuration',
+    'FT_ClassAttribute_SprintingDamageReduction',
+    'FT_ClassAttribute_ProximityResitance',
+    'FT_ClassAttribute_ExplosionResistance',
+    'FT_ClassAttribute_PredResistence',
+    'FT_ClassAttribute_MuddyDamageResistance',
+    'FT_ClassAttribute_ReducedThermalTemp',
+    'FT_ClassAttribute_IncreasedThermalTemp_TESTING',
+]);
+export const ATTRIBUTE_HIGHER_IS_BETTER = new Set([
+    'FT_ClassAttribute_LongerSpots',
+    'FT_ClassAttribute_PostSprintDamageBoost',
+    'FT_ClassAttribute_BulletWeaponDamage',
+    'FT_ClassAttribute_TeamAmmo',
+    'FT_ClassAttribute_ExtraAmmo',
+    'FT_ClassAttribute_LongShot',
+    'FT_ClassAttribute_HipFireDamage',
+    'FT_ClassAttribute_SecondaryWeaponDamage',
+]);
+export const ATTRIBUTE_UNITS = {
+    'FT_ClassAttribute_ReducedThermalTemp': ' °C',
+    'FT_ClassAttribute_IncreasedThermalTemp_TESTING': ' °C',
+};
+
+export function fmtAttribute(row) {
+    const v = row.modifier;
+    const attributeId = row.id.split(':')[1];
+    const title = `${row.source}: ${v} (${row.usage})`;
+    if (typeof v !== 'number') return <span title={title}>{String(v)}</span>;
+    const isAdd = row.usage === 'IntAdd' || row.usage === 'FloatAdd';
+    const neutral = isAdd ? 0 : 1;
+    const style = { fontWeight: 'bold' };
+    if (v !== neutral && ATTRIBUTE_LOWER_IS_BETTER.has(attributeId)) {
+        style.color = v < neutral ? '#218409' : '#f0001f';
+    } else if (v !== neutral && ATTRIBUTE_HIGHER_IS_BETTER.has(attributeId)) {
+        style.color = v > neutral ? '#218409' : '#f0001f';
+    }
+    if (isAdd) {
+        return <span style={style} title={title}>{v > 0 ? '+' : ''}{v}{ATTRIBUTE_UNITS[attributeId] ?? ''}</span>;
+    }
+    const pct = Math.round((v - 1) * 100);
+    return <span style={style} title={title}>{pct > 0 ? '+' : ''}{pct}%</span>;
+}
+
+<Table columns={[
+    { name: 'Class', key: 'class_name', format: (row) => Icon('name')({ ...row, name: row.class_name, icon: row.class_icon }) },
+    { name: 'Attribute', key: 'attribute' },
+    { name: 'Modifier', key: 'modifier', align: 'right', numeric: true, format: fmtAttribute },
+    { name: 'Description', key: 'description' },
+]} data={attributeRows} fullWidth filterable />
+
+
+## Common Stats
+
+These values are the same for every Fireteam class. *Armor* is a multiplier applied to incoming
+damage of the given damage type, *Self armor* applies to damage from your own explosives.
+
+export const ft = data.characters.fireteam;
+export const downedHealth = commonValue(ft, 'downed_health');
+export const downedBleed = commonValue(ft, 'downed_bleed');
+export const commonRows = [
+    ...(downedHealth != null ? [{ id: 'downed_health', source: 'downed_health', category: '❤️ Downed', name: 'Downed health', value: downedHealth, unit: ' HP', used_by: '' }] : []),
+    ...(downedBleed != null ? [{ id: 'downed_bleed', source: 'downed_bleed', category: '❤️ Downed', name: 'Downed bleed', value: downedBleed, unit: ' HP/s', used_by: '' }] : []),
+    ...(downedHealth != null && downedBleed ? [{ id: 'bleed_out', source: `${downedHealth} HP ÷ ${downedBleed} HP/s`, category: '❤️ Downed', name: 'Bleed-out time', value: ratio(downedHealth, downedBleed), unit: ' s', used_by: '' }] : []),
+    ...damageTypeRows(commonValue(ft, 'self_armor'), '💣 Self armor'),
+    ...damageTypeRows(commonValue(ft, 'armor'), '🛡️ Armor'),
+];
+
+<Table columns={[
+    { name: 'Category', key: 'category' },
+    { name: 'Name', key: 'name', format: fmtDamageTypeName },
+    { name: 'Value', key: 'value', align: 'right', format: fmtCommonValue },
+    { name: 'Used by', key: 'used_by' },
+]} data={commonRows} fullWidth filterable />
+
+
+## Body Parts
+
+Fireteam classes have no body part modifiers: a hit deals the same damage to the head, body, arms
+and legs. Only the attacking weapon can add a headshot bonus, see below.
+
+### Headshots
+
+:::note
+Weapons can add their own headshot bonus on top of the body part modifiers above. See the
+*Headshot* column in [Fireteam weapons](../fireteam/weapons.mdx#stats) and
+[Predator weapons](../predator/weapons.mdx#stats).
+
+Predator weapons with both a melee attack and a throw (e.g. Combistick, Trident, Smart Disc) can
+have a different headshot bonus for each. Those show two values as *melee / throw*, so `+5% / +20%`
+means +5% for melee hits and +20% for the thrown weapon. `—` marks the attack without a bonus.
+:::
 
 
 ## Last Man Standing
@@ -75,7 +232,7 @@ applied to incoming damage for the Fireteam member. That is why the percentage v
         <div class="col col--6">
 
 export const modify = {
-    PK_FT_LMS_BodyHeat: { callback: (value) => `+${value} °C/+${(value*9/5)+32} °F`, bad: true },
+    PK_FT_LMS_BodyHeat: { callback: (value) => `+${value} °C/+${Math.round(value*9/5)} °F`, bad: true },
     PK_FT_LMS_StaminaUsage: { good_negative: true },
     PK_FT_LMS_DamageResistance: { good_negative: true },
 

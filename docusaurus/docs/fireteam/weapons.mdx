@@ -9,6 +9,7 @@ import DamageCurveChart from '@site/src/components/DamageCurveChart'
 import SplashRadiusChart from '@site/src/components/SplashRadiusChart'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
+import { fmtHeadshot } from '@site/src/components/BodyParts'
 import data from '/static/data.json'
 
 # Fireteam Weapons and Gear
@@ -31,6 +32,9 @@ export function flattenWeapon(w) {
     const melee   = attacks.find(a => Array.isArray(a)) ?? null;
     const meleeSingle = melee ? melee.find(a => a.type === 'melee_single') : null;
     const meleeHeavy  = melee ? melee.find(a => a.type === 'melee_single' && a !== meleeSingle) : null;
+
+    // Headshot multiplier of the damage type; ±0% when the damage type has no head bonus
+    const headshot = (a) => a?.damage_class ? (a.headshot ?? 1) : null;
 
     const dmgClose = Array.isArray(attack?.damage) ? attack.damage[0] : (attack?.damage ?? null);
     const fireRate = attack?.fire_rate ?? null;
@@ -63,10 +67,14 @@ export function flattenWeapon(w) {
         _acigDuration: acig?.duration ?? null,
         _meleeDmg:   meleeSingle?.damage?.[0] ?? null,
         _meleeHeavy: meleeHeavy?.damage?.[0] ?? null,
+        _headshot:   headshot(attack) ?? headshot(meleeSingle),
+        _magSize:    w.magazine?.size ?? null,
+        _magazine:   w.magazine ?? null,
+        _meleeRange: meleeSingle?.range?.[0] != null ? +(meleeSingle.range[0] / 100).toFixed(2) : null,
     };
 }
 
-export const flatFT = data.weapons.fireteam.map(flattenWeapon);
+export const flatFT = data.weapons.fireteam.map(flattenWeapon).map((w) => ({ ...w, _magDamage: magDamage(w) }));
 
 export function fmtDamage(row) {
     const v = row._damage;
@@ -166,12 +174,64 @@ export function fmtAcig(row) {
     );
 }
 
+export function fmtAmmo(row) {
+    const mag = row._magazine;
+    if (mag?.size == null) return null;
+    const tooltip = [
+        `magazine: ${mag.size}`,
+        mag.max_ammo != null ? `max ammo: ${mag.max_ammo}` : null,
+        mag.ammo_bag ? `Ammo Bag refill: +${mag.ammo_bag}` : null,
+        mag.pickup ? `ammo pickup: +${mag.pickup}` : null,
+        mag.small_drop || mag.large_drop ? `ammo drops: +${mag.small_drop ?? 0} / +${mag.large_drop ?? 0}` : null,
+        mag.reload_speed != null && mag.reload_speed !== 1 ? `reload speed: x${mag.reload_speed}` : null,
+    ].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            <strong>{mag.size}</strong>
+            {mag.max_ammo != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> / {mag.max_ammo}</small>}
+        </span>
+    );
+}
+
+export const AMMO_COL = { name: 'Ammo', key: '_magSize', align: 'right', numeric: true, format: fmtAmmo };
+
+export function magDamage(row) {
+    // Close range damage of a full magazine (pellets included); null for launchers
+    const mag = row._magazine;
+    if (mag?.size == null || row._damage == null) return null;
+    return Math.round(row._damage * (row._pellets ?? 1) * mag.size);
+}
+
+export function fmtMagazine(row) {
+    const mag = row._magazine;
+    const total = row._magDamage;
+    if (total == null) return null;
+    const time = row._fireRate ? Math.round(mag.size / (row._fireRate / 60) * 10) / 10 : null;
+    const reserve = mag.max_ammo != null ? Math.round(total / mag.size * mag.max_ammo) : null;
+    const tooltip = [
+        `${mag.size} rounds × ${Math.round(row._damage)}${row._pellets ? ` × ${row._pellets} pellets` : ''} damage at close range`,
+        time != null ? `empties in ${time} s at ${row._fireRate} rpm` : null,
+        reserve != null ? `reserve ammo (${mag.max_ammo}): ${reserve.toLocaleString('en')} damage` : null,
+    ].filter(Boolean).join(' · ');
+    return (
+        <span title={tooltip}>
+            <strong>{total.toLocaleString('en')}</strong>
+            {time != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> in {time} s</small>}
+        </span>
+    );
+}
+
+export const MAG_COL = { name: 'Per magazine', key: '_magDamage', align: 'right', numeric: true, format: fmtMagazine };
+
 export const ASSAULT_COLS = [
     { name: 'Name',        key: 'name',            format: Icon('name') },
     { name: 'Damage',      key: '_damage',          align: 'right', numeric: true, format: fmtDamage },
     { name: 'DPS',         key: '_dps',             align: 'right', numeric: true, format: fmtDps },
     { name: 'Fire Rate',   key: '_fireRate',         align: 'right', numeric: true, format: fmtFireRate },
+    AMMO_COL,
+    MAG_COL,
     { name: 'Max. Range',       key: '_maxRange',         align: 'right', numeric: true, format: fmtRange },
+    { name: 'Headshot',    key: '_headshot',         align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
     { name: 'Underbarrel', key: '_hasUnderbarrel',   align: 'right', sortable: false, format: fmtUnderbarrel },
 ];
 
@@ -180,7 +240,10 @@ export const RIFLE_COLS = [
     { name: 'Damage',      key: '_damage',          align: 'right', numeric: true, format: fmtDamage },
     { name: 'DPS',         key: '_dps',             align: 'right', numeric: true, format: fmtDps },
     { name: 'Fire Rate',   key: '_fireRate',         align: 'right', numeric: true, format: fmtFireRate },
+    AMMO_COL,
+    MAG_COL,
     { name: 'Max. Range',       key: '_maxRange',         align: 'right', numeric: true, format: fmtRange },
+    { name: 'Headshot',    key: '_headshot',         align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
 ];
 
 export const SHOTGUN_COLS = [
@@ -189,7 +252,10 @@ export const SHOTGUN_COLS = [
     { name: 'Pellets',    key: '_pellets',  align: 'right', numeric: true },
     { name: 'DPS',        key: '_dps',      align: 'right', numeric: true, format: fmtDps },
     { name: 'Fire Rate',  key: '_fireRate', align: 'right', numeric: true, format: fmtFireRate },
+    AMMO_COL,
+    MAG_COL,
     { name: 'Max. Range',      key: '_maxRange', align: 'right', numeric: true, format: fmtRange },
+    { name: 'Headshot',    key: '_headshot',         align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
 ];
 
 export const allSplashWeapons = (() => {
@@ -241,6 +307,9 @@ export const allSplashWeapons = (() => {
     { name: 'Grenade',    key: '_directHit', align: 'right', numeric: true, sortable: false, format: fmtGrenade },
     { name: 'DPS',        key: '_dps',       align: 'right', numeric: true, format: fmtDps },
     { name: 'Fire Rate',  key: '_fireRate',  align: 'right', numeric: true, format: fmtFireRate },
+    AMMO_COL,
+    MAG_COL,
+    { name: 'Headshot',   key: '_headshot',  align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
 ]} data={flatFT.filter(w => w.category === 'Weapon.Category.Special')} fullWidth />
 
 
@@ -278,6 +347,9 @@ export const allSplashWeapons = (() => {
     { name: 'Damage',    key: '_damage',   align: 'right', numeric: true, format: fmtDamage },
     { name: 'DPS',       key: '_dps',      align: 'right', numeric: true, format: fmtDps },
     { name: 'Fire Rate', key: '_fireRate', align: 'right', numeric: true, format: fmtFireRate },
+    AMMO_COL,
+    MAG_COL,
+    { name: 'Headshot',  key: '_headshot', align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
 ]} data={flatFT.filter(w => w.category === 'Weapon.Category.SecondarySpecial')} fullWidth />
 
 ### Grenades
@@ -289,6 +361,8 @@ export const allSplashWeapons = (() => {
 <Table columns={[
     { name: 'Name',        key: 'name',        format: Icon('name') },
     { name: 'Light / Heavy', key: '_meleeDmg', align: 'right', numeric: true, format: fmtMelee },
+    { name: 'Headshot',    key: '_headshot',   align: 'right', numeric: true, format: fmtHeadshot('_headshot') },
+    { name: 'Range',       key: '_meleeRange', align: 'right', numeric: true, format: (row) => row._meleeRange != null ? <span>{row._meleeRange} <small>m</small></span> : null },
 ]} data={flatFT.filter(w => w.category === 'Weapon.Category.Melee')} fullWidth />
 
 

@@ -616,6 +616,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 4000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/Character/Data/Predator/Classes/Scout/CD_Predator_Scout_Male.0"
       },
       {
@@ -659,6 +666,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": null,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/Character/Data/Predator/Classes/Hunter/CD_Predator_Hunter_Male.0"
       },
       {
@@ -702,6 +716,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/Character/Data/Predator/Classes/Berserker/CD_Predator_Berserker_Female.0"
       },
       {
@@ -745,6 +766,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3500.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/Character/Data/Predator/Classes/JH87/CD_Predator_JH87.0"
       },
       {
@@ -788,6 +816,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3250.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_14/Character/Data/Predator/HeavyCat/CD_Predator_HeavyCat.0"
       },
       {
@@ -831,6 +866,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": null,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/DLC_01/Character/Data/Predator/CD_Predator_Alpha.0"
       },
       {
@@ -874,6 +916,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 4050.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_15/Data/Predator/Cyborg/CD_Predator_Cyborg.0"
       },
       {
@@ -917,6 +966,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_05/Character/Data/Predator/CD_Predator_Viking.0"
       },
       {
@@ -960,6 +1016,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 4000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_07/Character/Data/Predator/CD_Predator_Rio_01.0"
       },
       {
@@ -1003,6 +1066,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3950.0,
+        "cloak": {
+          "id": "Cloak_Velocity_Kappa",
+          "type": "Velocity",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/DLC_Release/FU_24/Data/Cloak/Cloak_Velocity_Kappa.0"
+        },
         "source": "Content/DLC_Release/FU_24/Data/CD_Predator_Kappa.0"
       },
       {
@@ -1046,6 +1116,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3700.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_16/Data/Predator/Celtic/CD_Predator_Celtic.0"
       },
       {
@@ -1089,6 +1166,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3100.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_16/Data/Predator/Scar/CD_Predator_Bloody.0"
       },
       {
@@ -1132,6 +1216,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3450.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_16/Data/Predator/Chopper/CD_Predator_Chopper.0"
       },
       {
@@ -1175,6 +1266,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3950.0,
+        "cloak": {
+          "id": "Cloak_Velocity_Scout",
+          "type": "Velocity",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Velocity_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_20/Data/Predator/Zeta/CD_Predator_Zeta.0"
       },
       {
@@ -1218,6 +1316,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3500.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_11/Character/Data/Predator/Helsinki/CD_Predator_Helsinki.0"
       },
       {
@@ -1261,6 +1366,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3250.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/DLC_02/Character/Data/Predator/CD_Predator_Samurai.0"
       },
       {
@@ -1304,6 +1416,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3750.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_01/Character/Data/Predator/Elder/CD_Predator_Elder.0"
       },
       {
@@ -1347,6 +1466,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3800.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_17/Data/Predator/Pirate/CD_Predator_Pirate.0"
       },
       {
@@ -1390,6 +1516,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3900.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_17/Data/Predator/Amazon/CD_Predator_Amazon.0"
       },
       {
@@ -1433,6 +1566,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3400.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Jotun",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/DLC_Release/FU_25/Data/Cloak/Cloak_Hybrid_Jotun.0"
+        },
         "source": "Content/DLC_Release/FU_25/Data/CD_Predator_Jotun.0"
       },
       {
@@ -1476,6 +1616,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3300.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Father",
+          "type": "Hybrid",
+          "initial_energy": 90.0,
+          "energy": 140.0,
+          "source": "/Game/DLC_Release/FU_26/Data/Cloak/Cloak_Hybrid_Father.0"
+        },
         "source": "Content/DLC_Release/FU_26/Data/CD_Predator_Father.0"
       },
       {
@@ -1519,6 +1666,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3850.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_21/Data/CD_Predator_Cid.0"
       },
       {
@@ -1562,6 +1716,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": null,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/DLC_03/Character/Data/Predator/CD_Predator_CityHunter_01.0"
       },
       {
@@ -1605,6 +1766,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3950.0,
+        "cloak": {
+          "id": "Cloak_Velocity_Feral",
+          "type": "Velocity",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/DLC_Release/FU_18/Data/Cloak/Cloak_Velocity_Feral.0"
+        },
         "source": "Content/DLC_Release/FU_18/Data/Predator/Feral/CD_Predator_Feral.0"
       },
       {
@@ -1648,6 +1816,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3500.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_12/Data/Predator/BigDog/CD_Predator_BigDog.0"
       },
       {
@@ -1691,6 +1866,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 4000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_12/Data/Predator/WildBird/CD_Predator_WildBird.0"
       },
       {
@@ -1734,6 +1916,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3500.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_12/Character/Predator/Crucified/CD_Predator_CP.0"
       },
       {
@@ -1777,6 +1966,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3000.0,
+        "cloak": {
+          "id": "Cloak_Hybrid_Scout",
+          "type": "Hybrid",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_22/Data/CD_Predator_Lambda.0"
       },
       {
@@ -1820,6 +2016,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3750.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_10/Character/Data/Predator/CD_Predator_Berlin.0"
       },
       {
@@ -1863,6 +2066,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3650.0,
+        "cloak": {
+          "id": "Cloak_Hybrid",
+          "type": "Hybrid",
+          "initial_energy": 100.0,
+          "energy": 165.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Hybrid.0"
+        },
         "source": "Content/DLC_Release/FU_13/Data/Predator/DogMeat/CD_Predator_DogMeat.0"
       },
       {
@@ -1906,6 +2116,13 @@
           "FT_SmallPlasma": 0.79
         },
         "beam_switch": 3200.0,
+        "cloak": {
+          "id": "Cloak_Velocity_Scout",
+          "type": "Velocity",
+          "initial_energy": 110.0,
+          "energy": 200.0,
+          "source": "/Game/Character/Data/Predator/Cloaks/Cloak_Velocity_Scout.0"
+        },
         "source": "Content/DLC_Release/FU_19/Data/Predator/Gamma/CD_Predator_Gamma.0"
       }
     ],
@@ -1950,6 +2167,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_LongerSpots",
+            "name": "Spot duration",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 1.5,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_LongerSpots.0"
+          },
+          {
+            "id": "FT_ClassAttribute_MuddyDuration",
+            "name": "Mud cover duration",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.8,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_MuddyDuration.0"
+          }
+        ],
+        "downed_limit": 2,
+        "interaction_speed": 1.04,
         "source": "Content/Character/Data/Fireteam/Classes/Recon/CD_Fireteam_Recon_Female.0"
       },
       {
@@ -1992,6 +2229,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_SprintingDamageReduction",
+            "name": "Sprint damage resist",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.8,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_SprintingDamageReduction.0"
+          },
+          {
+            "id": "FT_ClassAttribute_PostSprintDamageBoost",
+            "name": "Post sprint damage boost",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 1.2,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_PostSprintDamageBoost.0"
+          }
+        ],
+        "downed_limit": 2,
+        "interaction_speed": 1.08,
         "source": "Content/Character/Data/Fireteam/Classes/Scout/CD_Fireteam_Scout_Female.0"
       },
       {
@@ -2034,6 +2291,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_HipFireAccuracy",
+            "name": "Hipfire accuracy",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.75,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_HipFireAccuracy.0"
+          },
+          {
+            "id": "FT_ClassAttribute_BulletWeaponDamage",
+            "name": "Bullet weapon damage",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 1.1,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_BulletWeaponDamage.0"
+          }
+        ],
+        "downed_limit": null,
+        "interaction_speed": 1.0,
         "source": "Content/Character/Data/Fireteam/Classes/Assault/CD_Fireteam_Assault_Female.0"
       },
       {
@@ -2076,6 +2353,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_TeamAmmo",
+            "name": "Team ammo reserves",
+            "description": null,
+            "usage": "RoundedIntMulFloat",
+            "modifier": 1.2,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_TeamAmmo.0"
+          },
+          {
+            "id": "FT_ClassAttribute_ProximityResitance",
+            "name": "Team proximity damage resist",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.9,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_ProximityResitance.0"
+          }
+        ],
+        "downed_limit": 4,
+        "interaction_speed": 0.95,
         "source": "Content/Character/Data/Fireteam/Classes/Support/CD_Fireteam_Support_Male.0"
       },
       {
@@ -2118,6 +2415,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_HipFireAccuracy",
+            "name": "Hipfire accuracy",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.75,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_HipFireAccuracy.0"
+          },
+          {
+            "id": "FT_ClassAttribute_MuddyDuration",
+            "name": "Mud cover duration",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.8,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_MuddyDuration.0"
+          }
+        ],
+        "downed_limit": null,
+        "interaction_speed": 1.0,
         "source": "Content/DLC_Release/DLC_01/Character/Data/Fireteam/CD_Fireteam_Dutch2025.0"
       },
       {
@@ -2160,6 +2477,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_MuddyDuration",
+            "name": "Mud cover duration",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.8,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_MuddyDuration.0"
+          },
+          {
+            "id": "FT_ClassAttribute_LongShot",
+            "name": "Increased damage at range",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 1.15,
+            "source": "/Game/DLC_Release/FU_09/Character/Data/Fireteam/ClassSpecializations/FT_ClassAttribute_LongShot.0"
+          }
+        ],
+        "downed_limit": null,
+        "interaction_speed": 1.04,
         "source": "Content/DLC_Release/FU_09/Character/Data/Fireteam/CD_Fireteam_SmallFox.0"
       },
       {
@@ -2202,6 +2539,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_ExplosionResistance",
+            "name": "Explosive damage resistance",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.75,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_ExplosionResistance.0"
+          },
+          {
+            "id": "FT_ClassAttribute_SprintingDamageReduction",
+            "name": "Sprint damage resist",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.8,
+            "source": "/Game/DLC_Release/FU_05/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_SprintingDamageReduction.0"
+          }
+        ],
+        "downed_limit": null,
+        "interaction_speed": 1.02,
         "source": "Content/DLC_Release/FU_06/Character/Data/Fireteam/CD_Fireteam_MTL.0"
       },
       {
@@ -2244,6 +2601,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_ReducedThermalTemp",
+            "name": "Thermal Suit",
+            "description": "Reduced thermal body temperature",
+            "usage": "IntAdd",
+            "modifier": -70,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_ReducedThermalTemp.0"
+          },
+          {
+            "id": "FT_ClassAttribute_PredResistence",
+            "name": "Yautja Damage Resistance",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.9,
+            "source": "/Game/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_PredResistence.0"
+          }
+        ],
+        "downed_limit": 2,
+        "interaction_speed": 1.05,
         "source": "Content/DLC_Release/FU_06/Character/Data/Fireteam/CD_Fireteam_OWLF.0"
       },
       {
@@ -2286,6 +2663,26 @@
           "FT_LauncherExplosive": 0.5,
           "FT_RocketExplosive": 0.75
         },
+        "class_attributes": [
+          {
+            "id": "FT_ClassAttribute_HipFireDamage",
+            "name": "Hipfire damage",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 1.1,
+            "source": "/Game/DLC_Release/DLC_04/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_HipFireDamage.0"
+          },
+          {
+            "id": "FT_ClassAttribute_MuddyDamageResistance",
+            "name": "Mud damge resist",
+            "description": null,
+            "usage": "FloatMul",
+            "modifier": 0.9,
+            "source": "/Game/DLC_Release/DLC_04/Character/Data/Fireteam/SpecialAttributes/FT_ClassAttribute_MuddyDamageResistance.0"
+          }
+        ],
+        "downed_limit": null,
+        "interaction_speed": 1.0,
         "source": "Content/DLC_Release/DLC_04/Character/Data/Fireteam/CD_Fireteam_Dutch87.0"
       }
     ],
@@ -2703,7 +3100,11 @@
                 75.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0
               ]
@@ -2716,7 +3117,11 @@
                 100.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0,
                 300.0,
@@ -2725,6 +3130,7 @@
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/DLC_01/Weapon/Definitions/Predator/Sickle/WD_Predator_Sickle.0"
       },
       {
@@ -2741,7 +3147,9 @@
                 35.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
@@ -2753,7 +3161,9 @@
                 55.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0,
                 300.0
@@ -2767,13 +3177,16 @@
                 60.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
+              "damage_class": "Slashing_BattleAxe",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/FU_05/Weapon/Predator/BattleAxe/WD_Predator_BattleAxe.0"
       },
       {
@@ -2790,7 +3203,9 @@
                 35.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
@@ -2803,7 +3218,9 @@
                 70.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0,
                 300.0,
@@ -2820,7 +3237,9 @@
                 70.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ],
@@ -2829,6 +3248,7 @@
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/FU_07/Weapon/Definitions/Predator/RioWeapon/WD_Predator_RioWeapon.0"
       },
       {
@@ -2841,7 +3261,9 @@
           {
             "type": "fire",
             "damage_type": "ESFDamageTypeCategory::Energy",
+            "damage_class": "SmallPlasma",
             "headshot": null,
+            "zones": null,
             "damage": 100,
             "splash_damage_max": 10,
             "splash_damage_min": 5,
@@ -2849,6 +3271,16 @@
             "splash_radius_outer": 150
           }
         ],
+        "magazine": {
+          "size": 4,
+          "max_ammo": 120,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_20/Weapon/HandHeldPlasmaCaster_Zeta/Mag_HandheldPlasmaCaster_Zeta.0"
+        },
         "source": "Content/DLC_Release/FU_20/Weapon/HandHeldPlasmaCaster_Zeta/WD_Predator_HandheldPlasmaCaster_Zeta.0"
       },
       {
@@ -2865,7 +3297,9 @@
                 35.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
@@ -2878,7 +3312,9 @@
                 125.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0,
                 300.0,
@@ -2893,13 +3329,16 @@
                 125.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 325.0
               ]
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/FU_11/Weapon/Definitions/HelsinkiWeapon/WD_Predator_HelsinkiWeapon.0"
       },
       {
@@ -2916,7 +3355,9 @@
                 25.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
+              "damage_class": "Slashing_Katana",
               "headshot": null,
+              "zones": null,
               "range": [
                 320.0
               ]
@@ -2930,7 +3371,9 @@
                 25.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
+              "damage_class": "Slashing_Katana",
               "headshot": null,
+              "zones": null,
               "range": [
                 320.0,
                 300.0,
@@ -2946,13 +3389,16 @@
                 35.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
+              "damage_class": "Slashing_Katana",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/DLC_02/Weapon/Definitions/Predator/Katana/WD_Predator_Katana.0"
       },
       {
@@ -2969,7 +3415,11 @@
                 30.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0
               ]
@@ -2981,7 +3431,11 @@
                 40.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0,
                 300.0
@@ -2995,13 +3449,18 @@
                 50.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0
               ]
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/DLC_Release/FU_21/Weapon/Sword_Cid/WD_Predator_Sword_Cid.0"
       },
       {
@@ -3014,12 +3473,26 @@
           {
             "type": "fire",
             "damage_type": "ESFDamageTypeCategory::Energy",
-            "headshot": null,
+            "damage_class": "WristDart",
+            "headshot": 1.1,
+            "zones": {
+              "Head": 1.1
+            },
             "damage": 25.0,
             "damage_fire": 5,
             "fire_time": 5
           }
         ],
+        "magazine": {
+          "size": 8,
+          "max_ammo": 8,
+          "ammo_bag": 0,
+          "pickup": 0,
+          "small_drop": 0,
+          "large_drop": 0,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/DLC_03/Weapon/Definitions/Predator/WristDart/Mag_WristDart_Default.0"
+        },
         "source": "Content/DLC_Release/DLC_03/Weapon/Definitions/Predator/WD_Predator_WristDart_CityHunter.0"
       },
       {
@@ -3029,6 +3502,7 @@
         "description": "An expandable shield that is worn on the left arm. Upon expanding, soaks up any incoming damage to avoid heavy barrages of gunfire or other attacks. If the shield absorbs too much damage, it can overload your energy.",
         "category": "Weapon.Category.Special",
         "attacks": {},
+        "magazine": null,
         "source": "Content/DLC_Release/FU_18/Data/Predator/Feral/WD_Predator_EnergyShield.0"
       },
       {
@@ -3043,10 +3517,22 @@
             "damage": 120,
             "damage_back": 80,
             "damage_type": "ESFDamageTypeCategory::Blade",
+            "damage_class": "SmartDisc",
             "headshot": null,
+            "zones": null,
             "health": 1000
           }
         ],
+        "magazine": {
+          "size": 3,
+          "max_ammo": 3,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Definitions/Predator/Tuscon/Mag_Tuscon.0"
+        },
         "source": "Content/DLC_Release/FU_18/Weapon/Predator/BoltGun/WD_Predator_HandheldTuscon_A.0"
       },
       {
@@ -3063,7 +3549,11 @@
                 25.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "CombiStickMelee",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 350.0
               ]
@@ -3076,7 +3566,11 @@
                 25.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "CombiStickMelee",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 350.0,
                 350.0,
@@ -3087,9 +3581,24 @@
           {
             "type": "throw",
             "damage": 64.0,
-            "damage_type": "ESFDamageTypeCategory::Bullet"
+            "damage_type": "ESFDamageTypeCategory::Blade",
+            "damage_class": "CombiStick",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            }
           }
         ],
+        "magazine": {
+          "size": 1,
+          "max_ammo": 3,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_19/Weapon/Trident/Mag_Trident.0"
+        },
         "source": "Content/DLC_Release/FU_19/Weapon/Trident/WD_Predator_CombiStick_Trident.0"
       },
       {
@@ -3102,7 +3611,9 @@
           {
             "type": "fire",
             "damage_type": "ESFDamageTypeCategory::Energy",
+            "damage_class": "Plasma",
             "headshot": null,
+            "zones": null,
             "damage": 140,
             "splash_damage_max": 100,
             "splash_damage_min": 15,
@@ -3110,6 +3621,7 @@
             "splash_radius_outer": 750
           }
         ],
+        "magazine": null,
         "source": "Content/Weapon/Definitions/Predator/PlasmaCaster/WD_Predator_PlasmaCaster.0"
       },
       {
@@ -3126,7 +3638,9 @@
                 35.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0
               ]
@@ -3139,7 +3653,9 @@
                 125.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blunt",
+              "damage_class": "Bludgeon",
               "headshot": null,
+              "zones": null,
               "range": [
                 300.0,
                 300.0,
@@ -3148,6 +3664,7 @@
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/Weapon/Definitions/Predator/WarClub/WD_Predator_WarClub.0"
       },
       {
@@ -3164,7 +3681,11 @@
                 20.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "CombiStickMelee",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 350.0
               ]
@@ -3177,7 +3698,11 @@
                 27.5
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "CombiStickMelee",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 350.0,
                 350.0,
@@ -3188,9 +3713,24 @@
           {
             "type": "throw",
             "damage": 115.0,
-            "damage_type": "ESFDamageTypeCategory::Blade"
+            "damage_type": "ESFDamageTypeCategory::Blade",
+            "damage_class": "CombiStick",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            }
           }
         ],
+        "magazine": {
+          "size": 1,
+          "max_ammo": 1,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Definitions/Predator/CombiStick/Mag_CombiStick.0"
+        },
         "source": "Content/Weapon/Definitions/Predator/CombiStick/WD_Predator_CombiStick_Hunter.0"
       },
       {
@@ -3203,7 +3743,9 @@
           {
             "type": "fire",
             "damage_type": "ESFDamageTypeCategory::Energy",
+            "damage_class": "SmallPlasma",
             "headshot": null,
+            "zones": null,
             "damage": 40,
             "splash_damage_max": 20,
             "splash_damage_min": 3,
@@ -3211,6 +3753,16 @@
             "splash_radius_outer": 250
           }
         ],
+        "magazine": {
+          "size": 6,
+          "max_ammo": 120,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_HandheldPlasmaCaster_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Predator/Handheld_PlasmaCaster/WD_Predator_HandheldPlasmaCaster.0"
       },
       {
@@ -3220,6 +3772,16 @@
         "description": "Shoots a large net projectile at a limited range. Upon trapping or pinning a victim, this net will begin to constrict, dealing damage while they are vulnerable. This weapon contains limited uses",
         "category": "Weapon.Category.Special",
         "attacks": {},
+        "magazine": {
+          "size": 15,
+          "max_ammo": 15,
+          "ammo_bag": 0,
+          "pickup": 0,
+          "small_drop": 0,
+          "large_drop": 0,
+          "reload_speed": 0.75,
+          "source": "/Game/Weapon/Definitions/Predator/NetGun/NetGun_Ammo.0"
+        },
         "source": "Content/Weapon/Definitions/Predator/NetGun/WD_Predator_NetGun.0"
       },
       {
@@ -3236,7 +3798,11 @@
                 60.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing_WristBlades",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 200.0
               ]
@@ -3249,7 +3815,11 @@
                 60.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing_WristBlades",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 200.0,
                 200.0,
@@ -3258,6 +3828,7 @@
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/Weapon/Definitions/Predator/WristBlades/WD_Predator_WristBlades.0"
       },
       {
@@ -3270,7 +3841,11 @@
           {
             "type": "fire",
             "damage_type": "ESFDamageTypeCategory::Blunt",
-            "headshot": null,
+            "damage_class": "Arrow",
+            "headshot": 1.6,
+            "zones": {
+              "Head": 1.6
+            },
             "damage": [
               40,
               60,
@@ -3283,6 +3858,16 @@
             ]
           }
         ],
+        "magazine": {
+          "size": 20,
+          "max_ammo": 20,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Definitions/Predator/Bow/Mag_Bow.0"
+        },
         "source": "Content/Weapon/Definitions/Predator/Bow/WD_Predator_Bow.0"
       },
       {
@@ -3299,7 +3884,11 @@
                 50.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 200.0
               ]
@@ -3312,7 +3901,11 @@
                 80.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 200.0,
                 200.0,
@@ -3325,10 +3918,22 @@
             "damage": 125,
             "damage_back": 50,
             "damage_type": "ESFDamageTypeCategory::Blade",
+            "damage_class": "SmartDisc",
             "headshot": null,
+            "zones": null,
             "health": 200
           }
         ],
+        "magazine": {
+          "size": 3,
+          "max_ammo": 3,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": null,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Definitions/Predator/SmartDisc/Pred_SmartDisc_Ammo.0"
+        },
         "source": "Content/Weapon/Definitions/Predator/SmartDisc/WD_Predator_SmartDisc.0"
       },
       {
@@ -3345,7 +3950,11 @@
                 45.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0
               ]
@@ -3358,7 +3967,11 @@
                 60.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "Slashing",
+              "headshot": 1.05,
+              "zones": {
+                "Head": 1.05
+              },
               "range": [
                 300.0,
                 300.0,
@@ -3367,6 +3980,7 @@
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/Weapon/Definitions/Predator/ElderSword/WD_Predator_ElderSword.0"
       }
     ],
@@ -3381,6 +3995,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               47.3,
               46.3,
@@ -3399,6 +4018,9 @@
           {
             "type": "grenade",
             "damage_type": "ESFDamageTypeCategory::Explosion",
+            "damage_class": "FT_LauncherExplosive",
+            "headshot": null,
+            "zones": null,
             "fire_rate": 40,
             "direct_hit_damage": 15.0,
             "splash_damage_max": 120.0,
@@ -3407,6 +4029,16 @@
             "splash_radius_outer": 500.0
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 270,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/DLC_01/Weapon/Definitions/Fireteam/HammerHead/Mag_Hammerhead_Default.0"
+        },
         "source": "Content/DLC_Release/DLC_01/Weapon/Definitions/Fireteam/HammerHead/WD_Rifle_Hammerhead.0"
       },
       {
@@ -3419,6 +4051,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_HighCaliber",
+            "headshot": 1.3,
+            "zones": {
+              "Head": 1.3
+            },
             "damage": [
               294.3,
               266.1,
@@ -3437,6 +4074,16 @@
             "max_range": 200000
           }
         ],
+        "magazine": {
+          "size": 5,
+          "max_ammo": 35,
+          "ammo_bag": 30,
+          "pickup": 10,
+          "small_drop": 3,
+          "large_drop": 9,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_09/Weapon/Definitions/Fireteam/SmallFoxWeapon/Mag_SmallFoxWeapon_Default.0"
+        },
         "source": "Content/DLC_Release/FU_09/Weapon/Definitions/Fireteam/SmallFoxWeapon/WD_SniperRifle_SmallFoxWeapon_Standard.0"
       },
       {
@@ -3449,6 +4096,9 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Energy",
+            "damage_class": "Plasma",
+            "headshot": null,
+            "zones": null,
             "damage": [
               45.0,
               35.9,
@@ -3465,6 +4115,16 @@
             "max_range": null
           }
         ],
+        "magazine": {
+          "size": 25,
+          "max_ammo": 250,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PlasmaRifle/Mag_PlasmaRifle_Default.0"
+        },
         "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PlasmaRifle/WD_PlasmaAR_Base.1"
       },
       {
@@ -3474,6 +4134,16 @@
         "description": "Using modified alien technology, the OWLF was able to retrofit a grenade launcher to fire proximity sensing mines. This new tool allows them to turn the tables on a Predator and become the hunter.",
         "category": "Weapon.Category.SecondarySpecial",
         "attacks": [],
+        "magazine": {
+          "size": 3,
+          "max_ammo": 6,
+          "ammo_bag": 3,
+          "pickup": 3,
+          "small_drop": 0,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PDL/Mag_PDL_Default.0"
+        },
         "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/PDL/WD_GrenadeLauncher_PDL.0"
       },
       {
@@ -3486,14 +4156,27 @@
           {
             "type": "grenade",
             "damage_type": "ESFDamageTypeCategory::Explosion",
+            "damage_class": "FT_RocketExplosive",
+            "headshot": null,
+            "zones": null,
             "fire_rate": 60,
             "direct_hit_damage": 75.0,
             "splash_damage_max": 150.0,
-            "splash_damage_min": null,
+            "splash_damage_min": 15.0,
             "splash_radius_inner": 250.0,
             "splash_radius_outer": 600.0
           }
         ],
+        "magazine": {
+          "size": 1,
+          "max_ammo": 4,
+          "ammo_bag": 2,
+          "pickup": 3,
+          "small_drop": 0,
+          "large_drop": null,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_06/Weapon/Definitions/Fireteam/SpecialHeavy/B34S-T/Mag_B34ST_Default.0"
+        },
         "source": "Content/DLC_Release/FU_06/Weapon/Definitions/Fireteam/SpecialHeavy/B34S-T/WD_B34ST.0"
       },
       {
@@ -3506,6 +4189,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               55.0,
               49.9,
@@ -3522,6 +4210,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 240,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/FU_03/Weapon/Definitions/Fireteam/AssaultRifle/OWLFAR/Mag_OWLFAR_Default.0"
+        },
         "source": "Content/DLC_Release/FU_03/Weapon/Definitions/Fireteam/AssaultRifle/OWLFAR/WD_OWLFAR_Standard.0"
       },
       {
@@ -3534,6 +4232,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               48.9,
               47.2,
@@ -3552,6 +4255,9 @@
           {
             "type": "grenade",
             "damage_type": "ESFDamageTypeCategory::Explosion",
+            "damage_class": "FT_LauncherExplosive",
+            "headshot": null,
+            "zones": null,
             "fire_rate": 40,
             "direct_hit_damage": 15.0,
             "splash_damage_max": 120.0,
@@ -3560,6 +4266,16 @@
             "splash_radius_outer": 500.0
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 300,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/DLC_Release/DLC_04/Weapon/Definitions/Fireteam/MERC/Mag_MERC_Default.0"
+        },
         "source": "Content/DLC_Release/DLC_04/Weapon/Definitions/Fireteam/MERC/WD_Rifle_MERC.0"
       },
       {
@@ -3572,6 +4288,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               80.1,
               70.4,
@@ -3588,6 +4309,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 7,
+          "max_ammo": 47,
+          "ammo_bag": 12,
+          "pickup": 20,
+          "small_drop": 2,
+          "large_drop": 5,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_1911_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/1011-12/WD_Pistol_1011-12_Standard.0"
       },
       {
@@ -3600,6 +4331,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_HighCaliber",
+            "headshot": 1.3,
+            "zones": {
+              "Head": 1.3
+            },
             "damage": [
               140.0,
               112.0,
@@ -3616,6 +4352,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 6,
+          "max_ammo": 24,
+          "ammo_bag": 12,
+          "pickup": 12,
+          "small_drop": 2,
+          "large_drop": 5,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_2XL_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/2XL/WD_Pistol_2XL.0"
       },
       {
@@ -3628,6 +4374,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               60.9,
               49.4,
@@ -3642,6 +4393,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 15,
+          "max_ammo": 60,
+          "ammo_bag": 20,
+          "pickup": 30,
+          "small_drop": 5,
+          "large_drop": 10,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_Grim19_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/PistolSidearm/Grimtech19/WD_Pistol_Grimtech19_Standard.0"
       },
       {
@@ -3654,6 +4415,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_Shotgun",
+            "headshot": 1.5,
+            "zones": {
+              "Head": 1.5
+            },
             "damage": [
               15.0,
               3.2,
@@ -3669,6 +4435,16 @@
             "pellets": 7
           }
         ],
+        "magazine": {
+          "size": 8,
+          "max_ammo": 64,
+          "ammo_bag": 20,
+          "pickup": 30,
+          "small_drop": 3,
+          "large_drop": 5,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_CS12_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/Shotgun/Cs12/WD_Shotgun_CS12.0"
       },
       {
@@ -3681,6 +4457,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_Shotgun",
+            "headshot": 1.5,
+            "zones": {
+              "Head": 1.5
+            },
             "damage": [
               32.085056,
               13.4,
@@ -3696,6 +4477,16 @@
             "pellets": 9
           }
         ],
+        "magazine": {
+          "size": 8,
+          "max_ammo": 48,
+          "ammo_bag": 15,
+          "pickup": 20,
+          "small_drop": 3,
+          "large_drop": 5,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_DJL-33_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/Shotgun/DJL33/WD_Shotgun_DJL33_Secondary.0"
       },
       {
@@ -3708,6 +4499,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_Shotgun",
+            "headshot": 1.5,
+            "zones": {
+              "Head": 1.5
+            },
             "damage": [
               20.0,
               5.0,
@@ -3723,6 +4519,16 @@
             "pellets": 9
           }
         ],
+        "magazine": {
+          "size": 16,
+          "max_ammo": 48,
+          "ammo_bag": 10,
+          "pickup": 25,
+          "small_drop": 3,
+          "large_drop": 5,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_XDB12_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/Shotgun/XDB12/WD_Shotgun_XDB12_Secondary.0"
       },
       {
@@ -3735,6 +4541,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_MiniGun",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               12.1,
               10.3,
@@ -3749,6 +4560,16 @@
             "max_range": 15000
           }
         ],
+        "magazine": {
+          "size": 400,
+          "max_ammo": 800,
+          "ammo_bag": 0,
+          "pickup": 200,
+          "small_drop": 0,
+          "large_drop": 0,
+          "reload_speed": 0.75,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_MiniGun_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/Minigun/WD_Minigun.0"
       },
       {
@@ -3761,6 +4582,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_HighCaliber",
+            "headshot": 1.3,
+            "zones": {
+              "Head": 1.3
+            },
             "damage": [
               69.7,
               69.6,
@@ -3777,6 +4603,16 @@
             "max_range": 200000
           }
         ],
+        "magazine": {
+          "size": 15,
+          "max_ammo": 75,
+          "ammo_bag": 80,
+          "pickup": 30,
+          "small_drop": 8,
+          "large_drop": 15,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_ABR-Z_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/SniperRifle/ABR-Z/WD_SniperRifle_ABR-Z_Standard.0"
       },
       {
@@ -3789,6 +4625,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_HighCaliber",
+            "headshot": 1.3,
+            "zones": {
+              "Head": 1.3
+            },
             "damage": [
               166.0,
               165.2,
@@ -3805,6 +4646,16 @@
             "max_range": 200000
           }
         ],
+        "magazine": {
+          "size": 5,
+          "max_ammo": 35,
+          "ammo_bag": 30,
+          "pickup": 10,
+          "small_drop": 3,
+          "large_drop": 9,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_7EN_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/SniperRifle/7EN/WD_SniperRifle_7EN_Standard.0"
       },
       {
@@ -3817,6 +4668,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               32.9,
               29.9,
@@ -3833,6 +4689,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 270,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_G-ROW_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/G-ROW/WD_Rifle_G-ROW_Standard.0"
       },
       {
@@ -3845,6 +4711,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               55.0,
               50.1,
@@ -3861,6 +4732,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 210,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_GOSL-R_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/GOSL-R/WD_Rifle_GOSL-R_Standard.0"
       },
       {
@@ -3873,6 +4754,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               42.5,
               38.5,
@@ -3889,6 +4775,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 270,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_AK_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/AR-W/WD_Rifle_AR-W_Standard.0"
       },
       {
@@ -3901,6 +4797,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               38.0,
               35.9,
@@ -3917,6 +4818,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 30,
+          "max_ammo": 270,
+          "ammo_bag": 60,
+          "pickup": 120,
+          "small_drop": 15,
+          "large_drop": 45,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_QR4_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/AssaultRifle/QR4/WD_Rifle_QR4_Standard.0"
       },
       {
@@ -3933,7 +4844,11 @@
                 125.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "FT_Slashing",
+              "headshot": 1.3,
+              "zones": {
+                "Head": 1.3
+              },
               "range": [
                 170.0
               ]
@@ -3944,7 +4859,11 @@
                 100.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "FT_Slashing",
+              "headshot": 1.3,
+              "zones": {
+                "Head": 1.3
+              },
               "range": [
                 170.0
               ]
@@ -3957,13 +4876,18 @@
                 190.0
               ],
               "damage_type": "ESFDamageTypeCategory::Blade",
-              "headshot": null,
+              "damage_class": "FT_Slashing",
+              "headshot": 1.3,
+              "zones": {
+                "Head": 1.3
+              },
               "range": [
                 170.0
               ]
             }
           ]
         ],
+        "magazine": null,
         "source": "Content/Weapon/Definitions/Fireteam/Melee/WD_Knife_Gear_Base.1"
       },
       {
@@ -3976,6 +4900,9 @@
           {
             "type": "grenade",
             "damage_type": "ESFDamageTypeCategory::Explosion",
+            "damage_class": "FT_LauncherExplosive",
+            "headshot": null,
+            "zones": null,
             "fire_rate": 70,
             "direct_hit_damage": 15.0,
             "splash_damage_max": 120.0,
@@ -3984,6 +4911,16 @@
             "splash_radius_outer": 500.0
           }
         ],
+        "magazine": {
+          "size": 6,
+          "max_ammo": 24,
+          "ammo_bag": 6,
+          "pickup": 24,
+          "small_drop": 0,
+          "large_drop": 2,
+          "reload_speed": 0.93,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_D34D_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/GrenadeLauncher/D34D/WD_GrenadeLauncher_D34D.0"
       },
       {
@@ -3996,6 +4933,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               47.0,
               40.8,
@@ -4010,6 +4952,16 @@
             "max_range": 80000
           }
         ],
+        "magazine": {
+          "size": 25,
+          "max_ammo": 250,
+          "ammo_bag": 150,
+          "pickup": 50,
+          "small_drop": 15,
+          "large_drop": 50,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_Z-06_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/SMG/Z-06/WD_SMG_Z-06_Secondary.0"
       },
       {
@@ -4022,6 +4974,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               42.8,
               34.1,
@@ -4038,6 +4995,16 @@
             "max_range": 80000
           }
         ],
+        "magazine": {
+          "size": 20,
+          "max_ammo": 220,
+          "ammo_bag": 150,
+          "pickup": 50,
+          "small_drop": 15,
+          "large_drop": 50,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_PDW-Z_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/SMG/PDW-Z/WD_SMG_PDW-Z_Secondary.0"
       },
       {
@@ -4050,6 +5017,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               30.2,
               21.0,
@@ -4064,6 +5036,16 @@
             "max_range": 80000
           }
         ],
+        "magazine": {
+          "size": 25,
+          "max_ammo": 250,
+          "ammo_bag": 150,
+          "pickup": 50,
+          "small_drop": 15,
+          "large_drop": 50,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_ZR-55_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/SMG/ZR-55/WD_SMG_ZR-55_Secondary.0"
       },
       {
@@ -4076,6 +5058,9 @@
           {
             "type": "grenade",
             "damage_type": "ESFDamageTypeCategory::Explosion",
+            "damage_class": "FT_Explosive",
+            "headshot": null,
+            "zones": null,
             "fire_rate": null,
             "direct_hit_damage": 10.0,
             "splash_damage_max": 300.0,
@@ -4084,6 +5069,16 @@
             "splash_radius_outer": 1500.0
           }
         ],
+        "magazine": {
+          "size": 3,
+          "max_ammo": 3,
+          "ammo_bag": null,
+          "pickup": null,
+          "small_drop": 0,
+          "large_drop": 0,
+          "reload_speed": 0.8,
+          "source": "/Game/Weapon/Attachments/Frag_Ammo.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/Grenade/WD_Grenade_Frag_FT.0"
       },
       {
@@ -4096,6 +5091,11 @@
           {
             "type": "projectile",
             "damage_type": "ESFDamageTypeCategory::Bullet",
+            "damage_class": "Bullet_SmallCaliber",
+            "headshot": 1.2,
+            "zones": {
+              "Head": 1.2
+            },
             "damage": [
               34.8,
               32.8,
@@ -4112,6 +5112,16 @@
             "max_range": 100000
           }
         ],
+        "magazine": {
+          "size": 150,
+          "max_ammo": 450,
+          "ammo_bag": 165,
+          "pickup": 150,
+          "small_drop": 16,
+          "large_drop": 50,
+          "reload_speed": 1.0,
+          "source": "/Game/Weapon/Attachments/Magazines/Mag_RP-103_Default.0"
+        },
         "source": "Content/Weapon/Definitions/Fireteam/LMG/RP-103/WD_LMG_RP-103_Base.1"
       }
     ]

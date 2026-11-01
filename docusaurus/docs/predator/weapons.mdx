@@ -7,6 +7,7 @@ import Table from '@site/src/components/Table'
 import Icon from '@site/src/components/Icon'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
+import { fmtHeadshot } from '@site/src/components/BodyParts'
 import data from '/static/data.json'
 
 # Predator Weapons and Gear
@@ -42,32 +43,55 @@ export function flattenWeapons(weapons) {
             _primaryDmgType:   primarySingle?.damage_type?.replace('ESFDamageTypeCategory::', '') ?? null,
             _primarySingle:    Array.isArray(primarySingle?.damage) ? primarySingle.damage[0] : (primarySingle?.damage ?? null),
             _primaryCombo:     primaryCombo?.damage ?? null,
+            _primaryCharge:    Array.isArray(primarySingle?.damage) && primarySingle.damage.length > 1 ? primarySingle.damage : null,
+            _primaryChargeTime: primarySingle?.damage_time ?? null,
+            _primarySplashMin: primarySingle?.splash_damage_min ?? null,
+            _primarySplashInner: toM(primarySingle?.splash_radius_inner),
+            _primarySplashOuter: toM(primarySingle?.splash_radius_outer),
+            _primaryFireTime:  primarySingle?.fire_time ?? null,
+            _range:            toM(primarySingle?.range?.[0]),
+            _comboRange:       primaryCombo?.range?.map(toM) ?? null,
+            _comboStun:        toM(primaryCombo?.impact_radius),
+            _secondaryStun:    toM(secondarySingle?.impact_radius),
             _primarySplash:    primarySingle?.splash_damage_max ?? null,
             _primaryFire:      primarySingle?.damage_fire ?? null,
-            _primaryHeadshot:  primarySingle?.headshot ?? null,
+            _primaryHeadshot:  primarySingle?.damage_class ? (primarySingle.headshot ?? 1) : null,
             _secondaryType:    secondarySingle?.type ?? null,
             _secondarySingle:  Array.isArray(secondarySingle?.damage) ? secondarySingle.damage[0] : (secondarySingle?.damage ?? null),
             _secondaryDmgType: secondarySingle?.damage_type?.replace('ESFDamageTypeCategory::', '') ?? null,
             _secondaryBack:    secondarySingle?.damage_back ?? null,
             _secondaryHealth:  secondarySingle?.health ?? null,
-            _secondaryHeadshot: secondarySingle?.headshot ?? null,
+            _secondaryHeadshot: secondarySingle?.damage_class ? (secondarySingle.headshot ?? 1) : null,
         };
     });
+}
+
+export function toM(cm) {
+    // Unreal units (cm) to metres
+    return cm == null ? null : +(cm / 100).toFixed(2);
+}
+
+export const SMALL = {color: 'var(--ifm-color-secondary-darkest)'};
+
+export function fmtStun(radius) {
+    if (radius == null) return null;
+    return <small style={SMALL} title={`stuns targets within ${radius} m`}> + stun {radius} m</small>;
+}
+
+export function comboTotal(dmg) {
+    return Math.round(dmg.reduce((a, b) => a + b, 0) * 100) / 100;
 }
 
 export function fmtCombo(row) {
     const dmg = row._primaryCombo;
     if (!dmg) return null;
     return (
-        <span title={dmg.join(' → ')}>
+        <span title={`${dmg.join(' → ')} = ${comboTotal(dmg)} total`}>
             {dmg.join(' / ')}
+            <small style={SMALL}> = <strong>{comboTotal(dmg)}</strong></small>
+            {fmtStun(row._comboStun)}
         </span>
     );
-}
-
-export function fmtHeadshot(multiplier) {
-    if (multiplier == null) return null;
-    return <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> 💢x{multiplier}</small>;
 }
 
 export function fmtPrimary(row) {
@@ -75,15 +99,36 @@ export function fmtPrimary(row) {
     if (v == null) return null;
     const emoji = DMG_TYPE_EMOJI[row._primaryDmgType] ?? '';
     const extra = [];
-    if (row._primarySplash != null) extra.push(`splash ${row._primarySplash}`);
-    if (row._primaryFire != null) extra.push(`fire ${row._primaryFire}/s`);
-    if (row._primaryHeadshot != null) extra.push(`headshot x${row._primaryHeadshot}`);
-    const tooltip = [emoji, row._primaryDmgType, row._primaryType, ...extra].filter(Boolean).join(' · ');
+    if (row._primarySplash != null) {
+        const dmg = row._primarySplashMin != null ? `${row._primarySplashMin}–${row._primarySplash}` : row._primarySplash;
+        const radius = row._primarySplashOuter != null ? ` (${row._primarySplashInner ?? 0}–${row._primarySplashOuter} m)` : '';
+        extra.push(`splash ${dmg}${radius}`);
+    }
+    if (row._primaryFire != null) {
+        extra.push(`fire ${row._primaryFire}/s${row._primaryFireTime != null ? ` for ${row._primaryFireTime}s` : ''}`);
+    }
+    const charge = row._primaryCharge;
+    const chargeTip = charge
+        ? 'charge ' + charge.map((d, i) => `${row._primaryChargeTime?.[i] ?? '?'}s: ${d}`).join(', ')
+        : null;
+    const tooltip = [emoji, row._primaryDmgType, row._primaryType, chargeTip, ...extra].filter(Boolean).join(' · ');
     return (
         <span title={tooltip}>
-            {emoji} <strong>{v}</strong>
-            {row._primaryHeadshot != null && fmtHeadshot(row._primaryHeadshot)}
-            {(row._primarySplash != null || row._primaryFire != null) && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> +{[row._primarySplash != null ? `splash ${row._primarySplash}` : null, row._primaryFire != null ? `fire ${row._primaryFire}/s` : null].filter(Boolean).join(', ')}</small>}
+            {emoji} <strong>{charge ? charge.join(' → ') : v}</strong>
+            {extra.length > 0 && <small style={SMALL}> +{extra.join(', ')}</small>}
+        </span>
+    );
+}
+
+export function fmtRange(row) {
+    if (row._range == null) return null;
+    const combo = row._comboRange;
+    const title = combo ? `combo: ${combo.join(' / ')} m` : undefined;
+    const comboMax = combo ? Math.max(...combo) : null;
+    return (
+        <span title={title}>
+            {row._range} <small>m</small>
+            {comboMax != null && comboMax !== row._range && <small style={SMALL}> (combo up to {comboMax} m)</small>}
         </span>
     );
 }
@@ -98,13 +143,12 @@ export function fmtSecondary(row) {
     const extra = [];
     if (row._secondaryBack != null) extra.push(`back hit: ${row._secondaryBack}`);
     if (row._secondaryHealth != null) extra.push(`projectile HP: ${row._secondaryHealth}`);
-    if (row._secondaryHeadshot != null) extra.push(`headshot x${row._secondaryHeadshot}`);
     const tooltip = [icon, dmgEmoji, typeLabel, ...extra].filter(Boolean).join(' · ');
     return (
         <span title={tooltip}>
             {icon} <strong>{v}</strong>
-            {row._secondaryHeadshot != null && fmtHeadshot(row._secondaryHeadshot)}
             {row._secondaryBack != null && <small style={{color: 'var(--ifm-color-secondary-darkest)'}}> /{row._secondaryBack}</small>}
+            {fmtStun(row._secondaryStun)}
         </span>
     );
 }
@@ -124,6 +168,8 @@ export const DMG_TYPE_EMOJI = {
     { name: 'Primary',   key: '_primarySingle',   align: 'right', numeric: true, format: fmtPrimary },
     { name: 'Combo',     key: '_primaryCombo',    align: 'right', sortable: false, format: fmtCombo },
     { name: 'Secondary', key: '_secondarySingle', align: 'right', numeric: true, format: fmtSecondary },
+    { name: 'Melee range', key: '_range',          align: 'right', numeric: true, format: fmtRange },
+    { name: 'Headshot',  key: '_primaryHeadshot', align: 'right', numeric: true, format: fmtHeadshot('_primaryHeadshot', '_secondaryHeadshot') },
 ]} data={flattenWeapons(data.weapons.predator)} fullWidth filterable />
 
 

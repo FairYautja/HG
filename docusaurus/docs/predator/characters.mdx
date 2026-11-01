@@ -9,6 +9,9 @@ import Percent from '@site/src/components/Percent'
 import Relative from '@site/src/components/Relative'
 import NoteGauges from "@site/src/components/NoteGauges.md"
 import NoteValues from "@site/src/components/NoteValues.md"
+import { characterZoneRows, ZoneModifier } from '@site/src/components/BodyParts'
+import { fmtDamageTypeName, commonValue, commonModifiers, damageTypeRows, fmtCommonValue } from '@site/src/components/DamageTypes'
+import Seconds, { ratio } from '@site/src/components/Seconds'
 import data from '/static/data.json'
 import predatorEHP from '@site/src/components/predatorEHP'
 
@@ -19,6 +22,54 @@ List of all available Predator classes and their key attributes.
 
 
 ## Stats
+
+export const CLOAK_REGEN_DELAY = 4.2;
+
+export const predators = data.characters.predator.map((c) => ({
+    ...c,
+    beam_switch_m: c.beam_switch != null ? c.beam_switch / 100 : null,
+    cloak_time: cloakTime(c),
+    stamina_refill: ratio(c.stamina, c.stamina_recovery),
+    energy_refill: ratio(c.energy, c.energy_recovery),
+}));
+
+export function cloakTime(c) {
+    // Seconds cloaked from full energy. The activation cost is paid once, the drain runs per
+    // second, and energy regeneration resumes CLOAK_REGEN_DELAY seconds after cloaking. The delay
+    // isn't in the game files; it's estimated from an in-game test (Jotun uncloaks after ~12 s,
+    // Celtic never does).
+    const cloak = c.cloak;
+    if (!cloak || c.energy == null || c.energy_recovery == null) return null;
+    const available = c.energy - cloak.initial_energy;
+    if (available <= cloak.energy * CLOAK_REGEN_DELAY) {
+        return Math.round(available / cloak.energy * 10) / 10;  // runs out before regen starts
+    }
+    const net = cloak.energy - c.energy_recovery;
+    if (net <= 0) return Infinity;
+    return Math.round((available - c.energy_recovery * CLOAK_REGEN_DELAY) / net * 10) / 10;
+}
+
+export const cloakTimes = predators.map((c) => c.cloak_time).filter((v) => v != null && isFinite(v));
+export const cloakMax = Math.max(...cloakTimes);
+export const cloakMin = Math.min(...cloakTimes);
+
+export function fmtCloakTime(row) {
+    const cloak = row.cloak;
+    const t = row.cloak_time;
+    if (!cloak || t == null) return null;
+    const title = `(${row.energy} energy - ${cloak.initial_energy} activation - ${row.energy_recovery} recovery × ${CLOAK_REGEN_DELAY} s delay) / `
+        + `(${cloak.energy} drain - ${row.energy_recovery} recovery) · ${cloak.id}`;
+    if (!isFinite(t)) {
+        return <span title={title + ' · recovery ≥ drain'}><strong>∞</strong></span>;
+    }
+    const percent = cloakMax === cloakMin ? 100 : Math.round((t - cloakMin) / (cloakMax - cloakMin) * 100);
+    return (
+        <div title={title}>
+            <strong>{t} s</strong><br />
+            <progress value={percent} max="100" style={{ width: '60px' }}>{percent}%</progress>
+        </div>
+    );
+}
 
 <Table columns={[
     { name: 'Name', key: 'name', format: Icon('name') },
@@ -37,13 +88,15 @@ List of all available Predator classes and their key attributes.
       format: Relative("stamina", data.characters.predator),
     },
     {
-      name: 'Stamina Recovery',
-      key: 'stamina_recovery',
+      detail: true,
+      name: 'Stamina refill',
+      key: 'stamina_refill',
       align: "right",
       numeric: true,
-      format: Relative("stamina_recovery", data.characters.predator),
+      format: Seconds('stamina_refill', predators, (row) => `${row.stamina} stamina ÷ ${row.stamina_recovery} recovery per second`),
     },
     {
+      detail: true,
       name: 'Stamina exhaustion duration',
       key: 'exhaustion_duration',
       align: "right",
@@ -74,11 +127,28 @@ List of all available Predator classes and their key attributes.
       format: Relative("energy", data.characters.predator),
     },
     {
-      name: 'Energy Recovery',
-      key: 'energy_recovery',
+      detail: true,
+      name: 'Energy refill',
+      key: 'energy_refill',
       align: "right",
       numeric: true,
-      format: Relative("energy_recovery", data.characters.predator),
+      format: Seconds('energy_refill', predators, (row) => `${row.energy} energy ÷ ${row.energy_recovery} recovery per second`),
+    },
+    {
+      detail: true,
+      name: 'Max beam switch distance (m)',
+      key: 'beam_switch_m',
+      align: "right",
+      numeric: true,
+      format: Relative("beam_switch_m", predators.filter((c) => c.beam_switch_m != null)),
+    },
+    {
+      detail: true,
+      name: 'Cloak time',
+      key: 'cloak_time',
+      align: "right",
+      numeric: true,
+      format: fmtCloakTime,
     },
     {
       name: 'Melee',
@@ -89,6 +159,7 @@ List of all available Predator classes and their key attributes.
       filterValue: (v) => Math.round((v - 1) * 100),
     },
     {
+      detail: true,
       name: 'Melee Stamina Regeneration',
       key: 'melee_stamina',
       align: "right",
@@ -104,13 +175,26 @@ List of all available Predator classes and their key attributes.
       numeric: true,
       format: Relative("downed_health", data.characters.predator),
     },
-]} data={data.characters.predator} fullWidth filterable />
+]} data={predators} fullWidth filterable />
+
+
+*Show details* adds refill times, stamina exhaustion, cloak time and beam switch distance. *Stamina
+refill* and *Energy refill* are the seconds needed to recover from empty to full (hover for the
+raw recovery rate).
+*Cloak time* is how long the Predator can stay cloaked starting from full energy, standing still.
+Cloaking costs the activation energy once, then drains energy every second. Energy keeps
+regenerating while cloaked, but only after a delay of about 4.2 s, so for the first seconds the full
+drain applies. `∞` means energy recovery is at least as fast as the drain. Verified in game: Celtic
+stays cloaked indefinitely, Jotun uncloaks after about 12 s. The 4.2 s delay is estimated from the
+Jotun test; it isn't part of the game files. Hover a value to see the numbers used.
 
 
 ## Effective Health
 
-Effective health shows how much total damage each Predator can absorb per damage type, based on
-their base HP and armor value.
+Effective health shows how much raw weapon damage each Predator can absorb per damage type before
+entering Second Wind: base HP ÷ armor. Armor multiplies incoming damage, which was verified in game:
+4–5 D34-D grenades (15 direct + 120 splash, ×2.0 launcher armor) put a 1,000 HP Scout into
+Second Wind. If armor divided damage instead, it would take 14 or more.
 
 <Table columns={[
     { name: 'Name',         key: 'name',  format: Icon('name') },
@@ -122,12 +206,65 @@ their base HP and armor value.
     { name: '⚡ Plasma',    key: 'eHP_Plasma',              align: 'right', numeric: true },
 ]} data={predatorEHP} fullWidth filterable />
 
+
+## Common Stats
+
+These values are the same for every Predator class. *Armor* is a multiplier applied to incoming
+damage of the given damage type. Armor values that differ between classes are part of the
+Effective Health table above.
+
+export const pd = data.characters.predator;
+export const downedBleed = commonValue(pd, 'downed_bleed');
+export const commonRows = [
+    ...(downedBleed != null ? [{ id: 'downed_bleed', source: 'downed_bleed', category: '❤️ Second Wind', name: 'Second Wind bleed', value: downedBleed, unit: ' HP/s', used_by: '' }] : []),
+    ...damageTypeRows(commonModifiers(pd, 'armor'), '🛡️ Armor'),
+];
+
+<Table columns={[
+    { name: 'Category', key: 'category' },
+    { name: 'Name', key: 'name', format: fmtDamageTypeName },
+    { name: 'Value', key: 'value', align: 'right', format: fmtCommonValue },
+    { name: 'Used by', key: 'used_by' },
+]} data={commonRows} fullWidth filterable />
+
+## Body Parts
+
+Incoming damage modifiers for each body part. Positive values mean the Predator takes more damage
+when hit there.
+
+<Table columns={[
+    { name: 'Classes', key: 'name' },
+    { name: '🗣️ Head', key: 'head', align: 'right', format: ZoneModifier('head') },
+    { name: '👕 Body', key: 'body', align: 'right', format: ZoneModifier('body') },
+    { name: '💪 Arms', key: 'arms', align: 'right', format: ZoneModifier('arms') },
+    { name: '🦵 Legs', key: 'legs', align: 'right', format: ZoneModifier('legs') },
+]} data={characterZoneRows(data.characters.predator)} />
+
+### Headshots
+
+:::note
+Weapons can add their own headshot bonus on top of the body part modifiers above. See the
+*Headshot* column in [Fireteam weapons](../fireteam/weapons.mdx#stats) and
+[Predator weapons](../predator/weapons.mdx#stats).
+
+Predator weapons with both a melee attack and a throw (e.g. Combistick, Trident, Smart Disc) can
+have a different headshot bonus for each. Those show two values as *melee / throw*, so `+5% / +20%`
+means +5% for melee hits and +20% for the thrown weapon. `—` marks the attack without a bonus.
+:::
+
+
 ## Notes
 
+export const secondWind = (() => {
+    const hp = pd.map((c) => c.downed_health).filter((v) => v != null);
+    const time = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+    return { min: time(Math.min(...hp) / downedBleed), max: time(Math.max(...hp) / downedBleed) };
+})();
+
 :::info[Second Wind bleed]
-  All Predators bleed 5 HP per second when they are in Second Wind. Theoretically, this gives them
-  between 3:20 and 5:00 minutes to heal themselves. However, they take additional damage if
-  the Fireteam or NPCs shoot at them.
+  All Predators bleed {downedBleed} HP per second when they are in Second Wind. Theoretically, this
+  gives them between {secondWind.min} and {secondWind.max} minutes to heal themselves. However, they
+  take additional damage if the Fireteam or NPCs shoot at them.
 :::
 
 <NoteGauges />

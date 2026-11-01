@@ -24,7 +24,7 @@ export default function Relative(key, data, modify_keys = {}) {
         if (typeof value !== 'number') {
             return <span style={style} title={title}>{value}</span>;
         }
-        const percent = (value - min) / (max - min) * 100;
+        const percent = max === min ? 100 : Math.round((value - min) / (max - min) * 100);
         return <div>
             <span style={style} title={title}>{value}</span><br />
             <progress value={percent} max="100" style={{ width: '60px' }}>{percent}%</progress>

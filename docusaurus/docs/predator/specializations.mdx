@@ -18,8 +18,9 @@ Each class has access to a different set of specializations.
 ## Stats
 
 export const modify = {
-    Spec_Brute: { good_negative: true },
-    Spec_Disciplined: { good_negative: true },
+    // Parried attacks deal +40% of the hit's damage (in game: 16 HP instead of 2 for a 33 HP hit)
+    Spec_Brute: { callback: (value) => `+${Math.round(value * 100)}% on parry`, good: true },
+    Spec_Disciplined: { callback: () => 'yes', good: true },  // -1.0 is an on/off flag, not a percentage
     Spec_Savage: { callback: (value) => value + 1 },
     Spec_Warrior: { good_negative: true },
 }
@@ -39,5 +40,11 @@ export const modify_secondary = {
 
 
 ## Notes
+
+:::info[Brute]
+  When a Predator's melee attack is parried, the Fireteam normally takes only 2 HP of damage. Brute
+  lets 40% of the hit's damage through: tested in game, a Berserker's Wrist Blades hit (33 HP
+  unparried) dealt 16 HP when parried. Unparried hits are not affected.
+:::
 
 <NoteValues />

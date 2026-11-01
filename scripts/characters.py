@@ -5,7 +5,8 @@ from typing import Any
 
 from . import WEAPON_HUMAN, WEAPON_PREDATOR, log
 from .loader import Loader
-from .utils import extract_curve, extract_list_of_dicts
+from .perks import extract_modifier
+from .utils import extract_curve, extract_list_of_dicts, split_index
 
 NPC_NAMES = {  # .pak name to human name
     "CD_DrugLord": "Drug Lord",
@@ -94,6 +95,55 @@ def parse_damage_zone_modifiers(damage_zone_modifiers: list[dict]) -> dict[str, 
     return modifiers
 
 
+def resolve_class_attribute(loader: Loader, object_path: str) -> dict[str, Any] | None:
+    """Fireteam class attribute (perk-like passive bonus defined per class)"""
+    path, index = split_index(object_path)
+    try:
+        attribute = loader.extract(path, index, {
+            "Name": str,
+            "Properties.Name.LocalizedString": str,
+            "Properties.Name.SourceString": str,
+            "Properties.Description.LocalizedString": str,
+            "Properties.Usage": str,
+            "Properties.FloatModifier": float,
+            "Properties.IntModifier": int,
+        })
+    except KeyError as error:
+        log.warning("Class attribute not found: %s", error)
+        return None
+    name = attribute.get("Properties.Name.LocalizedString") or attribute.get("Properties.Name.SourceString")
+    return {
+        "id": attribute.get("Name"),
+        "name": name.capitalize() if name and name.isupper() else name,
+        "description": attribute.get("Properties.Description.LocalizedString") or None,
+        "usage": attribute.get("Properties.Usage", "").split("::")[-1] or None,
+        "modifier": extract_modifier(attribute),
+        "source": attribute.get("_source"),
+    }
+
+
+def resolve_cloak(loader: Loader, object_path: str) -> dict[str, Any] | None:
+    """Predator cloak type and its energy consumption"""
+    path, index = split_index(object_path)
+    try:
+        cloak = loader.extract(path, index, {
+            "Name": str,
+            "Properties.CloakType": str,
+            "Properties.InitialEnergyConsumptionAmount": float,
+            "Properties.EnergyConsumptionAmount": float,
+        })
+    except KeyError as error:
+        log.warning("Cloak not found: %s", error)
+        return None
+    return {
+        "id": cloak.get("Name"),
+        "type": cloak.get("Properties.CloakType", "").split("::")[-1] or None,
+        "initial_energy": cloak.get("Properties.InitialEnergyConsumptionAmount"),
+        "energy": cloak.get("Properties.EnergyConsumptionAmount"),
+        "source": cloak.get("_source"),
+    }
+
+
 def extract_characters(loader: Loader) -> dict[str, Any]:
     """Extract Fireteam, Predator, NPC and fauna characters"""
     characters = []
@@ -135,7 +185,20 @@ def extract_characters(loader: Loader) -> dict[str, Any]:
             "Properties.StaminaRecoveryRate": float,
             "Properties.HealthArmor.EditorCurveData": extract_curve,
             "Properties.MaxBeamSwitchDistance": float,
+            "Properties.SpecialAttributes": list,
+            "Properties.DownedLimit": int,
+            "Properties.InteractionSpeedMultiplier": float,
+            "Properties.Cloak.ObjectPath": str,
         }, inheritance_key="Template.ObjectPath")
+
+        attributes = [
+            resolve_class_attribute(loader, attribute["ObjectPath"])
+            for attribute in character.get("Properties.SpecialAttributes") or []
+            if attribute and attribute.get("ObjectPath")
+        ]
+        character["_class_attributes"] = [a for a in attributes if a]
+        cloak_path = character.get("Properties.Cloak.ObjectPath")
+        character["_cloak"] = resolve_cloak(loader, cloak_path) if cloak_path else None
 
         for suffix in (
             "_Female",
@@ -170,8 +233,6 @@ def characters_data(characters: dict[str, Any]) -> dict[str, dict[str, Any]]:
         faction = character.get("Properties.FactionTag.TagName")
 
         if faction == WEAPON_PREDATOR:
-            armor = character.get("Properties.Armor")["Bullet_Shotgun"]
-            effective_hp = character.get("Properties.Health") * armor
             yautja.append({
                 "id": character_id,
                 "name": character_name,
@@ -193,6 +254,7 @@ def characters_data(characters: dict[str, Any]) -> dict[str, dict[str, Any]]:
                 "damage_zones": character.get("Properties.DamageZoneModifiers"),
                 "armor": character.get("Properties.Armor"),
                 "beam_switch": character.get("Properties.MaxBeamSwitchDistance"),
+                "cloak": character.get("_cloak"),
                 "source": character.get("_source"),
             })
         elif faction == WEAPON_HUMAN:
@@ -214,6 +276,9 @@ def characters_data(characters: dict[str, Any]) -> dict[str, dict[str, Any]]:
                 "damage_zones": character.get("Properties.DamageZoneModifiers"),
                 "armor": character.get("Properties.Armor"),
                 "self_armor": character.get("Properties.SelfArmor"),
+                "class_attributes": character.get("_class_attributes"),
+                "downed_limit": character.get("Properties.DownedLimit"),
+                "interaction_speed": character.get("Properties.InteractionSpeedMultiplier", 1.0),
                 "source": character.get("_source"),
             })
         else:
