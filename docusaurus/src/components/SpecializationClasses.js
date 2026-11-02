@@ -30,19 +30,55 @@ export function classesFilterValue(characters) {
   };
 }
 
+/**
+ * Class filter: a full class name (e.g. from clicking a class) matches only that class,
+ * so "HUNTER" doesn't also match Jungle Hunter; anything else is a substring search.
+ */
+export function classesFilterMatch(characters) {
+  const names = (classes) =>
+    classes.map((id) => characters.find((c) => c.id === id)?.name ?? "");
+  return function match(classes, filter) {
+    const query = String(filter).toLowerCase();
+    const exact = characters.some((c) => c.name.toLowerCase() === query);
+    return names(classes).some((name) =>
+      exact ? name.toLowerCase() === query : name.toLowerCase().includes(query),
+    );
+  };
+}
+
 export function SpecializationClassList(characters) {
-  return function format(row) {
+  return function format(row, options) {
     const { colorMode } = useColorMode();
     const chars = row.classes
       .map((character_id) => characters.find((c) => c.id === character_id))
       .filter(Boolean);
+    // In a filterable table, clicking a class searches for it (clicking again clears it)
+    const setFilter = options?.setFilter;
     return (
       <span style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
         {chars.map((c) => (
           <span
             key={c.id}
-            title={c.name}
+            title={setFilter ? `Show specializations of ${c.name}` : c.name}
+            role={setFilter ? "button" : undefined}
+            tabIndex={setFilter ? 0 : undefined}
+            onClick={setFilter ? () => setFilter(c.name) : undefined}
+            onKeyDown={
+              setFilter
+                ? (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setFilter(c.name);
+                    }
+                  }
+                : undefined
+            }
             style={{
+              cursor: setFilter ? "pointer" : undefined,
+              outline:
+                options?.filterValue === c.name
+                  ? "1px solid var(--ifm-color-primary)"
+                  : undefined,
               display: "inline-flex",
               alignItems: "center",
               gap: "4px",

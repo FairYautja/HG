@@ -1,0 +1,28 @@
+---
+sidebar_position: 5
+sidebar_label: 🧮 Damage Calculator
+---
+
+import DamageCalculator from '@site/src/components/DamageCalculator'
+
+# Predator Damage Calculator
+
+Pick a Predator class, specialization and perks, then a Fireteam target, to see how much damage every
+Predator weapon deals. Hover a damage value for the full breakdown of modifiers.
+
+<DamageCalculator side="predator" />
+
+## How it's calculated
+
+```
+damage = base × class melee modifier (melee only) × perks × specialization
+              × target armor × hit zone × weapon headshot bonus (head only) × target perks
+```
+
+- All modifiers multiply each other. Armor multiplies incoming damage, see [Damage Model](../nerds/damage.mdx).
+- Conditional perks and specializations (e.g. *from behind*, *while wounded*) are assumed to be active.
+  Perks and specializations that don't change damage are left out.
+- Hit zone modifiers are not applied to explosions and splash damage.
+- The game files don't contain attack speeds of Predator weapons, so there is no DPS.
+- Combo damage is the sum of all hits; *Hits to down* cycles through the combo.
+- The Yautja Bow uses a fully charged shot. Plasma casters list the direct hit and splash separately.

@@ -74,10 +74,23 @@ export default function Table({
     setShowDetails(!showDetails);
   }
 
+  // Lets cell formatters set a column filter, e.g. clicking a value to search for it.
+  // Setting the current value again clears the filter.
+  function setFilter(key, value) {
+    setFilters((current) => ({
+      ...current,
+      [key]: {
+        ...current[key],
+        value: current[key]?.value === value ? null : value,
+      },
+    }));
+  }
+
   columns.forEach((col) => {
     if (col.filterText) {
       FilterService.register(`custom_${col.key}`, (value, filter) => {
         if (!filter) return true;
+        if (col.filterMatch) return col.filterMatch(value, filter);
         return col
           .filterText(value)
           .toLowerCase()
@@ -111,12 +124,23 @@ export default function Table({
                   })
               : undefined
           }
-          body={column.format}
+          body={
+            column.format && filterable
+              ? (row, options) =>
+                  column.format(row, {
+                    ...options,
+                    filterValue: filters[column.key]?.value ?? null,
+                    setFilter: (value) => setFilter(column.key, value),
+                  })
+              : column.format
+          }
           align={column.align}
           filter={filterable}
           filterMatchMode={FilterMatchMode.CUSTOM}
           filterFunction={
-            column.filterValue
+            column.filterMatch
+              ? (value, filter) => !filter || column.filterMatch(value, filter)
+              : column.filterValue
               ? (value, filter) => {
                   if (filter === null || filter === undefined || filter === "")
                     return true;

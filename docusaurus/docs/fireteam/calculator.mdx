@@ -1,0 +1,29 @@
+---
+sidebar_position: 5
+sidebar_label: 🧮 Damage Calculator
+---
+
+import DamageCalculator from '@site/src/components/DamageCalculator'
+
+# Fireteam Damage Calculator
+
+Pick a Fireteam class, specialization and perks, then a Predator target, to see how much damage every
+Fireteam weapon deals. Hover a damage value for the full breakdown of modifiers.
+
+<DamageCalculator side="fireteam" />
+
+## How it's calculated
+
+```
+damage = base × class melee modifier (melee only) × perks × specialization
+              × target armor × hit zone × weapon headshot bonus (head only) × target perks
+```
+
+- All modifiers multiply each other. Armor multiplies incoming damage, see [Damage Model](../nerds/damage.mdx).
+- Conditional perks and specializations (e.g. *from behind*, *while wounded*) are assumed to be active.
+  Perks and specializations that don't change damage are left out.
+- Hit zone modifiers are not applied to explosions and splash damage.
+- Damage falls off with the distance set by the slider; shotguns assume all pellets hit.
+- Grenades count a direct hit plus full splash damage.
+- *DPS* and *Time to down* use the fire rate and ignore reloads, misses and recoil. ↻ marks weapons
+  that need more than one magazine.
