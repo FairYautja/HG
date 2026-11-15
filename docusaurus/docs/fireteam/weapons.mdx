@@ -14,7 +14,7 @@ import data from '/static/data.json'
 
 # Fireteam Weapons and Gear
 
-Available Fireteam Weapons statistics.
+Available Fireteam weapons statistics.
 
 export const DMG_TYPE_EMOJI = {
     'ESFDamageTypeCategory::Bullet':    '\ud83d\udd2b',
@@ -99,7 +99,7 @@ export function fmtFireRate(row) {
 export function fmtRange(row) {
     const v = row._maxRange;
     if (v == null) return null;
-    return <span title="max effective range in metres">{v} <small>m</small></span>;
+    return <span title="max effective range in meters">{v} <small>m</small></span>;
 }
 
 export function fmtMelee(row) {

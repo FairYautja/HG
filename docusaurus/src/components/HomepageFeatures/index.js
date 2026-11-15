@@ -18,8 +18,8 @@ const FeatureList = [
     img: require('@site/static/img/predator.png').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Predator characters, specializations, perks and weapons statistics,
+        plus an effective health and damage calculator.
       </>
     ),
     link: '/predator',
@@ -29,8 +29,8 @@ const FeatureList = [
     img: require('@site/static/img/nerd.png').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Under-the-hood mechanics: damage formulas, armor, body parts
+        and NPC statistics.
       </>
     ),
     link: '/nerds',

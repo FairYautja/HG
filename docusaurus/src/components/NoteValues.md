@@ -8,7 +8,7 @@ For example, weapon damage is determined by multiple variables, including:
   * The weapon itself
   * The projectile the weapon fires
   * The armor modifier of the character receiving the damage
-We may not be aware of all the attributes required to form an exact formula for calculating these values. Additionally, Illfonic may override or modify certain values directly in the game code (via C++ methods), making such changes inaccessible from the game data files.
+We may not be aware of all the attributes required to form an exact formula for calculating these values. Additionally, IllFonic may override or modify certain values directly in the game code (via C++ methods), making such changes inaccessible from the game data files.
 
 For more details on how we extract values, check the [Nerds](/nerds) section.
 :::

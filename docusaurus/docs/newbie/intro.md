@@ -41,7 +41,7 @@ game decide for you. Note that the random chance of being placed as the Predator
 - NPCs shoot at both the Fireteam and the Predator, but damage dealt to the Predator is negligible.
 - Fireteam members can heal using a **syrette** (fast, usable mid-combat) or a **medkit** (slow).
 - Fireteam members can be **downed** by NPCs, the Predator, or explosives.
-  - A downed player can be revived by another Fireteam member (real player or bot), or by using the [Self-Revive perk](/fireteam#perks).
+  - A downed player can be revived by another Fireteam member (real player or bot), or by using the [Self-Revive perk](/fireteam/perks).
   - Downed players bleed out and die after roughly one minute if not revived.
   - A downed player can be **claimed** (executed) by the Predator.
 - The Predator can heal using a syrette or by **eating a boar**.
