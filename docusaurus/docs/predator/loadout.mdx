@@ -1,0 +1,29 @@
+---
+sidebar_position: 6
+sidebar_label: 🎲 Loadout Generator
+---
+
+import LoadoutGenerator from '@site/src/components/LoadoutGenerator'
+
+# Predator Loadout Generator
+
+Can't decide what to play? Roll a random Predator loadout: class, specialization, two weapons,
+perks and gear, always within the class's point budgets.
+
+<LoadoutGenerator side="predator" />
+
+## Rules
+
+- **Weapons:** two different weapons for the primary and secondary slots. *Wrist Blades* and the
+  shoulder *Plasma Caster* are never rolled, because every Predator always carries them. The
+  *Hand Held Plasma Caster* is a separate weapon and can be rolled. The *Wrist Launcher* counts as gear.
+- **Specialization:** a random pick from the specializations the class can use.
+- **Perks and gear:** up to 3 of each. Their points never exceed the class's perk and gear budgets.
+  If the budget only fits one or two items, you get one or two. A random roll can also leave
+  points unused, or give no perks or gear at all.
+- **Maximise points:** perks and gear are each picked from the combinations that use the most
+  points the budget allows.
+- **Include DLC classes:** turn it off to roll only the base-game classes (Scout, Hunter,
+  Berserker and Jungle Hunter).
+- **Copy link:** the link contains the roll's seed and settings, so it opens the same loadout
+  for whoever you send it to.

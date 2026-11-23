@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import Table from '@site/src/components/Table';
 import Icon from '@site/src/components/Icon';
+import PerkIcon, { selectStyle } from '@site/src/components/ItemIcon';
 import data from '/static/data.json';
 import {
     ATTACKER_MODIFIERS, TARGET_MODIFIERS, TARGET_HEALTH_PERKS, OPPONENT, ZONES,
@@ -30,12 +30,6 @@ function effectLabel(item, def) {
     if (value == null) return null;
     return [percent(value), def.scope ? `${def.scope} damage` : 'damage', def.when ? `(${def.when})` : null]
         .filter(Boolean).join(' ');
-}
-
-function PerkIcon({ icon }) {
-    const { colorMode } = useColorMode();
-    if (!icon) return null;
-    return <img src={icon} alt="" style={{ width: 24, height: 24, verticalAlign: 'middle', filter: `invert(${colorMode === 'dark' ? 0 : 0.7})` }} />;
 }
 
 function PerkList({ perks, selected, onToggle, defs, incoming, extra }) {
@@ -71,8 +65,6 @@ function Field({ label, children }) {
         </div>
     );
 }
-
-const selectStyle = { width: '100%', padding: '4px 6px', fontSize: '1rem' };
 
 function toggle(list, id) {
     return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];

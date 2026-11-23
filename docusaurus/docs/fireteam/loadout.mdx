@@ -1,0 +1,30 @@
+---
+sidebar_position: 6
+sidebar_label: 🎲 Loadout Generator
+---
+
+import LoadoutGenerator from '@site/src/components/LoadoutGenerator'
+
+# Fireteam Loadout Generator
+
+Can't decide what to play? Roll a random Fireteam loadout: class, specialization, primary and
+secondary weapon, perks and gear, always within the class's point budgets.
+
+<LoadoutGenerator side="fireteam" />
+
+## Rules
+
+- **Primary weapon:** assault rifles, sniper rifles, the CS-12 shotgun and the heavy weapons
+  (D34-D, RP-103, B34S-T).
+- **Secondary weapon:** pistols, SMGs, the DJL-33 and XDB-12 shotguns, the S-R3D and the PDL.
+- The *Basic Knife* is always carried, so it's never rolled. The *Frag Grenade* counts as gear.
+- **Specialization:** a random pick from the specializations the class can use.
+- **Perks and gear:** up to 3 of each. Their points never exceed the class's perk and gear budgets.
+  If the budget only fits one or two items, you get one or two. A random roll can also leave
+  points unused, or give no perks or gear at all.
+- **Maximise points:** perks and gear are each picked from the combinations that use the most
+  points the budget allows.
+- **Include DLC classes:** turn it off to roll only the base-game classes (Recon, Scout, Assault
+  and Support).
+- **Copy link:** the link contains the roll's seed and settings, so it opens the same loadout
+  for whoever you send it to.
